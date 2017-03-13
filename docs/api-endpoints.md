@@ -1,48 +1,49 @@
-API Endpoints
+# API Endpoints
 
-HTML API
-Root
+## HTML API
 
-GET /
+### Root
 
-JSON API
+- `GET /` - loads React web app
 
-Users
-GET /api/users/:id
-POST /api/users
-PATCH /api/users
+##JSON API
 
-
-Session
-POST /api/session
-DELETE /api/session
-GET /api/session
+###Users
+- GET /api/users/:id
+- POST /api/users
+- PATCH /api/users
 
 
-Listings
-GET /api/listings
-POST /api/listings
-GET /api/listings/:id
-PATCH /api/listings/:id
-DELETE /api/listings/:id
+###Session
+- POST /api/session
+- DELETE /api/session
+- GET /api/session
 
 
-Regions
-GET /api/regions
-GET /api/regions/:id
+###Listings
+- GET /api/listings
+- POST /api/listings
+- GET /api/listings/:id
+- PATCH /api/listings/:id
+- DELETE /api/listings/:id
 
 
-Bookings
-GET /api/bookings
-POST /api/bookings
-GET /api/bookings/:id
-PATCH /api/bookings/:id
-DELETE /api/bookings/:id
+###Regions
+- GET /api/regions
+- GET /api/regions/:id
 
 
-Reviews
-GET /api/reviews
-POST /api/reviews
-GET /api/reviews/:id
-PATCH /api/reviews/:id
-DELETE /api/reviews/:id
+###Bookings
+- GET /api/bookings
+- POST /api/bookings
+- GET /api/bookings/:id
+- PATCH /api/bookings/:id
+- DELETE /api/bookings/:id
+
+
+###Reviews
+- GET /api/reviews
+- POST /api/reviews
+- GET /api/reviews/:id
+- PATCH /api/reviews/:id
+- DELETE /api/reviews/:id
