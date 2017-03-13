@@ -54,9 +54,9 @@ the API.
 
 **Objective:** Users have listings and profile pages. Current user has a dashboard.
 
-### Phase 5: Allow form editing and additional styling  (1 day)
+### Phase 5: Allow form editing, additional styling, image hosting  (1 day)
 
-**Objective:** Allow users to edit their profile and reviews they've written.
+**Objective:** Allow users to edit their profile and reviews they've written. Set up AWS image hosting.
 
 
 ### Bonus Features (TBD)
