@@ -32,7 +32,7 @@ Associations: hosts will have many listings, bookings
 | property_type | string    | not null                       |
 | house_rules   | text      |                                |
 
-Associations: listings will belong to a host(user), and a region, and have many bookings, reviews, and images		
+Associations: listings will belong to a host (user), and a region, and have many bookings, reviews, and images		
 
 ## Regions
 | column name | data type | details               |
@@ -66,4 +66,4 @@ Associations: bookings will belong to a listing and a user
 | title           | string    |                                |
 | body            | text      |                                |
 
-Associations: reviews will belong to a listing and an author(user)		
+Associations: reviews will belong to a listing and an author (user)		
