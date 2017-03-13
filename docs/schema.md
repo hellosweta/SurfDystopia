@@ -12,18 +12,26 @@
 | image_url       | string    |                           |
 | region_id       | integer   | foreign_key               |
 
-associations: users will have many bookings, and reviews		
-associations: hosts will have many listings, and bookings		
+Associations: users will have many bookings, and reviews		
+Associations: hosts will have many listings, and bookings		
 
-## notes
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-title       | string    | not null
-body        | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+## listings
+| Listings      |           |                                |
+|---------------|-----------|--------------------------------|
+| column name   | data type | details                        |
+| id            | integer   | not null, primary key          |
+| host_id       | integer   | foreign key, not null, indexed |
+| title         | string    | not null                       |
+| longitude     | float     | not null, unique, indexed      |
+| latitude      | float     | not null, unique, indexed      |
+| image_url     | string    | not null                       |
+| description   | text      |                                |
+| region_id     | integer   | not null, foreign_key          |
+| max_guests    | integer   | not null                       |
+| property_type | string    | not null                       |
+| house_rules   | text      |                                |
+
+Associations: listings will belong to a host(user), and a region, and have many bookings, reviews, and images		
 
 ## notebooks
 column name | data type | details
