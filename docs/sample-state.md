@@ -3,6 +3,7 @@
   currentUser: {
     id: 1,
     username: "ultrasonic",
+    name: "Sweta",
     image_url: "assets/user1"
   },
 
@@ -40,7 +41,6 @@
     1: {
       city: "New York",
       state: "New York",
-      zip: '11001',
       image_url: 'assets/region1'
     }
   }
@@ -62,7 +62,7 @@
       check_out_date: 5/15/2017,
     }
   },
-  s
+  
   users: {
     1: {
       username: "Ava",

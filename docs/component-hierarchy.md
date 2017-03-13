@@ -1,10 +1,10 @@
-Component Hierarchy
+##Component Hierarchy
 
-AuthForm Container
+#AuthForm Container
 - AuthForm
 - Errors Components
 
-Nav Container (Header)
+#Nav Container (Header)
 - User Dropdown Container
   - User Dropdown Items
 
@@ -12,10 +12,10 @@ Nav Container (Header)
   - Search Component
   - Date Component
 
-Home Container
+#Home Container
   - RegionsContainer
 
-Listing Container
+#Listing Container
   - Booking Container
     - Date Component
   - User Component
@@ -24,29 +24,30 @@ Listing Container
   - Reviews Container
     - Review Items
 
-Users Container
+#Users Container
   - User Component
   - Reviews Container
     - Review Items
 
-Dashboard Container
+#Dashboard Container
   - User Component
   - User Bookings Component
   - User Guests Component
   - Edit User Form
 
-Search Results Container
+#Search Results Container
   - Date Component
   - Listing Items
   - Map Component
 
-Routes
+##Routes
 
-"/sign-up" - "AuthFormContainer"
-"/sign-in" - "AuthFormContainer"
-"/home" - "HomeContainer"
-"/search" - "SearchResultsContainer"
-"/listings/:listingId" - "ListingContainer"
-"/dashboard" - "DashboardContainer"
-"/profile/:userId" - "UsersContainer"
-"/dashboard/edit" - "EditUserForm"
+| /sign-up             | AuthFormContainer      |
+|----------------------|------------------------|
+| /sign-in             | AuthFormContainer      |
+| /home                | HomeContainer          |
+| /search              | SearchResultsContainer |
+| /listings/:listingId | ListingContainer       |
+| /dashboard           | DashboardContainer     |
+| /profile/:userId     | UsersContainer         |
+| /dashboard/edit      | EditUserForm           |
