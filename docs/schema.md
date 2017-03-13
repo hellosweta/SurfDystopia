@@ -1,14 +1,16 @@
 # Schema Information
 
 ## users
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-username        | string    | not null, indexed, unique
-email           | string    | not null, indexed, unique
-password_digest | string    | not null
-session_token   | string    | not null, indexed, unique
-
+| Users           |           |                           |
+|-----------------|-----------|---------------------------|
+| column name     | data type | details                   |
+| id              | integer   | not null, primary key     |
+| username        | string    | not null, unique, indexed |
+| password_digest | string    | not null                  |
+| session_token   | string    | not null, unique, indexed |
+| about_me        | text      |                           |
+| image_url       | string    |                           |
+| region_id       | integer   | foreign_key               |
 ## notes
 column name | data type | details
 ------------|-----------|-----------------------
