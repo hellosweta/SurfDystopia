@@ -20,7 +20,7 @@ sufficient CSS styling:
 - [ ] Bookings
 - [ ] Listings Search by location and availability using Google Maps
 - [ ] Reviews
-- [ ] Production README [sample](docs/production_readme.md)
+- [ ] Production README [sample](docs/readme.md)
 
 ## Design Docs
 * [View Wireframes][wireframes]
