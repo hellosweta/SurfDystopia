@@ -11,6 +11,10 @@
 | about_me        | text      |                           |
 | image_url       | string    |                           |
 | region_id       | integer   | foreign_key               |
+
+associations: users will have many bookings, and reviews		
+associations: hosts will have many listings, and bookings		
+
 ## notes
 column name | data type | details
 ------------|-----------|-----------------------
