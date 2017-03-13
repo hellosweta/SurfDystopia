@@ -1,7 +1,7 @@
 # Schema Information
 
-## users
-| Users           |           |                           |
+## Users
+|                 |           |                           |
 |-----------------|-----------|---------------------------|
 | column name     | data type | details                   |
 | id              | integer   | not null, primary key     |
@@ -15,8 +15,8 @@
 Associations: users will have many bookings, and reviews		
 Associations: hosts will have many listings, and bookings		
 
-## listings
-| Listings      |           |                                |
+## Listings
+|               |           |                                |
 |---------------|-----------|--------------------------------|
 | column name   | data type | details                        |
 | id            | integer   | not null, primary key          |
