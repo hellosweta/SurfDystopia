@@ -16,9 +16,8 @@ Associations: users will have many bookings, and reviews
 Associations: hosts will have many listings, and bookings		
 
 ## Listings
-|               |           |                                |
-|---------------|-----------|--------------------------------|
 | column name   | data type | details                        |
+|---------------|-----------|--------------------------------|
 | id            | integer   | not null, primary key          |
 | host_id       | integer   | foreign key, not null, indexed |
 | title         | string    | not null                       |
