@@ -17,7 +17,6 @@
 ###Session
 - POST /api/session
 - DELETE /api/session
-- GET /api/session
 
 
 ###Listings
@@ -36,7 +35,6 @@
 ###Bookings
 - GET /api/bookings
 - POST /api/bookings
-- GET /api/bookings/:id
 - PATCH /api/bookings/:id
 - DELETE /api/bookings/:id
 
@@ -44,6 +42,5 @@
 ###Reviews
 - GET /api/reviews
 - POST /api/reviews
-- GET /api/reviews/:id
 - PATCH /api/reviews/:id
 - DELETE /api/reviews/:id

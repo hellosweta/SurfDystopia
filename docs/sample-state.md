@@ -12,13 +12,6 @@
     logIn: { errors: [] },
   },
 
-  createReview: {
-    body: "",
-    author_id: null,
-    place_id: null,
-    number_of_gears: null,  
-  },
-
   listings: {
     1: {
       title: "Urban dwelling",
