@@ -1,24 +1,25 @@
-var path = require('path');
-
+const path = require('path');
 module.exports = {
-  entry: './frontend/entry.jsx',
+  context: __dirname,
+  entry: './frontend/surf_dystopia.jsx',
   output: {
-    filename: './bundle.js',
+    path: path.join(__dirname, 'app', 'assets', 'javascripts'),
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '*']
   },
   module: {
     loaders: [
       {
-        test: [/\.jsx?$/],
-        exclude: /(node_modules)/,
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['react', 'es2015']
         }
       }
     ]
   },
-  devtool: 'source-map',
-  resolve: {
-    extensions: ['.js', '.jsx', '*']
-  }
+  devtool: 'source-map'
 };
