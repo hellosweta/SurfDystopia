@@ -4,13 +4,13 @@ class Api::SessionsController < ApplicationController
       params[:user][:username],
       params[:user][:password]
     )
-    
+
     if @user
       login(@user)
       render "api/users/show"
     else
       render(
-        json: ["Surfer, either your username or password is incorrect. Try again."],
+        json: ["Surfer, your username or password is incorrect. Try again."],
         status: 401
       )
     end
@@ -23,7 +23,7 @@ class Api::SessionsController < ApplicationController
       render "api/users/show"
     else
       render(
-        json: ["There's no one to log out."],
+        json: ["There's no surfer to log out."],
         status: 404
       )
     end
