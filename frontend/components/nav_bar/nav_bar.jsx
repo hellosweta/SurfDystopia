@@ -1,27 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
 
-const notLoggedIn = () => (
-  <nav className="login-signup">
-    <img src="assets/images/nav_bar/Logo.png" alt="SurfDystopia" style={{float: 'left'}}></img>
-    <Link to="/login" activeClassName="current" activeStyle={ {color: 'red'} } >Log In</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup" activeClassName="current">Sign Up</Link>
-  </nav>
+const handleLogIn = (e) => {
+  e.preventDefault();
+  hashHistory.push('login');
+};
+
+const handleSignUp = (e) => {
+  e.preventDefault();
+  hashHistory.push('signup');
+};
+
+const notLoggedIn = (demo) => (
+  <hgroup className="login-signup">
+    <section className="hero">
+      <img src="https://s3.amazonaws.com/surf-dev/NavBar/logo_outline.png" alt="SurfDystopia"></img>
+      <section className="hero-text">
+        <h1>If Not Now...When?</h1>
+        <Link to='/search'>Stay with locals and meet travelers </Link>
+      </section>
+    </section>
+    <div className="auth">
+      <button className="header-button" onClick={ handleLogIn }>Log In</button>
+      &nbsp;&nbsp;
+      <button className="header-button" onClick={ handleSignUp }>Join</button>
+      &nbsp;&nbsp;
+      <button className="header-button" onClick={demo}>Demo</button>
+      &nbsp;&nbsp;
+    </div>
+  </hgroup>
 );
 
 const loggedIn = (currentUser, logOut) => (
-	<hgroup className="header-group">
-    <img src="assets/images/nav_bar/Logo.png" alt="SurfDystopia" style={{float: 'left'}}></img>
-    <input placeholder="Search for stuff"  />
-    <h4 className="header-name" style={{float: 'left'}}>{currentUser.name}</h4>
-    <button className="header-button" onClick={logOut} >Log Out</button>
+	<hgroup className="login-signup">
+    <img className="logo" src="https://s3.amazonaws.com/surf-dev/NavBar/logo_outline.png" alt="SurfDystopia"></img>
+    <input placeholder="Search for stuff"/>
+    <div className="auth">
+      <button className="header-button right-nav" onClick={logOut}>Log Out</button>
+      <h5 className="header-name">{currentUser.name}</h5>
+    </div>
 	</hgroup>
 );
 
-const NavBar = ({ currentUser, logOut }) => (
-  currentUser ? loggedIn(currentUser, logOut) : notLoggedIn()
+const NavBar = ({ currentUser, logOut, demo }) => (
+  currentUser ? loggedIn(currentUser, logOut) : notLoggedIn(demo)
 );
 
 export default NavBar;

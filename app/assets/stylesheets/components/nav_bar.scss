@@ -1,7 +1,76 @@
 .header-group{
-  display: flex;
+  display:flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	border-bottom: 1px solid $grey;
 }
+
+// can use active style for current class
+// .activeStyle {
+//   background: blue;
+// }
 
 .login-signup{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  border: 1px solid grey;
+}
+
+.hero {
+  display: flex;
+  width:960px;
+  margin:1rem auto;
+  position: relative;
+  // height: 50%;
+  // width: auto;
+}
+.hero-text{
+  background:rgba(255,255,255,0.5);
+  position: absolute;
+  top:50%;
+  left:0;
+  padding:1rem;
+  transform:translateY(-50%);
+}
+.header-button{
+  height: 15px;
+  width: 50px
+}
+
+// .left-nav,
+// .right-nav{
+// 	display: flex;
+// 	align-items: center;
+// }
+//
+// .left-nav {
+// 	margin-left: 20px;
+// 	cursor: pointer;
+// 	text-transform: uppercase;
+// 	font-family: $sans-serif;
+// 	font-weight: bold;
+// 	font-size: 11px;
+// 	padding: 7px 9px;
+// 	transition: background-color 0.3s;
+// }
+
+.auth {
+	margin-left: 5px;
+	cursor: pointer;
+  flex-direction: row;
+}
+
+
+@media all and (max-width: 1000px) {
+  .right-nav button {
+  	display: none;
+  }
+  .left-nav > ul > li {
+  	margin: 0;
+  }
+  .main-nav {
+  	padding: 20px 0;
+  }
 }

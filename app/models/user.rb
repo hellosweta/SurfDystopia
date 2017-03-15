@@ -27,6 +27,8 @@ class User < ApplicationRecord
 
 
   # Write assoociations
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)

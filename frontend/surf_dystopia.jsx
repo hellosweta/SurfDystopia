@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  const windowFunctions = { };
+  const windowFunctions = {store};
   Object.assign(window, windowFunctions);
 
   ReactDOM.render(<Root store= { store }/>, root);
