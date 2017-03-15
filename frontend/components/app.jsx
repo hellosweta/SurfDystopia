@@ -1,15 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
-import GreetingContainer from './greeting/greeting_container';
+import NavBarContainer from './nav_bar/nav_bar_container';
 
 const App = ({ children }) => (
   <div>
-    <header>
-      <Link to="/" className="header-link">
-        <h1>Surf On!</h1>
-      </Link>
-      <GreetingContainer />
-    </header>
+    <NavBarContainer />
     {children}
   </div>
 );

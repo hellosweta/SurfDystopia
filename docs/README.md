@@ -1,10 +1,10 @@
 # SurfDystopia
 
-[Heroku link][heroku] **Note:** Not Yet Live
+[Heroku link][heroku] 
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://surfdystopia.herokuapp.com/#/
 [trello]: https://trello.com/b/b9JGmdht/couchsurfing-clone
 
 ## Minimum Viable Product
