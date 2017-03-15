@@ -20,7 +20,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
-      render "{}"
+      render(json: "{}")
     else
       render(
         json: ["There's no surfer to log out."],

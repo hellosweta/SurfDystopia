@@ -6,7 +6,7 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 
 export const signUp = user => dispatch => (
-  APIUtil.signup(user)
+  APIUtil.signUp(user)
     .then(newUser => dispatch(receiveCurrentUser(newUser)),
       error => dispatch(receiveErrors(error.responseJSON)))
 );
@@ -17,7 +17,7 @@ export const logIn = user => dispatch => (
       error => dispatch(receiveErrors(error.responseJSON)))
 );
 
-export const logOut = dispatch => (
+export const logOut = () => dispatch => (
   APIUtil.logOut().then(user => dispatch(receiveCurrentUser(null)))
 );
 
