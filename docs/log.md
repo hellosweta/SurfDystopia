@@ -5,4 +5,4 @@ componentWillReceiveProps(newProps){
     this.props.clearErrors();
   }
 }
-```js
+```
