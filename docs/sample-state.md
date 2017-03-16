@@ -1,15 +1,15 @@
 ```js
 {
-  currentUser: {
-    id: 1,
-    username: "ultrasonic",
-    name: "Sweta",
-    image_url: "assets/user1"
-  },
-
-  forms: {
-    signUp: { errors: [] },
-    logIn: { errors: [] },
+  session: {
+    currentUser: {
+      id: 1,
+      username: "ultrasonic",
+      name: "Sweta",
+      image_url: "assets/user1",
+      about_me: "Hi from SF",
+      region_id: 1,
+    },
+    errors: []
   },
 
   listings: {
@@ -55,7 +55,7 @@
       check_out_date: 5/15/2017,
     }
   },
-  
+
   users: {
     1: {
       username: "Ava",
