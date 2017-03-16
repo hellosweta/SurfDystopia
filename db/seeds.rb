@@ -5,8 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Listing.delete_all
-Region.delete_all
+
+User.create!(
+  username: 'Guest',
+  name: "Guest Surfer",
+  password: "password"
+)
 
 Region.create!(
   city: "San Francisco",
