@@ -26,8 +26,8 @@ return (
     <Router history={ hashHistory }>
       <Route path="/" component={ App }>
         <IndexRoute component={HomeContainer} />
-        <Route path="/login" component={SessionFormContainer} />
-        <Route path="/signup" component={SessionFormContainer} />
+        // <Route path="/login" component={SessionFormContainer} />
+        // <Route path="/signup" component={SessionFormContainer} />
       </Route>
     </Router>
   </Provider>

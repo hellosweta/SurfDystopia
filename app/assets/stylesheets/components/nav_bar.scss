@@ -1,7 +1,7 @@
 .header-group{
   display:flex;
 	justify-content: space-between;
-	padding: 10px 0;
+	// padding: 10px 0;
 	border-bottom: 1px solid $grey;
 }
 
@@ -18,33 +18,21 @@
   border: 1px solid grey;
 }
 
-.hero {
-  display: flex;
-  width:960px;
-  margin:1rem auto;
-  position: relative;
-  // height: 50%;
-  // width: auto;
+.logo {
+  height: 30%;
+  width: auto;
 }
-.hero-text{
-  background:rgba(255,255,255,0.5);
-  position: absolute;
-  top:50%;
-  left:0;
-  padding:1rem;
-  transform:translateY(-50%);
-}
+
 .header-button{
+  color: #766D88;
+  background: none;
+  text-transform: none;
+  border: 1px 1px solid; 
   height: 15px;
   width: 50px
 }
 
-// .left-nav,
-// .right-nav{
-// 	display: flex;
-// 	align-items: center;
-// }
-//
+
 // .left-nav {
 // 	margin-left: 20px;
 // 	cursor: pointer;
@@ -67,7 +55,7 @@
   .right-nav button {
   	display: none;
   }
-  .left-nav > ul > li {
+  .left-nav  {
   	margin: 0;
   }
   .main-nav {
