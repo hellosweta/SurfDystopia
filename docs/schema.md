@@ -28,8 +28,8 @@ Associations: hosts will have many listings, bookings
 | image_url     | string    | not null                       |
 | description   | text      |                                |
 | region_id     | integer   | not null, foreign_key          |
-| max_guests    | integer   | not null                       |
-| property_type | string    | not null                       |
+| max_guests    | integer   |                                |
+| property_type | string    |                                |
 | house_rules   | text      |                                |
 
 Associations: listings will belong to a host (user), and a region, and have many bookings, reviews, and images		
