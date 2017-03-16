@@ -8,11 +8,7 @@ class NavBar extends React.Component {
     super(props);
     this.handleLogIn = this.handleLogIn.bind(this);
     this.handleSignUp = this.handleSignUp.bind(this);
-    // this.notLoggedIn = this.notLoggedIn.bind(this);
-    // this.LoggedIn = this.LoggedIn.bind(this);
-    // this.currentUser = this.props.currentUser;
-    // this.logOut = this.props.logOut;
-    // this.demo = this.props.demo;
+
   }
 
   handleLogIn(e){
@@ -36,36 +32,38 @@ class NavBar extends React.Component {
       //   <button className="header-button" onClick={demo}>Demo</button>
       //   &nbsp;&nbsp;
       // </div>
-  );
+    );
   }
 
+  // <img className='thumbnail' src="https://s3.amazonaws.com/surf-dev/Users/User1.png"></img>
   loggedIn(currentUser, logOut){
     return(
-    <div className="auth">
-      <ul className="drowdown">
-        <li>
-          <img src="https://s3.amazonaws.com/surf-dev/Users/User1.png"></img>
-        </li>
-        <li>
-          <h5 className="header-name">{this.props.currentUser.name}</h5>
-        </li>
-        <li>
-          <button className="header-button" onClick={logOut}>Log Out</button>
-        </li>
-      </ul>
+      <div className="auth">
+        <ul className="drowdown">
+          <li>
+          </li>
+          <li>
+            <h5 className="header-name">{this.props.currentUser.name}</h5>
+          </li>
+          <li>
+            <button className="header-button" onClick={logOut}>Log Out</button>
+          </li>
+        </ul>
 
 
-    </div>
-  );
+      </div>
+    );
   }
 
   render() {
   return(
-    <hgroup className="login-signup">
-      <img className = "logo" src="https://s3.amazonaws.com/surf-dev/NavBar/logo_outline.png" alt="SurfDystopia"></img>
-      <input placeholder="Search for stuff"/>
+    <div className="login-signup">
+      <Link to='/' className="logo">
+        <img src="https://s3.amazonaws.com/surf-dev/NavBar/logo_outline.png" alt="SurfDystopia" style={{maxHeight: '24px'}}></img>
+      </Link>
+      <input className="Input" placeholder="Search for stuff" />
       {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
-    </hgroup>
+    </div>
   );
 }
 }

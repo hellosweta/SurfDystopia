@@ -9,7 +9,7 @@ const Root = ({ store }) => {
 const _ensureLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
-      hashHistory.push('/login');
+      hashHistory.push('/');
     }
   };
 
@@ -26,8 +26,8 @@ return (
     <Router history={ hashHistory }>
       <Route path="/" component={ App }>
         <IndexRoute component={HomeContainer} />
-        // <Route path="/login" component={SessionFormContainer} />
-        // <Route path="/signup" component={SessionFormContainer} />
+        // <Route path="/search" />
+
       </Route>
     </Router>
   </Provider>

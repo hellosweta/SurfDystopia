@@ -11,27 +11,32 @@
 // }
 
 .login-signup{
+  padding: 8px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
-  border: 1px solid grey;
+  height: 42px;
 }
 
 .logo {
-  height: 30%;
-  width: auto;
+  width: 15%;
 }
 
 .header-button{
-  color: #766D88;
+  color: $dark_purple;
   background: none;
   text-transform: none;
-  border: 1px 1px solid; 
+  border: 1px 1px solid;
   height: 15px;
-  width: 50px
+  padding: 4px 8px 12px;
+
 }
 
+.header-button:hover{
+  border-bottom: 2px solid $dark_orange;
+  text-decoration: none;
+
+}
 
 // .left-nav {
 // 	margin-left: 20px;

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logIn, logOut, signUp, clearErrors } from '../../actions/session_actions';
+import { logIn, logOut, signUp, clearErrors, demo } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 
@@ -8,24 +8,26 @@ const mapStateToProps = ({ session }) => ({
   errors: session.errors
 });
 
-const mapDispatchToProps = (dispatch, { location }) => {
-  // const formType = location.pathname.slice(1);
-  // let processForm = "";
-  // if (formType === 'login') {
-  //   processForm = logIn;
-  // } else {
-  //   processForm = signUp;
-  // }
-  return {
-    // processForm: user => dispatch(processForm(user)),
-    logIn: (user) => dispatch(logIn(user)),
-    logOut: () => dispatch(logOut()),
-    signUp: (user) => dispatch(signUp(user)),
+const mapDispatchToProps = { logIn, logOut, signUp, clearErrors, demo };
 
-    clearErrors: () => dispatch(clearErrors()),
-    // formType
-  };
-};
+// const mapDispatchToProps = (dispatch, { location }) => {
+//   // const formType = location.pathname.slice(1);
+//   // let processForm = "";
+//   // if (formType === 'login') {
+//   //   processForm = logIn;
+//   // } else {
+//   //   processForm = signUp;
+//   // }
+//   return {
+//     // processForm: user => dispatch(processForm(user)),
+//     logIn: (user) => dispatch(logIn(user)),
+//     logOut: () => dispatch(logOut()),
+//     signUp: (user) => dispatch(signUp(user)),
+//
+//     clearErrors: () => dispatch(clearErrors()),
+//     // formType
+//   };
+// };
 
 export default connect(
   mapStateToProps,

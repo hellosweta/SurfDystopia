@@ -14,4 +14,10 @@ const Home = ({ currentUser }) => (
 	</div>
 );
 
+// map over region ids and pass them through ownprops and redirect to /search
+// sampleRegions.map({
+// 	<Link to='/search?regionId=${region.id}'>
+// 		<div region stuff> pretty picture</div>x
+// 	</Link>
+// })
 export default Home;
