@@ -50,9 +50,9 @@ the API.
 
 **Objective:** Reviews belong to Listings that can be created, and read through the API.
 
-### Phase 4: User Profiles (1 day)
+### Phase 4: Search (1 day)
 
-**Objective:** Users have listings and profile pages. Current user has a dashboard.
+**Objective:** Users can search listings by region and availability.
 
 ### Phase 5: Allow form editing, additional styling, image hosting  (1 day)
 
@@ -62,5 +62,5 @@ the API.
 ### Bonus Features (TBD)
 - [ ] Add listings
 - [ ] Explore listings
-- [ ] Messaging
+- [ ] User Profiles
 - [ ] Allow search by amenities  
