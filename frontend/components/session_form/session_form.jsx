@@ -15,15 +15,24 @@ class SessionForm extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.openModal = this.openModal.bind(this);
 		this.closeModal = this.closeModal.bind(this);
+		this.handleSignUp = this.handleSignUp.bind(this);
+		this.handleLogIn = this.handleLogIn.bind(this);
 	}
 
 	componentDidUpdate() {
 		this.redirectIfLoggedIn();
 	}
 
+	componentWillReceiveProps(newProps){
+		if (this.props !== newProps && this.props.errors.length > 0) {
+			this.props.clearErrors();
+		}
+	}
+
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
 			this.props.router.push("/");
+			this.props.clearErrors();
 		}
 	}
 
@@ -44,11 +53,21 @@ class SessionForm extends React.Component {
 		this.props.clearErrors();
 	}
 
+	handleSignUp(e) {
+		this.openModal.bind(this, 'signUp');
+		this.props.clearErrors();
+	}
+
+
+	handleLogIn(e){
+		this.openModal.bind(this, 'logIn');
+		this.props.clearErrors();
+	}
 	navLink() {
 		if (this.state.modalType === "logIn") {
-			return <button onClick={this.openModal.bind(this, 'signUp')}>Sign Up</button>;
+			return <button onClick={this.handleSignUp} >Sign Up</button>;
 		}else{
-			return <button onClick={this.openModal.bind(this, 'logIn')}>Log In</button>;
+			return <button onClick={this.handleLogIn}>Log In</button>;
 		}
 		// if (this.props.formType === "login") {
 		// 	return <Link to="/signup">Sign Up</Link>;
@@ -87,6 +106,7 @@ class SessionForm extends React.Component {
 					<button className="header-button" onClick={this.openModal.bind(this, 'logIn')}>Log In</button>
 					&nbsp;&nbsp;
 					<button className="header-button" onClick={this.openModal.bind(this, 'signUp')}>Sign Up</button>
+					&nbsp;&nbsp;
 					<button className="header-button" onClick={this.props.demo}>Demo</button>
 				</nav>
 				<Modal

@@ -23,7 +23,7 @@ const sessionReducer = (state = _nullUser, action) => {
       });
     case CLEAR_ERRORS:
       const oldState = state;
-      return merge({}, oldState, { errors: [] });
+      return Object.assign({}, oldState, { errors: [] });
     default:
       return state;
   }

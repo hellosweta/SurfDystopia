@@ -2,16 +2,20 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  name            :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  about_me        :text
-#  image_url       :string
-#  region_id       :integer
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                 :integer          not null, primary key
+#  username           :string           not null
+#  name               :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  about_me           :text
+#  image_url          :string
+#  region_id          :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -25,7 +29,10 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
-
+  has_many :listings,
+  primary_key: :id,
+  foreign_key: :host_id,
+  class_name: :Listing
   # Write assoociations
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
