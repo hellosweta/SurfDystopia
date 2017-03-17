@@ -9,10 +9,15 @@ class Api::ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+
   end
 
   def index
-    @listings = Listing.all
+    @listings = Listing.where(region_id: params[:region_id])
+    render :index
+    # @listings = Listing.all
+
+    # eventually with search you can do @listings = Listing.includes(search term)
   end
 
   private

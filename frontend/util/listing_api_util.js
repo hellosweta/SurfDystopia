@@ -1,8 +1,8 @@
-export const fetchListings = (data) => {
+export const fetchListings = (regionId) => {
   return $.ajax({
     method: 'GET',
-    url: 'api/listings',
-    data
+    url: `api/listings?region_id=${regionId}`
+    // data
   });
 };
 

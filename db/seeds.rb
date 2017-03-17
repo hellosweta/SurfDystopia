@@ -12,12 +12,22 @@ User.create!(
   password: "password"
 )
 
-Region.create!(
+SanFrancisco = Region.create!(
   city: "San Francisco",
   state: "CA",
   image_url: "https://s3.amazonaws.com/surf-dev/Regions/SanFrancisco.jpg",
 )
+Region.create!(
+  city: "New York",
+  state: "New York",
+  image_url: "https://s3.amazonaws.com/surf-dev/Regions/NewYork.jpg",
+)
 
+Region.create!(
+  city: "Chicago",
+  state: "Illinois",
+  image_url: "https://s3.amazonaws.com/surf-dev/Regions/Chicago.jpg",
+)
 Listing.create!(
   host_id: 1,
   title: "Airy home, lots of light",

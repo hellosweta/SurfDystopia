@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
 import Home from './home';
+import { fetchListings } from '../../actions/listing_actions';
 
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
-
+const mapStateToProps = ({ session, listings }, ownProps) => ({
+  currentUser: session.currentUser,
+  listings:  Object.keys(listings).map(id => listings[id]),
+  region_id: ownProps.params.regionId
 });
 
 const mapDispatchToProps = dispatch => ({
-  // logOut: () => dispatch(logOut())
+
 });
 
 export default connect(
