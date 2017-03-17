@@ -40,6 +40,26 @@
   // transform:translateY(-50%);
   color: white;
 }
+.explore{
+  display: flex;
+
+}
+.regions{
+  height: 200px;
+
+}
+.region{
+  position: relative;
+  padding-top: 40px; 
+}
+
+.region-name{
+  color: $pink;
+  position: absolute;
+  font-size: 24px;
+  top: 50%;
+  left: 30%;
+}
 
 @media screen and (max-width:680px){
   .text {font-size: 0.8rem}

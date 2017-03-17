@@ -12,8 +12,17 @@
   width: auto;
   padding: 5px 5px;
 }
-//
-// .map {
-//   width: 500px;
-//   height: 500px;
-// }
+
+.listing-title{
+  color: $purple;
+  font-weight: bold;
+
+}
+.listing-property_type{
+  color: $purple;
+}
+
+.map-container {
+  width: 500px;
+  height: 500px;
+}

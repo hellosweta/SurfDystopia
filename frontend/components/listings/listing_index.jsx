@@ -1,13 +1,11 @@
 import React from 'react';
 import ListingIndexItem from './listing_index_item';
-
+import Map from '../map/map'
 class ListingIndex extends React.Component {
 
   componentDidMount(){
     this.props.fetchListings(this.props.regionId);
   }
-
-  // componentDidRe
 
   render(){
     return(
@@ -20,7 +18,8 @@ class ListingIndex extends React.Component {
           ))}
         </span>
         <span className="Map col col-1-3">
-          <h2>Map Placehoder</h2>
+
+          <Map/>
         </span>
       </div>
     </div>);

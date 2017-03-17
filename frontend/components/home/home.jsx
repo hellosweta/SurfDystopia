@@ -15,7 +15,9 @@ const Home = ({ currentUser, fetchListings }) => (
         <Link to='/search' className="text">Stay with locals and meet travelers </Link>
       </section>
     </section>
-  <RegionsContainer/>
+    <section className="explore">
+      <RegionsContainer/>
+    </section>
 	</div>
 );
 

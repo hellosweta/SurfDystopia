@@ -4,13 +4,14 @@ import { hashHistory } from 'react-router';
 class ListingIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  // handleClick() {
-  //   const listingId = this.props.listing.id;
-  //   hashHistory.push(`search/${listingId}`);
-  // }
+  handleClick() {
+    const listingId = this.props.listing.id;
+    const regionId = this.props.listing.region_id;
+    hashHistory.push(`search/${regionId}/${listingId}`);
+  }
 
   render() {
     const { title, description, region_id, host_id, image_url, latitude, longitude, max_guests, property_type, house_rules } = this.props.listing;
@@ -20,12 +21,12 @@ class ListingIndexItem extends React.Component {
            onClick={this.handleClick}>
         <div className="index-item-info">
           <img className="listing-image" src={image_url}/>
-          <span className="listing-index-item-title">Title: </span>
-          <span>
+          <div className="listing-title">
             {title}
-          </span>
-          <span className="listing-index-item-description">Description: </span>
-          <span >{description}</span>
+          </div>
+           <div className="listing-property_type">
+             {property_type}
+           </div>
         </div>
       </div>
     );

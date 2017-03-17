@@ -6,3 +6,5 @@ componentWillReceiveProps(newProps){
   }
 }
 ```
+
+- decided to imitate search with a regions show page 

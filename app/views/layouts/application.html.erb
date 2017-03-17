@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CouchSurfingClone</title>
-    <%= csrf_meta_tags %>
+    <title>SurfDystopia</title>
 
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_KEY']}" %>
+    <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAK6X9Ci8SzrhTDSMFCtNjFD7fijSDUxsY' %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= csrf_meta_tags %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag 'https://s3.amazonaws.com/surf-dev/NavBar/logo_outline.png' %>
   </head>
 
   <body>
