@@ -5,6 +5,7 @@ import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import HomeContainer from './home/home_container';
 import ListingIndexContainer from './listings/listing_index_container';
+import ListingContainer from './listings/listing_container';
 import { clearErrors } from '../actions/session_actions';
 const Root = ({ store }) => {
 
@@ -30,9 +31,8 @@ return (
     <Router history={ hashHistory }>
       <Route path="/" component={ App }>
         <IndexRoute component={HomeContainer} />
-        <Route path="/search">
-          <Route path="/search/:regionId" component={ListingIndexContainer} />
-        </Route>
+        <Route path="/search/:regionId" component={ListingIndexContainer} />
+        <Route path="/listings/:listingId" component={ListingContainer} />
       </Route>
     </Router>
   </Provider>

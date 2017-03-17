@@ -6,11 +6,14 @@ class ListingIndexItem extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
+  // componentDidMount(){
+  //   this.props.fetchListings(this.props.listing.region_id);
+  // }
 
   handleClick() {
     const listingId = this.props.listing.id;
     const regionId = this.props.listing.region_id;
-    hashHistory.push(`search/${regionId}/${listingId}`);
+    hashHistory.push(`listings/${listingId}`);
   }
 
   render() {

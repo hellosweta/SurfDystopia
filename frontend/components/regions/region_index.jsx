@@ -8,6 +8,7 @@ class RegionIndex extends React.Component {
   }
 
   render () {
+    
     return (
       <div className="regions">
         <ul>

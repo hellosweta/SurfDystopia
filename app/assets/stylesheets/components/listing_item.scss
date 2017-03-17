@@ -1,0 +1,14 @@
+.main-listing-item{
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-image{
+  width: 100%;
+  height: auto;
+}
+
+.listing-info{
+  justify-content: center;
+  border: black;
+}

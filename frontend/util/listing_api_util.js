@@ -1,8 +1,10 @@
 export const fetchListings = (regionId) => {
   return $.ajax({
     method: 'GET',
-    url: `api/listings?region_id=${regionId}`
-    // data
+    url: `api/listings`,
+    data: {
+      region_id: regionId
+    }
   });
 };
 

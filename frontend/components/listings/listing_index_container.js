@@ -5,16 +5,10 @@ import { fetchListing, fetchListings } from '../../actions/listing_actions';
 
 import ListingIndex from './listing_index';
 
-const mapStateToProps = ({listings}, ownProps) => {
-  // const listingId = parseInt(params.listingId);
-  // const listing = selectListing(state, listingId);
-  return {
-    // listingId,
-    // listing
+const mapStateToProps = ({listings}, ownProps) => ({
     listings:  Object.keys(listings).map(id => listings[id]),
     regionId: ownProps.params.regionId
-  };
-};
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchListings: (id) => dispatch(fetchListings(id)),

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316165719) do
+ActiveRecord::Schema.define(version: 20170317193240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20170316165719) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["host_id"], name: "index_listings_on_host_id", using: :btree
-    t.index ["latitude"], name: "index_listings_on_latitude", unique: true, using: :btree
-    t.index ["longitude"], name: "index_listings_on_longitude", unique: true, using: :btree
+    t.index ["latitude"], name: "index_listings_on_latitude", using: :btree
+    t.index ["longitude"], name: "index_listings_on_longitude", using: :btree
   end
 
   create_table "regions", force: :cascade do |t|

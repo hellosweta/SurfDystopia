@@ -1,7 +1,7 @@
-.SearchResults{
-  display: flex;
-  justify-content: space-between;
-}
+// .search-results{
+//   display: flex;
+//   justify-content: flex-start;
+// }
 
 // .listing-index-item{
 //
@@ -9,8 +9,11 @@
 //
 .listing-image{
   height: 200px;
-  width: auto;
-  padding: 5px 5px;
+  width: 100%;
+  // margin: 10px 10px;
+  // border: 1px solid black;
+  padding: 10px 10px;
+  border-radius: 20px;
 }
 
 .listing-title{
@@ -21,8 +24,19 @@
 .listing-property_type{
   color: $purple;
 }
+.index-item-info{
+  margin: 10px 10px;
+}
 
+.map{
+}
 .map-container {
+  margin: 10px 10px;
   width: 500px;
   height: 500px;
+  border: 1px solid $purple;
+}
+
+li.region:hover{
+  cursor: pointer;
 }
