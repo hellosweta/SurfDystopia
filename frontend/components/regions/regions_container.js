@@ -3,8 +3,8 @@ import { fetchRegion, fetchRegions } from '../../actions/region_actions';
 import { fetchListings } from '../../actions/listing_actions';
 import RegionsIndex from './region_index';
 
-const mapStateToProps = ({regions}) => ({
-  
+const mapStateToProps = ({regions, listings}) => ({
+  listings,
   regions: Object.keys(regions).map(id => regions[id])
 });
 

@@ -31,11 +31,11 @@ class Listing < ApplicationRecord
   foreign_key: :region_id,
   class_name: :Region
 
-  # def self.in_bounds(bounds)
-  #   self.where("latitude < ?", bounds[:northEast][:latitude])
-  #       .where("latitude > ?", bounds[:southWest][:latitude])
-  #       .where("longitude > ?", bounds[:southWest][:longitude])
-  #       .where("longitude < ?", bounds[:northEast][:longitude])
-  # end
+  def self.in_bounds(bounds)
+    self.where("latitude < ?", bounds[:northEast][:latitude])
+        .where("latitude > ?", bounds[:southWest][:latitude])
+        .where("longitude > ?", bounds[:southWest][:longitude])
+        .where("longitude < ?", bounds[:northEast][:longitude])
+  end
 
 end

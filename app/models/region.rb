@@ -8,6 +8,8 @@
 #  image_url  :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  latitude   :float
+#  longitude  :float
 #
 
 class Region < ApplicationRecord

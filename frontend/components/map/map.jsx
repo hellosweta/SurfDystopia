@@ -3,21 +3,32 @@ import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router';
 import MarkerManager from '../../util/marker_manager';
 
+const _getCoordsObj = latLng => ({
+  lat: latLng.lat(),
+  lng: latLng.lng()
+});
+
 class ListingsMap extends React.Component {
   constructor(props){
     super(props);
+    this._registerListeners = this._registerListeners.bind(this);
   }
 
+
   componentDidMount() {
-    // debugger;
-
-    const mapOptions = {
+    const _mapOptions = {
       center: { lat: this.props.startLat, lng: this.props.startLong },
-      zoom: 13
+      zoom: 13,
+      streetViewControl: false,
+      overviewMapControl: true,
+      mapTypeControl: false
     };
-
     const map = this.refs.map;
-    this.map = new google.maps.Map(map, mapOptions);
+
+    this.map = new google.maps.Map(map, _mapOptions);
+
+  //   this.map.mapTypes.set('No Labels', nolabelMapType);
+  //  this.map.setMapTypeId('No Labels');
     this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this));
     this._registerListeners();
     this.MarkerManager.updateMarkers(this.props.listings);
@@ -29,11 +40,6 @@ class ListingsMap extends React.Component {
 
   _registerListeners() {
 
-    const _getCoordsObj = latLng => ({
-      lat: latLng.lat(),
-      lng: latLng.lng()
-    });
-
     google.maps.event.addListener(this.map, 'idle', () => {
       const { north, south, east, west } = this.map.getBounds().toJSON();
       const bounds = {
@@ -41,6 +47,7 @@ class ListingsMap extends React.Component {
         southWest: { lat: south, lng: west } };
       this.props.updateFilter('bounds', bounds);
     });
+
     google.maps.event.addListener(this.map, 'click', event => {
       const coords = _getCoordsObj(event.latLng);
       this._handleClick(coords);
@@ -63,8 +70,8 @@ class ListingsMap extends React.Component {
 
   render() {
     return (
-      <div className='map-container' ref={map => this.mapNode = map }>
-        <h1>Map Placehoder</h1>
+      <div className='map-container' ref="map">
+
       </div>
     );
   }

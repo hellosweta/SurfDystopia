@@ -4,7 +4,7 @@ import ListingsMap from '../map/map';
 
 class ListingIndex extends React.Component {
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.fetchListings(this.props.regionId);
   }
   renderMap(){

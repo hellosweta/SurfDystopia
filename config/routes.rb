@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'reviews/create'
+
+  get 'reviews/destroy'
+
+  get 'reviews/index'
+
+  get 'reviews/show'
+
+  get 'bookings/create'
+
+  get 'bookings/index'
+
+  get 'bookings/show'
+
+  get 'bookings/destroy'
+
   namespace :api do
     get 'regions/show'
   end

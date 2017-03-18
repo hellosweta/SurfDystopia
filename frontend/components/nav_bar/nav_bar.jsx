@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
 import SessionFormContainer from '../session_form/session_form_container';
+import { SingleDatePicker } from 'react-dates';
+// import 'react-dates/lib/css/_datepicker.css';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -56,12 +58,20 @@ class NavBar extends React.Component {
   }
 
   render() {
+    // <SingleDatePicker
+    //   id="date_input"
+    //   date={this.state.date}
+    //   focused={this.state.focused}
+    //   onDateChange={(date) => { this.setState({ date }); }}
+    //   onFocusChange={({ focused }) => { this.setState({ focused }); }}
+    //   />
   return(
     <div className="login-signup">
       <Link to='/' className="logo">
         <img src="https://s3.amazonaws.com/surf-dev/NavBar/LogoRobot.png" alt="SurfDystopia" style={{maxHeight: '40px'}}></img>
       </Link>
       <input className="Input" placeholder="Search for stuff" />
+
       {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
     </div>
   );

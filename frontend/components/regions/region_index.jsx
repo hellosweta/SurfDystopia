@@ -7,7 +7,7 @@ class RegionIndex extends React.Component {
     this.props.fetchRegions();
   }
 
-  render () {
+  render() {
     return (
       <div className="regions">
         <ul>

@@ -1,19 +1,59 @@
-.main-listing-item{
+.listing-item{
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  // justify-content: center;
+  padding: none;
+  position: relative;
 }
-
-.listing-image{
-  width: 100%;
-  height: auto;
+.all-info{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  position: absolute;
+  left: 50%
+  width: 400px;
 }
-
 .listing-info{
+  display: flex;
   justify-content: center;
-  border: black;
+  flex-direction: column;
+}
+.listing-title{
+  display: flex;
+  justify-content: center;
+}
+.listing-image{
+  height: 400px;
+  width: auto;
 }
 
-.guest-icon + .propery-type-icon{
+
+.icons{
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid $grey;
+  padding-bottom: 10px;
+}
+
+.guest-icon {
   height: 50px;
   width: auto;
+}
+
+.propery-type-icon {
+  height: 50px;
+  width: auto;
+}
+.booking-box{
+  position: fixed;
+  right: 250px;
+  top: 440px;
+  flex-direction: column;
+  box-shadow: 0 2px 3px 2px;
+}
+
+.overview{
+  display: flex;
+  flex-direction: column;
 }

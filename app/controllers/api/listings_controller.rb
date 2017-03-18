@@ -15,8 +15,8 @@ class Api::ListingsController < ApplicationController
   def index
     @listings = Listing.where(region_id: params[:region_id])
     render :index
-    # @listings = Listing.all
-
+  
+    # @listings = Listing.in_bounds(params[:bounds])
     # eventually with search you can do @listings = Listing.includes(search term)
   end
 

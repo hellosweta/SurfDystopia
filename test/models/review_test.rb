@@ -1,20 +1,20 @@
 # == Schema Information
 #
-# Table name: regions
+# Table name: reviews
 #
 #  id         :integer          not null, primary key
-#  city       :string           not null
-#  state      :string           not null
-#  image_url  :string           not null
+#  listing_id :integer          not null
+#  author_id  :integer          not null
+#  rating     :integer          not null
+#  title      :string
+#  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  latitude   :float
-#  longitude  :float
 #
 
 require 'test_helper'
 
-class RegionTest < ActiveSupport::TestCase
+class ReviewTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
