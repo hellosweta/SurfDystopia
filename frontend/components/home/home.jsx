@@ -21,13 +21,4 @@ const Home = ({ currentUser, fetchListings }) => (
 	</div>
 );
 
-// Eventually there will be componenents here that on click they will call fetchListings with their region id
-
-
-// map over region ids and pass them through ownprops and redirect to /search
-// sampleRegions.map({
-// 	<Link to='/search?regionId=${region.id}'>
-// 		<div region stuff> pretty picture</div>x
-// 	</Link>
-// })
 export default Home;

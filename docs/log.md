@@ -7,4 +7,6 @@ componentWillReceiveProps(newProps){
 }
 ```
 
-- decided to imitate search with a regions show page 
+- decided to imitate search with a regions show page
+
+- ajax calls to google maps were taking longer than component rendering so you'd see the map of the region before

@@ -12,46 +12,60 @@ User.create!(
   password: "password"
 )
 
+
+
 san_francisco = Region.create!(
   city: "San Francisco",
   state: "CA",
+  latitude: 37.775769,
+  longitude: -122.434960,
   image_url: "https://s3.amazonaws.com/surf-dev/Regions/SanFrancisco.jpg",
 )
 new_york = Region.create!(
   city: "New York",
   state: "New York",
+  latitude: 40.7128,
+  longitude: -74.0059,
   image_url: "https://s3.amazonaws.com/surf-dev/Regions/NewYork.jpg",
 )
 
 chicago = Region.create!(
   city: "Chicago",
   state: "Illinois",
+  latitude: 41.8781,
+  longitude: -87.6298,
   image_url: "https://s3.amazonaws.com/surf-dev/Regions/Chicago.jpg",
 )
 
 washington = Region.create!(
   city: "Seattle",
   state: "WA",
+  latitude: 47.6205,
+  longitude: -122.3509,
   image_url: "https://s3.amazonaws.com/surf-dev/Regions/Paris.jpg"
 )
 
 boston = Region.create!(
   city: "Boston",
   state: "MA",
+  latitude: 42.3601,
+  longitude: -71.0589,
   image_url: "https://s3.amazonaws.com/surf-dev/Regions/Tokyo.jpg"
 )
 
-london = Region.create!(
-  city: "London",
-  state: "England",
+philadelphia = Region.create!(
+  city: "Philadelphia",
+  state: "Pennsylvania",
+  latitude: 40.0094,
+  longitude: -75.1333,
   image_url: "https://s3.amazonaws.com/surf-dev/Regions/London.jpg"
 )
 
 Listing.create!(
   host_id: 1,
   title: "Airy home, lots of light",
-  latitude: 37.775769,
-  longitude: -122.434960,
+  latitude: 37.775739,
+  longitude: -122.431960,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/Flying_Home.jpg",
   description: "Catch excellent views of the city",
   region_id: san_francisco.id,
@@ -126,8 +140,8 @@ Listing.create!(
 Listing.create!(
   host_id: 1,
   title: "Homey, home",
-  latitude: 41.8781,
-  longitude: -87.6298,
+  latitude: 41.8741,
+  longitude: -87.6278,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ws-human-house.jpg",
   description: "Warm fireplace",
   region_id: chicago.id,
@@ -139,8 +153,8 @@ Listing.create!(
 Listing.create!(
   host_id: 1,
   title: "Sleep on my floor",
-  latitude: 42.3601,
-  longitude: -71.0589,
+  latitude: 42.3611,
+  longitude: -71.0579,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/todds-whiskey.jpg",
   description: "Sorry, meager accomodations, but right around the corner from Todd's Whiskey",
   region_id: boston.id,

@@ -8,9 +8,9 @@ class ListingIndex extends React.Component {
     this.props.fetchListings(this.props.regionId);
   }
   renderMap(){
-    let firstListing = this.props.listings[0];
+
     return(<span className="map col col-1-3">
-      <ListingsMap startLat={firstListing.latitude} startLong={firstListing.longitude}/>
+      <ListingsMap listings={this.props.listings} startLat={this.props.latitude} startLong={this.props.longitude}/>
     </span>);
   }
   render(){

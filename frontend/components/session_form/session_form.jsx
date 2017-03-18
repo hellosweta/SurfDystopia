@@ -69,11 +69,6 @@ class SessionForm extends React.Component {
 		}else{
 			return <button onClick={this.handleLogIn}>Log In</button>;
 		}
-		// if (this.props.formType === "login") {
-		// 	return <Link to="/signup">Sign Up</Link>;
-		// } else {
-		// 	return <Link to="/login">Already have an account?</Link>;
-		// }
 	}
 
 	openModal(modalType) {
@@ -160,42 +155,6 @@ class SessionForm extends React.Component {
 
 }
 
-// render() {
-// 	return (
-// 		<div className="login-form-container">
-// 			<form onSubmit={this.handleSubmit} className="login-form-box">
-//
-// 				<br/>
-// 				{this.props.formType} or {this.navLink()}
-// 				{this.renderErrors()}
-// 				<div className="login-form">
-// 					<br/>
-// 					<label> Username:
-// 						<input type="text"
-// 							value={this.state.username}
-// 							onChange={this.update("username")}
-// 							className="login-input" />
-// 					</label>
-// 					<label> Name:
-// 						<input type="text"
-// 							value={this.state.name}
-// 							onChange={this.update("name")}
-// 							className="login-input" />
-// 					</label>
-// 					<br/>
-// 					<label> Password:
-// 						<input type="password"
-// 							value={this.state.password}
-// 							onChange={this.update("password")}
-// 							className="login-input" />
-// 					</label>
-// 					<br/>
-// 					<input type="submit" value="Submit" />
-// 				</div>
-// 			</form>
-// 		</div>
-// 	);
-// }
 
 
 
