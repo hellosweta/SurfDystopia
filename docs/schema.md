@@ -64,7 +64,7 @@ Associations: bookings will belong to a listing and a user
 | id              | integer   | not null, primary key          |
 | listing_id      | integer   | foreign key, not null, indexed |
 | author_id       | integer   | foreign key, not null, indexed |
-| number_of_gears | integer   | not null                       |
+| rating          | integer   | not null                       |
 | title           | string    |                                |
 | body            | text      |                                |
 
