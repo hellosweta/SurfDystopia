@@ -41,6 +41,8 @@ Associations: listings will belong to a host (user), and a region, and have many
 | city        | string    | not null              |
 | state       | string    | not null              |
 | image_url   | string    | not null              |
+| latitude    | float     | not null              |
+| longitude   | float     | not null              |
 
 Associations: regions will have many listings		
 
