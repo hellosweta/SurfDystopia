@@ -8,7 +8,7 @@ class ListingItem extends React.Component {
     this.region = this.props.region;
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.props.fetchListing();
   }
 
@@ -22,10 +22,11 @@ class ListingItem extends React.Component {
           <h1 className='listing-title'>{this.listing.title}</h1>
           <h2 className='listing-location'>{`${this.region.city},${this.region.state}`}</h2>
         </div>
-        <div className="icons">
-
+        <div className="icons col col-2-3">
+          <img className='propery-type-icon'src = "https://s3.amazonaws.com/surf-dev/Listings/ListingShow/steamer_high_cont.gif"></img>
           <h3 className='listing-type'>{this.listing.property_type}</h3>
-          <h3 className='listing-guests'>{this.listing.max_guests}</h3>
+          <img className='guest-icon' src="https://s3.amazonaws.com/surf-dev/Listings/ListingShow/robot_orange.jpg"></img>
+          <h3 className='listing-guests'>{this.listing.max_guests} guests (includes electricty powered)</h3>
         </div>
         <div className="booking">
 
