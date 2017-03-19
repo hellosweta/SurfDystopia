@@ -23,8 +23,8 @@ class ListingIndex extends React.Component {
       <h2>Available Listings</h2>
       <div className="search-results">
         <span className="listings">
-          {this.props.listings.map(listing => (
-            <ListingIndexItem listing={listing} key={listing.id}/>
+          {this.props.listings.map((listing, id) => (
+            <ListingIndexItem listing={listing} key={id}/>
           ))}
         </span>
         {this.renderMap()}

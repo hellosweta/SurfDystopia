@@ -31,13 +31,29 @@ class BookingForm extends React.Component {
      });
  }
 
-
+ renderErrors() {
+   return(
+     <ul>
+       {this.props.errors.map((error, i) => (
+         <li key={`error-${i}`}>
+           {error}
+         </li>
+       ))}
+     </ul>
+   );
+ }
+ componentWillReceiveProps(newProps){
+   if (this.props !== newProps && this.props.errors.length > 0) {
+     this.props.clearErrors();
+   }
+ }
   handleSubmit(e) {
     e.preventDefault();
-    return (booking) => {
+    debugger
+    return ((booking) => {
       this.props.createBooking(booking);
       this.clearBookingForm();
-    };
+    });
   }
 
   render () {
@@ -46,6 +62,7 @@ class BookingForm extends React.Component {
       <div className="booking-form">
         <h3>Book</h3>
         <form onSubmit={this.handleSubmit}>
+          	{this.renderErrors()}
           <div>
 
             <span className="check-in">
@@ -59,18 +76,18 @@ class BookingForm extends React.Component {
           </div>
             <span className="check-out">
             <input
-              className="standard-output"
+              className="standard-input"
               type="date"
-    
+
               placeholder="Check-Out"
               onChange={this.update('check_out_date')} />
             </span>
 
-          <span className="form-button">
-            <button className = "form-button" type="submit">Submit</button>
+          <div>
+            <button onClick={this.handleSubmit} className = "form-button" type="submit">Submit</button>
             <button className='header-button' onClick={this.clearBookingForm}>Cancel</button>
 
-          </span>
+          </div>
         </form>
       </div>
     );

@@ -94,7 +94,7 @@ class SessionForm extends React.Component {
 		);
 	}
 	render() {
-		const CloseButton = () => (<button>Close modal</button>);
+		const CloseButton = (() => (<button>Close modal</button>));
 		return (
 			<div >
 				<nav className="login-signup">
