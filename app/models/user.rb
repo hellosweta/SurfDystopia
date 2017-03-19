@@ -30,11 +30,22 @@ class User < ApplicationRecord
   before_validation :ensure_session_token_uniqueness
 
   has_many :listings,
-  primary_key: :id,
-  foreign_key: :host_id,
-  class_name: :Listing
-  # Write assoociations
+    primary_key: :id,
+    foreign_key: :host_id,
+    class_name: :Listing
+
+  has_many :reviews,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Review
+
+  has_many :bookings,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Booking
+
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def self.find_by_credentials(username, password)

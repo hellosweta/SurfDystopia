@@ -14,16 +14,15 @@
 
 class Review < ApplicationRecord
 
-  validates :listing_id, :author_id, :rating, :description, :region_id, presence: true
-  validates :latitude, :longitude, presence: true, uniqueness: true
+  validates :listing_id, :author_id, :rating, presence: true
+  validates :rating, inclusion: { in: [1, 2, 3, 4, 5] }
+  belongs_to :author,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :User
 
-  belongs_to :host,
-  primary_key: :id,
-  foreign_key: :host_id,
-  class_name: :User
-
-  belongs_to :region,
-  primary_key: :id,
-  foreign_key: :region_id,
-  class_name: :Region
+  belongs_to :listing,
+    primary_key: :id,
+    foreign_key: :listing_id,
+    class_name: :Listing
 end

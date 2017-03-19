@@ -18,18 +18,27 @@
 #
 
 class Listing < ApplicationRecord
-  validates :host_id, :title, :image_url, :description, :region_id, presence: true
-  validates :latitude, :longitude, presence: true, uniqueness: true
+  validates :host_id, :title, :image_url, :description, :region_id, :latitude, :longitude, presence: true
 
   belongs_to :host,
-  primary_key: :id,
-  foreign_key: :host_id,
-  class_name: :User
+    primary_key: :id,
+    foreign_key: :host_id,
+    class_name: :User
 
   belongs_to :region,
-  primary_key: :id,
-  foreign_key: :region_id,
-  class_name: :Region
+    primary_key: :id,
+    foreign_key: :region_id,
+    class_name: :Region
+
+  has_many :reviews,
+    primary_key: :id,
+    foreign_key: :listing_id,
+    class_name: :Review
+
+  has_many :bookings,
+    primary_key: :id,
+    foreign_key: :listing_id,
+    class_name: :Booking
 
   def self.in_bounds(bounds)
     self.where("latitude < ?", bounds[:northEast][:latitude])
