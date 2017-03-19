@@ -65,9 +65,9 @@ class SessionForm extends React.Component {
 	}
 	navLink() {
 		if (this.state.modalType === "logIn") {
-			return <button onClick={this.handleSignUp} >Sign Up</button>;
-		}else{
-			return <button onClick={this.handleLogIn}>Log In</button>;
+			return <button className="header-button" onClick={this.handleSignUp}>Sign Up</button>;
+		} else {
+			return <button className="header-button" onClick={this.handleLogIn}>Log In</button>;
 		}
 	}
 
@@ -112,8 +112,8 @@ class SessionForm extends React.Component {
 					style={ModalStyle}>
 
 					<div>
-						<div style={{display: 'inline-block', marginTop: '8px', fontSize: '15px'}}>{this.state.modalType === 'signUp' ? 'Sign Up' : 'Log In'} </div>
-						<span style={{float: 'right'}}> {this.navLink()} </span>
+						<div className="sign-or-log-in">{this.state.modalType === 'signUp' ? 'Sign Up' : 'Log In'} </div>
+						<span className="navlink"> {this.navLink()} </span>
 					</div>
 					<form onSubmit={this.handleSubmit} >
 						{this.renderErrors()}
@@ -122,7 +122,7 @@ class SessionForm extends React.Component {
 								<input type="text"
 									value={this.state.username}
 									onChange={this.update("username")}
-									className="login-input Input"
+									className="login-input standard-input"
 									placeholder="Username"
 								/>
 							</div>
@@ -131,7 +131,7 @@ class SessionForm extends React.Component {
 									<input type="text"
 										value={this.state.name}
 										onChange={this.update("name")}
-										className="login-input Input"
+										className="login-input standard-input"
 										placeholder="Name"
 									/>
 								</div>
@@ -141,11 +141,11 @@ class SessionForm extends React.Component {
 									type="password"
 									value={this.state.password}
 									onChange={this.update("password")}
-									className="login-input Input"
+									className="login-input standard-input"
 									placeholder="Password"
 								/>
 							</div>
-							<button type="submit"> Submit </button>
+							<button className="form-button" type="submit"> Submit </button>
 						</div>
 					</form>
 				</Modal>

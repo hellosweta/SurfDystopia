@@ -12,24 +12,20 @@ body {
 
 button {
 	// style filled in button
-	// background-color: $pink;
-	color: #766D88;
-	background: none;
+	background-color: $dark_orange;
 	text-transform: none;
 	border: 1px 1px solid;
 	border-color: $purple;
-	color: $grey;
+	color: white;
 	font-weight: bold;
 	padding: 7px 9px;
 	border-radius: 3px;
 	transition: background-color 0.3s;
 	font-family: $sans-serif;
-
 	font-size: 15px;
 	text-align: center;
 }
-
-.Input {
+.standard-input {
   background-color: white;
   border-radius: 3px;
   border: 1px solid whitesmoke;
@@ -47,11 +43,11 @@ button {
   }
 }
 
-button:hover {
-	// background-color: $purple;
-  // border-color: $pink;
-	text-decoration: underline;
-}
+// button:hover {
+// 	background-color: $purple;
+//   border-color: $pink;
+//
+// }
 
 a:hover {
 	text-decoration: underline;

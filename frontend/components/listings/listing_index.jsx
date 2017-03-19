@@ -9,7 +9,7 @@ class ListingIndex extends React.Component {
   }
   renderMap(){
 
-    return(<span className="map col col-1-3">
+    return(<span className="map ">
       <ListingsMap listings={this.props.listings} startLat={this.props.latitude} startLong={this.props.longitude}/>
     </span>);
   }
@@ -22,7 +22,7 @@ class ListingIndex extends React.Component {
     <div>
       <h2>Available Listings</h2>
       <div className="search-results">
-        <span className="Listings col col-2-3">
+        <span className="listings">
           {this.props.listings.map(listing => (
             <ListingIndexItem listing={listing} key={listing.id}/>
           ))}

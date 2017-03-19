@@ -20,6 +20,7 @@
 
 .logo {
   width: 15%;
+  max-height: 40px;
 }
 
 .header-button{
@@ -37,7 +38,16 @@
   text-decoration: none;
 
 }
+.sign-or-log-in {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 15px;
+}
 
+.navlink{
+  float: right;
+  font-size: 15px;
+}
 // .left-nav {
 // 	margin-left: 20px;
 // 	cursor: pointer;

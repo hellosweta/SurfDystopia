@@ -68,9 +68,9 @@ class NavBar extends React.Component {
   return(
     <div className="login-signup">
       <Link to='/' className="logo">
-        <img src="https://s3.amazonaws.com/surf-dev/NavBar/LogoRobot.png" alt="SurfDystopia" style={{maxHeight: '40px'}}></img>
+        <img src="https://s3.amazonaws.com/surf-dev/NavBar/LogoRobot.png" alt="SurfDystopia"></img>
       </Link>
-      <input className="Input" placeholder="Search for stuff" />
+      <input className="standard-input" placeholder="Search for stuff" />
 
       {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
     </div>

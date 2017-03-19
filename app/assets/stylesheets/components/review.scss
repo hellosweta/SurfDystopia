@@ -1,0 +1,25 @@
+.review-form{
+  border: 1px solid $purple;
+  padding: 13px;
+  border-radius: 3px;
+}
+
+.review-list{
+  border: 1px solid $purple;
+  padding: 13px;
+  border-radius: 3px;
+}
+.review-title{
+  font-size: 18px;
+  font: $sans-serif;
+  font-weight: bold;
+}
+.review-body{
+  font-size: 15px;
+  font: $sans-serif;
+
+}
+
+.review-rating{
+  font-size: 34px;
+}

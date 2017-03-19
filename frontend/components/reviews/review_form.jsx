@@ -56,32 +56,35 @@ class ReviewForm extends React.Component {
         <h3>{text}</h3>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <span className="rating">How Was Your Host?</span>
+            <h2 className="rating">How Was Your Host?</h2>
               <Stars
                 className="stars"
                 count={5}
                 char={"⚙"}
-                size={24}
+                size={32}
                 value={this.state.rating}
                 onChange={this.updateStars}
                 color1={'#585c6c'}
                 color2={'#b48395'} />
             </div>
-            <span className="title">Title
-
+            <span className="title">
             <input
+              className="standard-input"
               type="text"
               value={this.state.title}
+              placeholder="Title"
               onChange={this.update('title')} />
             </span>
-            <span className="body">Review
+            <span className="body ">
             <textarea
+              className="standard-input"
               value={this.state.body}
-              onChange={this.update('body')} />
+              onChange={this.update('body')}
+              placeholder="Tell us about your host..." />
             </span>
 
-          <span className="submit">
-            <input type="submit" value={text} />
+          <span className="form-button">
+            <button className = "form-button" type="submit">Submit</button>
             <button className='cancel' onClick={this.clearReviewForm}>Cancel</button>
 
           </span>
