@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-
+import ReviewFormContainer from '../reviews/review_form_container';
+import ReviewIndexContainer from '../reviews/review_index_container';
 class ListingItem extends React.Component {
   constructor(props){
     super(props);
@@ -53,8 +54,12 @@ class ListingItem extends React.Component {
             <h3>HostInfoPlaceholder</h3>
           </div>
 
+          <div className="review-form">
+            <ReviewFormContainer listingId = {this.listing.id}/>
+          </div>
+
           <div className="reviews">
-            <h3>ReviewsPlaceholder</h3>
+            <ReviewIndexContainer listingId = {this.listing.id}/>
           </div>
         </div>
       </div>

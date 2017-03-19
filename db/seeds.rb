@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(
+guest = User.create!(
   username: 'Guest',
   name: "Guest Surfer",
   password: "password"
@@ -61,8 +61,8 @@ philadelphia = Region.create!(
   image_url: "https://s3.amazonaws.com/surf-dev/Regions/London.jpg"
 )
 
-Listing.create!(
-  host_id: 1,
+flying_home = Listing.create!(
+  host_id: guest.id,
   title: "Airy home, lots of light",
   latitude: 37.782310,
   longitude: -122.398278,
@@ -75,7 +75,7 @@ Listing.create!(
 )
 
 Listing.create!(
-host_id: 1,
+host_id: guest.id,
 title: "Spacious couch",
 latitude: 37.793054,
 longitude: -122.402632,
@@ -88,7 +88,7 @@ house_rules: "No smoking",
 )
 
 Listing.create!(
-host_id: 1,
+host_id: guest.id,
 title: "Comfy Bed",
 latitude: 37.776480,
 longitude: -122.423271,
@@ -101,7 +101,7 @@ house_rules: "No smoking",
 )
 
 Listing.create!(
-  host_id: 1,
+  host_id: guest.id,
   title: "Granok Bar",
   latitude: 40.7128,
   longitude: -74.0059,
@@ -113,7 +113,7 @@ Listing.create!(
   house_rules: "Responsible drinking encouraged",
 )
 Listing.create!(
-  host_id: 1,
+  host_id: guest.id,
   title: "Spacious Castle",
   latitude: 40.6128,
   longitude: -75.0059,
@@ -125,7 +125,7 @@ Listing.create!(
   house_rules: "Don't go into the dungeon",
 )
 Listing.create!(
-  host_id: 1,
+  host_id: guest.id,
   title: "Comfy spot in the bustling city",
   latitude: 39.7128,
   longitude: -73.0059,
@@ -138,7 +138,7 @@ Listing.create!(
 )
 
 Listing.create!(
-  host_id: 1,
+  host_id: guest.id,
   title: "Homey, home",
   latitude: 41.8741,
   longitude: -87.6278,
@@ -151,7 +151,7 @@ Listing.create!(
 )
 
 Listing.create!(
-  host_id: 1,
+  host_id: guest.id,
   title: "Sleep on my floor",
   latitude: 42.3611,
   longitude: -71.0579,
@@ -161,4 +161,12 @@ Listing.create!(
   max_guests: 1,
   property_type: "Floor",
   house_rules: "No smoking",
+)
+
+Review.create!(
+  listing_id: flying_home.id,
+  author_id: guest.id,
+  rating: 4,
+  title: "This host soars to the top",
+  body: "Our stay was perfect."
 )
