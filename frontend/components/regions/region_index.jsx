@@ -9,7 +9,7 @@ class RegionIndex extends React.Component {
 
   render() {
     return (
-      <div className="regions">
+      <div>
         <ul>
           {
             this.props.regions.map(region => (

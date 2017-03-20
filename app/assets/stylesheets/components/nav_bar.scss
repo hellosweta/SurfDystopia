@@ -3,19 +3,17 @@
 	justify-content: space-between;
 	// padding: 10px 0;
 	border-bottom: 1px solid $grey;
+
 }
 
-// can use active style for current class
-// .activeStyle {
-//   background: blue;
-// }
-
 .login-signup{
+  margin-top: 5px;
   padding: 8px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 42px;
+  width: 100%;
 }
 
 .logo {

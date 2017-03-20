@@ -1,54 +1,69 @@
 .search-results{
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   border: 1px 1px solid black;
-  width: 900px;
+  // width: 900px;
   border-color: black;
 }
 
 .listings{
   display: flex;
-
   border: 1px 1px solid black;
   border-color: blue;
+  width: 50%;
+  flex-wrap: wrap;
+  position: absolute;
 }
 .map{
+
 }
 
 .map-container {
   display: flex;
-  margin: 10px 10px;
-  width: 500px;
-  height: 500px;
+  // float: right;
+  padding: 10px 10px;
+  margin: 10px 10px 40px;
+  width: 700px;
+  height: 700px;
   border: 1px solid $purple;
+  position: relative;
+  left: 900px;
 }
 .listing-index-item{
+  display: block;
   flex-direction: column;
   justify-content: flex-start;
+  padding: 5px 5px;
+  border: 1px black;
+
 }
 .listing-index-image{
-  height: 150px;
+  height: 200px;
   width: auto;
   overflow: hidden;
-  border: 1px 1px solid black;
+  border: 1px solid black;
 
   // margin: 10px 10px;
   // border: 1px solid black;
   padding: 10px 10px;
-  border-radius: 20px;
+
 }
 
 .listing-title{
-  color: $purple;
+  color: $grey;
   font-weight: bold;
+  font-size: 15px;
 
 }
+
 .listing-property_type{
   color: $purple;
 }
+
 .index-item-info{
   margin: 10px 10px;
+  border: 1 px solid black;
+  text-align: left;
 }
 
 .reviews{

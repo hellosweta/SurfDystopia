@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-
+  
   return({
 
   fetchListing: () => dispatch(fetchListing(ownProps.params.listingId)),

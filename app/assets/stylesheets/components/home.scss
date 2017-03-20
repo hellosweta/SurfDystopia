@@ -1,30 +1,16 @@
-// .hero {
-//   display: flex;
-//   width:960px;
-//   margin:1rem auto;
-//   position: relative;
-//   // height: 50%;
-//   // width: auto;
-// }
-// .hero .text{
-//   // background:rgba(255,255,255,0.5);
-//   position: absolute;
-//   top:50%;
-//   left:0;
-//   padding:1rem;
-//   transform:translateY(-50%);
-// }
-
-// .text {font-size: 1rem}
+.home-group{
+  display: flex;
+  flex-direction: column;
+}
 .hero {
   display: flex;
   box-sizing: content-box;
 
-  width:100%;
-  // margin:.5rem auto;
+  width: 100%;
   position: relative;
 }
 .hero-image {
+  width:100%;
   opacity: 0.7;
 }
 
@@ -33,7 +19,7 @@
   display: flex;
   // border: solid black 1px;
   align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   position: absolute;
   top: 45%;
   left: 35%;
@@ -41,33 +27,46 @@
   text-shadow: white;
   // padding:1rem;
   // transform:translateY(-50%);
-  color: white;
 }
+
+
+.hero-main{
+  color: white;
+  font-size: 48pt;
+}
+
+
+.text{
+  text-outline: $grey;
+  text-shadow: white;
+  font-size: 30pt;
+  color: $dark_orange;
+  align-items: center;
+}
+
 .explore{
   display: flex;
-  box-sizing: content-box;
-
+  // box-sizing: content-box;
+  flex-wrap: wrap;
+  height: 200px;
 }
-.regions{
-  // height: 200px;
 
-
-}
 .region{
   box-sizing: content-box;
   position: relative;
-  padding: 40px 20px 20px 20px;
+  padding: 10px 10px;
   // overflow: hidden;
-  height: 200px;
-
+  height: 300px;
+  opacity: 80%;
 }
 
 .region-name{
   color: $pink;
   position: absolute;
-  font-size: 24px;
-  top: 50%;
-  left: 30%;
+  font-size: 40px;
+  font-weight: bold;
+  bottom: 20%;
+  left: 45%;
 }
 
 @media screen and (max-width:680px){

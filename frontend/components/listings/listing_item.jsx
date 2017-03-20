@@ -19,8 +19,8 @@ class ListingItem extends React.Component {
 
   componentDidMount(){
     this.props.fetchListing();
-
     this.props.fetchReviews();
+
   }
   componentWillReceiveProps(newProps) {
     this.setState(newProps.review);
@@ -82,7 +82,7 @@ class ListingItem extends React.Component {
           </div>
           <div className="all-info">
             <div className="listing-info">
-              <h1 className='listing-title'>{this.listing.title}</h1>
+              <h1 className='listing-show-title'>{this.listing.title}</h1>
               <h2 className='listing-location'>{`${this.region.city},${this.region.state}`}</h2>
             </div>
             <div className="icons">
@@ -98,16 +98,16 @@ class ListingItem extends React.Component {
 
             <div className="booking">
               <BookingContainer className="booking-box" booking={this.props.booking} listingId={this.listing.id} />
-
-
             </div>
+
             <div className="overview">
               <span className="space-label">
                 <h2>The Space</h2>
               </span>
               <span>
-                <h3 className='listing-type'>Property Type: {this.listing.description}</h3>
-                <h3 className='house-rules'>House Rules: {this.listing.house_rules}</h3>
+                <h3 className='listing-type'>Property Type: {this.listing.property_type}</h3>
+                <h3 className='listing-type'>Description: {this.listing.description}</h3>
+                <h3 className='house-rules'> House Rules: {this.listing.house_rules}</h3>
               </span>
             </div>
 
@@ -117,7 +117,7 @@ class ListingItem extends React.Component {
 
             <div className="review-form">
               {this.renderErrors()}
-              <div className="review-form">
+              <div>
                 <h3>Write a Review</h3>
                 <form onSubmit={this.handleSubmit}>
                   <div>
@@ -132,22 +132,22 @@ class ListingItem extends React.Component {
                         color1={'#585c6c'}
                         color2={'#b48395'} />
                     </div>
-                    <span className="title">
+                    <div className="title">
                     <input
                       className="standard-input"
                       type="text"
                       value={this.state.title}
                       placeholder="Title"
                       onChange={this.update('title')} />
-                    </span>
-                    <span className="body ">
+                  </div>
+                    <div className="body ">
                     <textarea
                       className="standard-input"
                       value={this.state.body}
 
                       onChange={this.update('body')}
                       placeholder="Tell us about your host..." />
-                    </span>
+                  </div>
 
                   <span >
                     <button className ="form-button" onClick={this.handleSubmit} type="submit">Submit</button>

@@ -26,46 +26,42 @@ class BookingForm extends React.Component {
   }
 
   clearBookingForm() {
-     this.setState({
-       check_in_date: "",
-       check_out_date: "",
-     });
- }
-
- renderErrors() {
-   if ((this.props.errors.length < 1) || (this.props.errors === undefined)) {
-     return(<div></div>);
-   } else {
-     return(
-       <ul>
-         {this.props.errors.map((error, i) => (
-           <li key={`error-${i}`}>
-             {error}
-           </li>
-         ))}
-       </ul>
-     );
+    this.setState({
+      check_in_date: "",
+      check_out_date: "",
+    });
   }
- }
- componentWillReceiveProps(newProps){
-   if (this.props !== newProps && this.props.errors.length > 0) {
-     this.props.clearErrors();
-   }
- }
+
+  renderErrors() {
+    console.log(this.props.errors);
+    if (!this.props.errors) {
+      return(<div></div>);
+    } else {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    // this.assignListingId();
-
+    this.props.clearErrors();
     this.props.createBooking(this.state);
-    this.clearBookingForm();
   }
+
   assignListingId(){
     this.setState({
       listing_id: this.props.listingId
     });
   }
-  render () {
 
+  render () {
     return (
       <div className="booking-form">
         <h3>Book</h3>

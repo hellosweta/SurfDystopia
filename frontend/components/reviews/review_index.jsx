@@ -17,7 +17,6 @@ class ReviewIndex extends React.Component {
   }
 
   render () {
-
     if (this.props.reviews.length < 1) {
       return (<div><h2>Host Hasn't Been Reviewed Yet</h2></div>);
     } else if (this.props.reviews === undefined) {
