@@ -3,7 +3,6 @@ import BookingForm from './booking_form';
 import { deleteBooking, receiveErrors, fetchBookings, createBooking } from '../../actions/booking_actions';
 
 const mapStateToProps = ({bookings}, ownProps) => {
-
   const booking = {
     check_in_date: "",
     check_out_date: "",

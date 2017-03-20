@@ -8,20 +8,29 @@ import Stars from 'react-stars';
 class ListingItem extends React.Component {
   constructor(props){
     super(props);
-    this.listing = this.props.listing;
-    this.region = this.props.region;
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = this.props.review;
     this.updateStars = this.updateStars.bind(this);
     this.clearReviewForm = this.clearReviewForm.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.state = {
+      review: {
+        title: "",
+        body: "",
+        rating: 0,
+      },
+      booking: {
+        check_in_date: "",
+        check_out_date: "",
+      }
+    };
   }
 
   componentDidMount(){
+    // this.props.fetchRegion();
     this.props.fetchListing();
     this.props.fetchReviews();
-
   }
+
   componentWillReceiveProps(newProps) {
     this.setState(newProps.review);
   }
@@ -48,7 +57,7 @@ class ListingItem extends React.Component {
 
   renderErrors() {
     if (this.props.errors === undefined){
-      return(<div></div>)
+      return(<div></div>);
     } else {
       return(
         <ul>
@@ -70,26 +79,26 @@ class ListingItem extends React.Component {
 
   render() {
 
-    if (this.listing === undefined) {
+    if (this.props.listing === undefined) {
       return(<div></div>);
     } else {
 
 
       return(
         <div className="listing-item">
-          <div className="listing-image">
-            <img src={this.listing.image_url}></img>
+          <div className="listing-image-div">
+            <img className="listing-image" src={this.props.listing.image_url}></img>
           </div>
           <div className="all-info">
             <div className="listing-info">
-              <h1 className='listing-show-title'>{this.listing.title}</h1>
-              <h2 className='listing-location'>{`${this.region.city},${this.region.state}`}</h2>
+              <h1 className='listing-show-title'>{this.props.listing.title}</h1>
+              <h2 className='listing-location'>{`${this.props.region.city},${this.props.region.state}`}</h2>
             </div>
             <div className="icons">
               <img className='propery-type-icon'src = "https://s3.amazonaws.com/surf-dev/Listings/ListingShow/home_icon.jpeg"></img>
-              <h3 className='listing-type'>{this.listing.property_type}</h3>
+              <h3 className='listing-type'>{this.props.listing.property_type}</h3>
               <img className='guest-icon' src="https://s3.amazonaws.com/surf-dev/Listings/ListingShow/robot_orange.jpg"></img>
-              <h3 className='listing-guests'>{this.listing.max_guests} guests </h3>
+              <h3 className='listing-guests'>{this.props.listing.max_guests} guests </h3>
             </div>
 
             <div>
@@ -97,7 +106,7 @@ class ListingItem extends React.Component {
             </div>
 
             <div className="booking">
-              <BookingContainer className="booking-box" booking={this.props.booking} listingId={this.listing.id} />
+              <BookingContainer className="booking-box" booking={this.props.booking} listingId={this.props.listing.id} />
             </div>
 
             <div className="overview">
@@ -105,9 +114,9 @@ class ListingItem extends React.Component {
                 <h2>The Space</h2>
               </span>
               <span>
-                <h3 className='listing-type'>Property Type: {this.listing.property_type}</h3>
-                <h3 className='listing-type'>Description: {this.listing.description}</h3>
-                <h3 className='house-rules'> House Rules: {this.listing.house_rules}</h3>
+                <h3 className='listing-type'>Property Type: {this.props.listing.property_type}</h3>
+                <h3 className='listing-type'>Description: {this.props.listing.description}</h3>
+                <h3 className='house-rules'> House Rules: {this.props.listing.house_rules}</h3>
               </span>
             </div>
 
@@ -159,7 +168,7 @@ class ListingItem extends React.Component {
             </div>
 
             <div className="reviews">
-              <ReviewIndexContainer listingId = {this.listing.id}/>
+              <ReviewIndexContainer listingId = {this.props.listing.id}/>
             </div>
           </div>
         </div>

@@ -1,38 +1,33 @@
 import { connect } from 'react-redux';
 import { fetchListing } from '../../actions/listing_actions';
+import { fetchRegion } from '../../actions/region_actions';
 import { fetchReviews, createReview } from '../../actions/review_actions';
 import ListingItem from './listing_item';
 
 const mapStateToProps = (state, ownProps) => {
   const listing = state.listings[ownProps.params.listingId];
-  const review = {
-    title: "",
-    body: "",
-    rating: 0,
-  };
+  let region;
 
-  const booking = {
-    check_in_date: "",
-    check_out_date: "",
-  };
+  if (listing) {
+    region = state.regions[listing.region_id];
+  }
+
   return({
     listing: listing,
-    region: state.regions[ownProps.params.regionId],
-    review: review,
-    errors: state.reviews.errors,
-    booking: booking,
-
+    region: region,
+    reviews: state.reviews,
+    errors: state.reviews.errors
   });
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  
+// pull listing out and grab region id
   return({
-
-  fetchListing: () => dispatch(fetchListing(ownProps.params.listingId)),
-  fetchReviews: () => dispatch(fetchReviews(ownProps.params.listingId)),
-  createReview: (review) => dispatch(createReview(ownProps.params.listingId, review))
-});
+    fetchListing: () => dispatch(fetchListing(ownProps.params.listingId)),
+    fetchRegion: () => dispatch(fetchRegion(ownProps.params.regionId)),
+    fetchReviews: () => dispatch(fetchReviews(ownProps.params.listingId)),
+    createReview: (review) => dispatch(createReview(ownProps.params.listingId, review))
+  });
 };
 
 export default connect(

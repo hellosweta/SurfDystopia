@@ -1,18 +1,11 @@
 .search-results{
   display: flex;
   justify-content: space-between;
-  border: 1px 1px solid black;
-  // width: 900px;
-  border-color: black;
 }
 
 .listings{
   display: flex;
-  border: 1px 1px solid black;
-  border-color: blue;
-  width: 50%;
   flex-wrap: wrap;
-  position: absolute;
 }
 .map{
 
@@ -20,40 +13,29 @@
 
 .map-container {
   display: flex;
-  // float: right;
   padding: 10px 10px;
-  margin: 10px 10px 40px;
   width: 700px;
   height: 700px;
   border: 1px solid $purple;
-  position: relative;
-  left: 900px;
 }
+
 .listing-index-item{
   display: block;
-  flex-direction: column;
   justify-content: flex-start;
   padding: 5px 5px;
-  border: 1px black;
-
 }
 .listing-index-image{
   height: 200px;
-  width: auto;
-  overflow: hidden;
-  border: 1px solid black;
-
-  // margin: 10px 10px;
-  // border: 1px solid black;
-  padding: 10px 10px;
-
+  width: 340px;
+  overflow: auto;
+  padding: 10px 5px;
 }
 
 .listing-title{
   color: $grey;
   font-weight: bold;
   font-size: 15px;
-
+  text-align: left;
 }
 
 .listing-property_type{
@@ -61,18 +43,10 @@
 }
 
 .index-item-info{
-  margin: 10px 10px;
-  border: 1 px solid black;
   text-align: left;
+  padding: 5px 5px;
 }
 
-.reviews{
-  padding: 10px 10px;
-}
-
-.review-item{
-  padding: 10px 10px;
-}
-li.region:hover{
+.index-item-info:hover{
   cursor: pointer;
 }

@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   const regionId = ownProps.params.regionId;
 
   return ({
-    listings:  Object.keys(state.listings).map(id => {
+    listings: Object.keys(state.listings).map(id => {
       if (id !== "errors") {
         return state.listings[id];
       }

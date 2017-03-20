@@ -60,14 +60,6 @@ class ListingsMap extends React.Component {
     this.props.router.push(`search/${listing.region_id}/${listing.id}`);
   }
 
-  // _handleClick(coords) {
-  //   this.props.router.push({
-  //     pathname: "benches/new",
-  //     query: coords
-  //   });
-  // }
-
-
   render() {
     return (
       <div className='map-container' ref="map">

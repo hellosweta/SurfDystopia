@@ -13,6 +13,15 @@ class NavBar extends React.Component {
 
   }
 
+  componentWillMount(){
+    this.props.fetchRegions();
+  }
+
+
+  componentDidMount(){
+    this.props.fetchRegions();
+  }
+
   handleLogIn(e){
     e.preventDefault();
     hashHistory.push('/');
@@ -26,14 +35,6 @@ class NavBar extends React.Component {
   notLoggedIn(demo){
    return(
       <SessionFormContainer/>
-      // <div className="auth">
-      //   <button className="header-button" onClick={ this.handleLogIn }>Log In</button>
-      //   &nbsp;&nbsp;
-      //   <button className="header-button" onClick={ this.handleSignUp }>Join</button>
-      //   &nbsp;&nbsp;
-      //   <button className="header-button" onClick={demo}>Demo</button>
-      //   &nbsp;&nbsp;
-      // </div>
     );
   }
 
@@ -57,6 +58,18 @@ class NavBar extends React.Component {
     );
   }
 
+  initAutocomplete() {
+    // var map = new google.maps.Map(document.getElementById('map'), {
+    //   center: {lat: -33.8688, lng: 151.2195},
+    //   zoom: 13,
+    //   mapTypeId: 'roadmap'
+    // });
+
+    // Create the search box and link it to the UI element.
+    var input = document.getElementById('autocomplete');
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  }
   render() {
     // <SingleDatePicker
     //   id="date_input"
@@ -65,16 +78,45 @@ class NavBar extends React.Component {
     //   onDateChange={(date) => { this.setState({ date }); }}
     //   onFocusChange={({ focused }) => { this.setState({ focused }); }}
     //   />
-  return(
-    <div className="login-signup">
-      <Link to='/' className="logo">
-        <img src="https://s3.amazonaws.com/surf-dev/NavBar/LogoRobot.png" alt="SurfDystopia"></img>
-      </Link>
-      <input className="standard-input" placeholder="Search for stuff" />
+    const regions = this.props.regions.map((region, id) =>
+      (<option key={id} value={region.city}>{region.city}</option>));
 
-      {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
-    </div>
-  );
+    return(
+      <div className="login-signup">
+
+        <Link to='/' className="logo">
+          <img src="https://s3.amazonaws.com/surf-dev/NavBar/LogoRobot.png" alt="SurfDystopia"></img>
+        </Link>
+
+        <div id='findregions'>
+          Find Hosts in:
+        </div>
+
+        <div id="locationField">
+          <input className="standard-input" id="autocomplete" placeholder="Enter a city" type="text" />
+        </div>
+
+        <div id="controls">
+          <select id="city">
+            <option value="all">All</option>
+            {regions}
+          </select>
+        </div>
+
+        <div id="listing">
+        <table id="resultsTable">
+          <tbody id="results"></tbody>
+        </table>
+      </div>
+
+
+
+
+
+        {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
+      </div>
+    );
+  }
 }
-}
+
 export default NavBar;

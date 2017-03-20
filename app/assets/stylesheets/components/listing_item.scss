@@ -1,34 +1,36 @@
 .listing-item{
-  display: flex;
-  flex-direction: column;
   box-sizing: border-box;
-  // justify-content: center;
-  padding: none;
-  // position: relative;
 }
+
 .all-info{
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  // position: absolute;
-  // top: 400px;
-  // left: 50%;
-  width: 400px;
+  width: 800px;
+  margin: 0 auto;
+  padding-right: 50px;
 }
+
 .listing-info{
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-right: 50px;
 }
 .listing-title{
   display: flex;
   justify-content: center;
 }
-.listing-image{
+.listing-image-div{
   height: 400px;
-  width: auto;
+  width: 1400px;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
+.listing-image{
+  // width: 100%;
+}
 
 .icons{
   display: flex;
@@ -48,7 +50,6 @@
 }
 .booking-form{
   padding: 10px 10px;
-  position: fixed;
   right: 250px;
   top: 440px;
   flex-direction: column;
@@ -58,4 +59,16 @@
 .overview{
   display: flex;
   flex-direction: column;
+}
+
+.reviews{
+  padding: 10px 10px;
+}
+
+.review-item{
+  padding: 10px 10px;
+}
+
+li.region:hover{
+  cursor: pointer;
 }
