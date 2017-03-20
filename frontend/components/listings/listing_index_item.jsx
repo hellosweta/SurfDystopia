@@ -17,18 +17,35 @@ class ListingIndexItem extends React.Component {
   }
 
   render() {
-    const { title, description, region_id, host_id, image_url, latitude, longitude, max_guests, property_type, house_rules } = this.props.listing;
+    const { title, description, region_id, host_id, image_url, latitude, longitude, max_guests, property_type, average_rating, review_count } = this.props.listing;
+
+    let reviewText;
+    let reviewCount = review_count;
+    if (review_count > 1) {
+      reviewText = "Reviews";
+    } else if (review_count === 0) {
+      reviewText = "Not yet reviewed";
+      reviewCount = '';
+    } else {
+      reviewText = "Review";
+    }
+
+
 
     return (
       <div onClick={this.handleClick}>
         <div className="index-item-info">
           <img className="listing-index-image" src={image_url}/>
-          <div className="listing-title">
-            {title}
+          <div className="listing-index-title">
+            { title }
           </div>
-           <div className="listing-property_type">
-             {property_type}
-           </div>
+          <div className="listing-property_type">
+            {property_type}
+          </div>
+          <div className="index-rating">
+            {"⚙ ".repeat(average_rating)}
+            <span className="index-review-count"> {reviewCount} {reviewText} </span>
+          </div>
         </div>
       </div>
     );

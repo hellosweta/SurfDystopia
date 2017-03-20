@@ -43,7 +43,16 @@ export default class MarkerManager {
       listingId: listing.id
     });
     marker.addListener('click', () => this.handleClick(listing));
+    marker.addListener('mouseover', () => this.toggleBounce(marker));
     this.markers.push(marker);
+  }
+
+  toggleBounce(marker) {
+    if (marker.getAnimation() !== null) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
   }
 
   _removeMarker(marker) {

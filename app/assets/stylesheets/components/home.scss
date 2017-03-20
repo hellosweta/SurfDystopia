@@ -5,9 +5,9 @@
 .hero {
   display: flex;
   box-sizing: content-box;
-
   width: 100%;
   position: relative;
+  padding-bottom: 20px;
 }
 .hero-image {
   width:100%;
@@ -15,24 +15,23 @@
 }
 
 .hero-text {
-  // background:rgba(255,255,255,0.5);
-  display: flex;
-  // border: solid black 1px;
+  background:rgba(255,255,255,0.15);
+  border-radius: 30px;
+  display: inline-block;
   align-items: center;
   flex-wrap: wrap;
   position: absolute;
   top: 45%;
   left: 35%;
-  text-outline: $grey;
+  // -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $grey;
   text-shadow: white;
-  // padding:1rem;
-  // transform:translateY(-50%);
 }
 
 
 .hero-main{
   color: white;
-  font-size: 48pt;
+  font-size: 56pt;
 }
 
 
@@ -42,31 +41,46 @@
   font-size: 30pt;
   color: $dark_orange;
   align-items: center;
+  padding: 7px 9px;
+}
+
+.text:hover{
+  border-bottom: 2px solid $dark_orange;
+  text-decoration: none;
 }
 
 .explore{
   display: flex;
-  // box-sizing: content-box;
   flex-wrap: wrap;
   height: 200px;
 }
-
-.region{
+.region-image-container{
+  display: flex;
+  position: absolute;
+  padding: 30px 20px 0px 0px;
+}
+.region-image-container:last-of-type{
+  padding-right: 0px;
+}
+.region-image{
   box-sizing: content-box;
-  position: relative;
-  padding: 10px 10px;
-  // overflow: hidden;
+  padding: 30px 20px 0px 0px;
+  overflow: hidden;
   height: 300px;
+  width: 100%;
   opacity: 80%;
+
 }
 
 .region-name{
   color: $pink;
-  position: absolute;
   font-size: 40px;
   font-weight: bold;
-  bottom: 20%;
-  left: 45%;
+  text-align: right;
+  position: relative;
+  padding: 0px 5px;
+  // bottom: 50px;
+  background: black;
 }
 
 @media screen and (max-width:680px){

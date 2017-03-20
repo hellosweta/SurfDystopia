@@ -35,7 +35,7 @@ class ReviewIndex extends React.Component {
                     {review.body}
                 </div>
                 <div className="review-rating">
-                  {"⚙".repeat(review.rating)}
+                  {" ⚙ ".repeat(review.rating)}
                 </div>
 
                 <div>
