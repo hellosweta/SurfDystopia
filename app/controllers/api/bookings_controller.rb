@@ -6,12 +6,12 @@ class Api::BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user_id = current_user.id
     if current_user.nil?
       render(
         json: ["Please log in, sign up, or select demo to book a listing"]
       )
     else
+      @booking.user_id = current_user.id
       if @booking.save
         render :show
       else

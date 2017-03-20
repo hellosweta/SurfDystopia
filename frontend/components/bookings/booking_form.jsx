@@ -33,15 +33,19 @@ class BookingForm extends React.Component {
  }
 
  renderErrors() {
-   return(
-     <ul>
-       {this.props.errors.map((error, i) => (
-         <li key={`error-${i}`}>
-           {error}
-         </li>
-       ))}
-     </ul>
-   );
+   if ((this.props.errors.length < 1) || (this.props.errors === undefined)) {
+     return(<div></div>);
+   } else {
+     return(
+       <ul>
+         {this.props.errors.map((error, i) => (
+           <li key={`error-${i}`}>
+             {error}
+           </li>
+         ))}
+       </ul>
+     );
+  }
  }
  componentWillReceiveProps(newProps){
    if (this.props !== newProps && this.props.errors.length > 0) {
@@ -50,14 +54,14 @@ class BookingForm extends React.Component {
  }
   handleSubmit(e) {
     e.preventDefault();
-    this.assignListingId();
-    debugger;
+    // this.assignListingId();
+
     this.props.createBooking(this.state);
     this.clearBookingForm();
   }
   assignListingId(){
     this.setState({
-      listingId: this.props.listingId
+      listing_id: this.props.listingId
     });
   }
   render () {

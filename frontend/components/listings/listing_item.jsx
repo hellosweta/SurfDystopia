@@ -97,8 +97,8 @@ class ListingItem extends React.Component {
             </div>
 
             <div className="booking">
-              <BookingContainer booking={this.props.booking} listingId={this.listing.id} />
-              <h3 className='booking-box'>bookingPlaceholder</h3>
+              <BookingContainer className="booking-box" booking={this.props.booking} listingId={this.listing.id} />
+
 
             </div>
             <div className="overview">
