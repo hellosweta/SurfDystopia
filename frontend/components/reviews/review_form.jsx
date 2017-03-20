@@ -10,12 +10,6 @@ class ReviewForm extends React.Component {
     this.clearReviewForm = this.clearReviewForm.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.params) {
-      this.props.fetchReview(this.props.params.reviewId);
-    }
-  }
-
   componentWillReceiveProps(newProps) {
     this.setState(newProps.review);
   }
@@ -28,9 +22,7 @@ class ReviewForm extends React.Component {
 
   updateStars(newRating) {
     this.setState({
-      title: "",
-      body:"",
-      rating: 0
+      rating: newRating
     });
   }
 
@@ -45,7 +37,7 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+    this.props.submit(this.props.listingId, this.state);
     this.clearReviewForm();
   }
 
@@ -84,7 +76,7 @@ class ReviewForm extends React.Component {
             </span>
 
           <span className="form-button">
-            <button className = "form-button" type="submit">Submit</button>
+            <button className ="form-button" onClick={this.handleSubmit} type="submit">Submit</button>
             <button className='cancel' onClick={this.clearReviewForm}>Cancel</button>
 
           </span>

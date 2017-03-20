@@ -16,11 +16,11 @@ export const fetchBooking = (id) => {
 };
 
 
-export const createBooking = (data) => {
+export const createBooking = (booking) => {
   return $.ajax({
     method: 'POST',
     url: 'api/bookings',
-    data
+    data: {booking}
   });
 };
 

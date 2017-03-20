@@ -3,9 +3,14 @@ import ReviewIndex from './review_index';
 import { fetchReviews, deleteReview, createReview, updateReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
   return({
-  reviews: Object.keys(state.reviews).map(id => state.reviews[id]),
+
+  reviews: Object.keys(state.reviews).map(id => {
+    if (id !== "errors") {
+      return state.reviews[id];
+    }
+  }),
+  errors: state.reviews.errors,
   listingId: ownProps.listingId
 });
 };
@@ -13,8 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchReviews: () => dispatch(fetchReviews(ownProps.listingId)),
   deleteReview: id => dispatch(deleteReview(id)),
-  createReview: data => dispatch(createReview(data)),
-  updateReview: data => dispatch(updateReview(data)),
+
 });
 
 export default connect(

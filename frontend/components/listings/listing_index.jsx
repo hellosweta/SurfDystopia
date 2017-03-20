@@ -5,15 +5,18 @@ import ListingsMap from '../map/map';
 class ListingIndex extends React.Component {
 
   componentDidMount(){
-    this.props.fetchListings(this.props.regionId);
+    this.props.fetchRegion(this.props.regionId).then(
+    this.props.fetchListings(this.props.regionId));
+
   }
   renderMap(){
 
-    return(<span className="map ">
+    return(<span className="map col col-1-3">
       <ListingsMap listings={this.props.listings} startLat={this.props.latitude} startLong={this.props.longitude}/>
     </span>);
   }
   render(){
+
     if (this.props.listings.length < 1) {
       return(<div></div>);
     } else {
@@ -21,13 +24,15 @@ class ListingIndex extends React.Component {
     return(
     <div>
       <h2>Available Listings</h2>
-      <div className="search-results">
+      <div className="search-results col col-2-3">
         <span className="listings">
           {this.props.listings.map((listing, id) => (
-            <ListingIndexItem listing={listing} key={id}/>
+            <ListingIndexItem className="listing-index-item"
+                              listing={listing}
+                              key={id}/>
           ))}
         </span>
-        {this.renderMap()}
+        {this.props.latitude && this.props.longitude && this.renderMap()}
       </div>
     </div>);
     }

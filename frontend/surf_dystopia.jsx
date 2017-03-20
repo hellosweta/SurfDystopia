@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root.jsx';
 import { logIn, logOut } from './actions/session_actions';
 import { fetchListing, fetchListings } from './actions/listing_actions';
+import { fetchReview, fetchReviews } from './actions/review_actions';
 import  Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,8 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  const windowFunctions = {store, fetchListing, fetchListings};
+  const windowFunctions = {store, fetchListing, fetchListings, fetchReview};
   Object.assign(window, windowFunctions);
+  window.fetchReview = fetchReview;
   Modal.setAppElement(document.body);
   ReactDOM.render(<Root store= { store }/>, root);
 });

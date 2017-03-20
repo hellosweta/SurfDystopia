@@ -3,8 +3,9 @@ import React from 'react';
 class BookingForm extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.booking;
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.assignListingId = this.assignListingId.bind(this);
     this.clearBookingForm = this.clearBookingForm.bind(this);
   }
 
@@ -49,19 +50,23 @@ class BookingForm extends React.Component {
  }
   handleSubmit(e) {
     e.preventDefault();
-    debugger
-    return ((booking) => {
-      this.props.createBooking(booking);
-      this.clearBookingForm();
+    this.assignListingId();
+    debugger;
+    this.props.createBooking(this.state);
+    this.clearBookingForm();
+  }
+  assignListingId(){
+    this.setState({
+      listingId: this.props.listingId
     });
   }
-
   render () {
 
     return (
       <div className="booking-form">
         <h3>Book</h3>
         <form onSubmit={this.handleSubmit}>
+
           	{this.renderErrors()}
           <div>
 
@@ -69,7 +74,7 @@ class BookingForm extends React.Component {
             <input
               className="standard-input"
               type="date"
-
+              value={this.state.check_in_date}
               placeholder="Check-In"
               onChange={this.update('check_in_date')} />
             </span>
@@ -78,7 +83,7 @@ class BookingForm extends React.Component {
             <input
               className="standard-input"
               type="date"
-
+              value={this.state.check_out_date}
               placeholder="Check-Out"
               onChange={this.update('check_out_date')} />
             </span>

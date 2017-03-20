@@ -18,6 +18,8 @@
 // .text {font-size: 1rem}
 .hero {
   display: flex;
+  box-sizing: content-box;
+
   width:100%;
   // margin:.5rem auto;
   position: relative;
@@ -36,21 +38,28 @@
   top: 45%;
   left: 35%;
   text-outline: $grey;
+  text-shadow: white;
   // padding:1rem;
   // transform:translateY(-50%);
   color: white;
 }
 .explore{
   display: flex;
+  box-sizing: content-box;
 
 }
 .regions{
-  height: 200px;
+  // height: 200px;
+
 
 }
 .region{
+  box-sizing: content-box;
   position: relative;
-  padding-top: 40px; 
+  padding: 40px 20px 20px 20px;
+  // overflow: hidden;
+  height: 200px;
+
 }
 
 .region-name{

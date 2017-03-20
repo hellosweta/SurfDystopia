@@ -32,7 +32,7 @@ return (
       <Route path="/" component={ App }>
         <IndexRoute component={HomeContainer} />
         <Route path="/search/:regionId" component={ListingIndexContainer} />
-        <Route path="/listings/:listingId" component={ListingContainer} />
+        <Route path="/search/:regionId/:listingId" component={ListingContainer} />
       </Route>
     </Router>
   </Provider>

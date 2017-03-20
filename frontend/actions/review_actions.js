@@ -10,15 +10,22 @@ export const fetchReviews = listingId => dispatch => {
     .then(reviews => dispatch(receiveReviews(reviews)));
 };
 
-export const fetchReview = id => dispatch => (
-  APIUtil.fetchReview(id)
+export const fetchReview = (listingId, id) => dispatch => (
+  APIUtil.fetchReview(listingId, id)
     .then(reviews => dispatch(receiveReview(reviews)))
 );
 
-export const createReview = review => dispatch => (
-  APIUtil.createReview(review)
-    .then(review => dispatch(receiveReview(review)))
+export const createReview = (listingId, review) => dispatch => (
+  APIUtil.createReview(listingId, review)
+    .then(review => dispatch(receiveReview(review)),
+    error => dispatch(receiveErrors(error.responseJSON)))
 );
+
+// export const deleteReview = (listingId, review) => dispatch => (
+//   APIUtil.createReview(listingId, review)
+//     .then(review => dispatch(receiveReview(review)),
+//     error => dispatch(receiveErrors(error.responseJSON)))
+// );
 
 export const receiveReview = review => ({
   type: RECEIVE_REVIEW,

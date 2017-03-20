@@ -4,7 +4,7 @@ import { fetchReview, createReview, updateReview } from '../../actions/review_ac
 
 const mapStateToProps = (state, ownProps) => {
   let review = { title: "", body: "", rating: ""};
-  if(ownProps.params) {
+  if (ownProps.params) {
     review = state.reviews[ownProps.params.reviewId];
   }
   let formType = ownProps.formType || "edit";
@@ -12,10 +12,10 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const action = ownProps.formType === "new" ? createReview : updateReview;
+  const submit = ownProps.formType === "new" ? createReview : updateReview;
   return {
     fetchReview: id => dispatch(fetchReview(id)),
-    action: review => dispatch(action(review))
+    submit: review => dispatch(submit(review))
   };
 };
 

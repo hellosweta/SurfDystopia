@@ -17,7 +17,8 @@ export const fetchBooking = id => dispatch => (
 
 export const createBooking = booking => dispatch => (
   APIUtil.createBooking(booking)
-    .then(booking => dispatch(receiveBooking(booking)))
+    .then(booking => dispatch(receiveBooking(booking)),
+    error => dispatch(receiveErrors(error.responseJSON)))
 );
 
 export const receiveBooking = booking => ({
