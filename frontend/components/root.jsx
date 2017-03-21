@@ -30,9 +30,9 @@ return (
   <Provider store={ store }>
     <Router history={ hashHistory }>
       <Route path="/" component={ App }>
-        <IndexRoute component={HomeContainer} />
+        <IndexRoute component={ HomeContainer } />
         <Route path="/search/:regionId" component={ListingIndexContainer} />
-        <Route path="/search/:regionId/:listingId" component={ListingContainer} />
+        <Route path="/search/:regionId/:listingId" component={ ListingContainer } />
       </Route>
     </Router>
   </Provider>

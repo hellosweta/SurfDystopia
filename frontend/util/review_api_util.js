@@ -16,10 +16,10 @@ export const fetchReview = (listingId, id) => {
 };
 
 
-export const createReview = (listingId, review) => {
+export const createReview = (review) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/listings/${listingId}/reviews`,
+    url: `/api/listings/${review.listing_id}/reviews`,
     data: { review }
   });
 };
@@ -28,7 +28,7 @@ export const updateReview = (listingId, review) => {
   return $.ajax({
     method: 'PATCH',
     url: `api/listings/${listingId}/reviews/${review.id}`,
-    data: {review}
+    data: { review }
   });
 };
 

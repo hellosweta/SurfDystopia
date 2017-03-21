@@ -39,8 +39,6 @@ class ListingIndexItem extends React.Component {
       reviewText = "Review";
     }
 
-
-
     return (
       <div onClick={this.handleClick} >
         <div className="index-item-info">
