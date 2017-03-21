@@ -38,7 +38,6 @@ class NavBar extends React.Component {
     );
   }
 
-  // <img className='thumbnail' src="https://s3.amazonaws.com/surf-dev/Users/User1.png"></img>
   loggedIn(currentUser, logOut){
     return(
       <div className="auth">

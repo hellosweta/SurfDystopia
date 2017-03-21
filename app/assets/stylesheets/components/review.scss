@@ -7,9 +7,13 @@
 }
 
 .review-list{
-  border: 1px solid $purple;
   padding: 13px;
-  border-radius: 3px;
+  width: 675px;
+}
+
+.review-item{
+  padding: 20px;
+  border-bottom: 1px solid #dce0e0;
 }
 .review-title{
   font-size: 18px;

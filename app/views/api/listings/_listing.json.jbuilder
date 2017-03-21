@@ -1,1 +1,1 @@
-json.extract! listing, :id, :host_id, :title, :latitude, :longitude, :image_url, :description, :region_id, :max_guests, :property_type, :house_rules, :average_rating, :review_count
+json.extract! listing, :id, :host_id, :title, :latitude, :longitude, :image_url, :description, :region_id, :max_guests, :property_type, :house_rules, :average_rating, :review_count, :host

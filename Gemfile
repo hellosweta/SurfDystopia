@@ -54,8 +54,9 @@ group :development do
   gem "guard-livereload",  :require => false
   gem "rack-livereload"
   gem "rb-fsevent",        :require => false
-
+  gem 'seed_dump'
 end
+
 group :production do
   # gem 'rails_12factor'
 end

@@ -77,6 +77,51 @@ class ListingItem extends React.Component {
     this.clearReviewForm();
   }
 
+  displayReviewForm(){
+    return(<div className="review-form">
+      {this.renderErrors()}
+      <div>
+        <h3>Write a Review</h3>
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <h2 className="rating">How Was Your Host?</h2>
+              <Stars
+                className="stars"
+                count={5}
+                char={"⚙"}
+                size={32}
+                value={this.state.rating}
+                onChange={this.updateStars}
+                color1={'#585c6c'}
+                color2={'#b48395'} />
+            </div>
+            <div className="title">
+            <input
+              className="standard-input"
+              type="text"
+              value={this.state.title}
+              placeholder="Title"
+              onChange={this.update('title')} />
+          </div>
+            <div className="body ">
+            <textarea
+              className="standard-input"
+              value={this.state.body}
+
+              onChange={this.update('body')}
+              placeholder="Tell us about your host..." />
+          </div>
+
+          <span >
+            <button className ="form-button" onClick={this.handleSubmit} type="submit">Submit</button>
+            <button className='header-button' onClick={this.clearReviewForm}>Cancel</button>
+
+          </span>
+        </form>
+      </div>
+    </div>
+  );
+  }
   render() {
 
     if (this.props.listing === undefined) {
@@ -84,7 +129,7 @@ class ListingItem extends React.Component {
     } else {
       let reviewText;
 
-      let reviewCount = this.props.review_count;
+      let reviewCount = this.props.listing.review_count;
 
       if (reviewCount > 1) {
         reviewText = "Reviews";
@@ -96,101 +141,87 @@ class ListingItem extends React.Component {
       }
 
       return(
-        <div className="listing-item">
+        <div className="listing-item group">
           <div className="listing-image-div">
             <img className="listing-image" src={this.props.listing.image_url}></img>
           </div>
           <div className="all-info">
             <div className="listing-info-not-form">
               <div className="listing-info">
-                <h1 className='listing-show-title'>{this.props.listing.title}</h1>
-                <h2 className='listing-location'>{`${this.props.region.city},${this.props.region.state}`}</h2>
-                <div className="index-rating">
-                  {"⚙ ".repeat(this.props.listing.average_rating)}
-                  <span className="index-review-count"> {reviewCount} {reviewText} </span>
+                <div className="text-listing-overview">
+                  <h1 className='listing-show-title'>{this.props.listing.title}</h1>
+                  <h2 className='listing-location'>{`${this.props.region.city},${this.props.region.state}`}</h2>
+                  <div className="index-rating">
+                    {"⚙ ".repeat(this.props.listing.average_rating)}
+                    <span className="index-review-count"> {reviewCount} {reviewText} </span>
+                  </div>
+                </div>
+                <div className="user-thumbnail">
+                  <img src={this.props.host.image_url}></img>
+                  <p> {this.props.host.name} </p>
                 </div>
               </div>
-              <div className="icons">
-                <img className='propery-type-icon'src = "https://s3.amazonaws.com/surf-dev/Listings/ListingShow/home_icon.jpeg"></img>
-                <h3 className='listing-type'>{this.props.listing.property_type}</h3>
-                <img className='guest-icon' src="https://s3.amazonaws.com/surf-dev/Listings/ListingShow/robot_orange.jpg"></img>
-                <h3 className='listing-guests'>{this.props.listing.max_guests} guests </h3>
-              </div>
-
               <div>
-                <h2>About this listing</h2>
+                <article className="listing-icons group">
+                  <ul className="listing-icons-ul">
+                    <li>
+                      <img className='propery-type-icon'src = "https://s3.amazonaws.com/surf-dev/Listings/ListingShow/home_icon.jpeg"></img>
+                    </li>
+                    <li>
+                      <h3 className='listing-type'>{this.props.listing.property_type}</h3>
+                    </li>
+                  </ul>
+                  <ul className="listing-icons-ul">
+                    <li>
+                  <img className='guest-icon' src="https://s3.amazonaws.com/surf-dev/Listings/ListingShow/robot_orange.jpg"></img>
+                    </li>
+                    <li>
+                      <h3 className='listing-guests'>{this.props.listing.max_guests} guests </h3>
+                    </li>
+                  </ul>
+                </article>
+
+
               </div>
 
+              <article className="listing-description">
+                <h2>About this listing</h2>
+                <p className='listing-type'> { this.props.listing.description } </p>
+              </article>
 
-              <div className="overview">
+
+              <div className="listing-more-info">
                 <span className="space-label">
                   <h2>The Space</h2>
                 </span>
-                <span>
-                  <h3 className='listing-type'>Property Type: {this.props.listing.property_type}</h3>
-                  <h3 className='listing-type'>Description: {this.props.listing.description}</h3>
+                <span className="space-info">
+                  <ul className='listing-type'>
+                    <li>
+                      Property Type
+                    </li>
+                    <li>
+                      {this.props.listing.property_type}
+                    </li>
+                  </ul>
                   <h3 className='house-rules'> House Rules: {this.props.listing.house_rules}</h3>
                 </span>
               </div>
-            </div>
-
-
-
-            <div className="host">
-              <h3>HostInfoPlaceholder</h3>
-            </div>
-
-            <div className="review-form">
-              {this.renderErrors()}
-              <div>
-                <h3>Write a Review</h3>
-                <form onSubmit={this.handleSubmit}>
-                  <div>
-                    <h2 className="rating">How Was Your Host?</h2>
-                      <Stars
-                        className="stars"
-                        count={5}
-                        char={"⚙"}
-                        size={32}
-                        value={this.state.rating}
-                        onChange={this.updateStars}
-                        color1={'#585c6c'}
-                        color2={'#b48395'} />
-                    </div>
-                    <div className="title">
-                    <input
-                      className="standard-input"
-                      type="text"
-                      value={this.state.title}
-                      placeholder="Title"
-                      onChange={this.update('title')} />
-                  </div>
-                    <div className="body ">
-                    <textarea
-                      className="standard-input"
-                      value={this.state.body}
-
-                      onChange={this.update('body')}
-                      placeholder="Tell us about your host..." />
-                  </div>
-
-                  <span >
-                    <button className ="form-button" onClick={this.handleSubmit} type="submit">Submit</button>
-                    <button className='header-button' onClick={this.clearReviewForm}>Cancel</button>
-
-                  </span>
-                </form>
+              <div className="reviews">
+                <div className="review-index-label">
+                  <h2 className="review-count-label">{reviewCount} {reviewText} </h2>
+                </div>
+                  <ReviewIndexContainer listingId = {this.props.listing.id}/>
               </div>
             </div>
 
-            <div className="reviews">
-              <ReviewIndexContainer listingId = {this.props.listing.id}/>
-            </div>
 
-          </div>
           <div className="booking">
+            <div className="booking-form-header group">
+              <h3 className="booking-form-header-text">Surf</h3>
+            </div>
             <BookingContainer className="booking-box" booking={this.props.booking} listingId={this.props.listing.id} />
           </div>
+        </div>
         </div>
       );
     }

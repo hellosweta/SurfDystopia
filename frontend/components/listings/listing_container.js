@@ -7,16 +7,19 @@ import ListingItem from './listing_item';
 const mapStateToProps = (state, ownProps) => {
   const listing = state.listings[ownProps.params.listingId];
   let region;
+  let host;
 
   if (listing) {
     region = state.regions[listing.region_id];
+    host = listing.host;
   }
 
   return({
     listing: listing,
     region: region,
     reviews: state.reviews,
-    errors: state.reviews.errors
+    errors: state.reviews.errors,
+    host: host,
   });
 };
 

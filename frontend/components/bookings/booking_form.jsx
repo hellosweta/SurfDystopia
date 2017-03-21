@@ -64,32 +64,36 @@ class BookingForm extends React.Component {
   render () {
     return (
       <div className="booking-form">
-        <h3>Book</h3>
         <form onSubmit={this.handleSubmit}>
+          <ul className="errors">
+            {this.renderErrors()}
+          </ul>
+          <article className="booking-form-dates group">
+            <div>
+              <span className="check-in">
+                <h3 className="check-in-text">Check In</h3>
+              <input
+                className="standard-input"
+                type="date"
+                value={this.state.check_in_date}
+                placeholder="Check-In"
+                onChange={this.update('check_in_date')} />
+              </span>
+            </div>
+              <span className="check-out">
+                  <h3 className="check-out-text">Check Out</h3>
+              <input
+                className="standard-input"
+                type="date"
+                value={this.state.check_out_date}
+                placeholder="Check-Out"
+                onChange={this.update('check_out_date')} />
+              </span>
+            </article>
 
-          	{this.renderErrors()}
+
           <div>
-
-            <span className="check-in">
-            <input
-              className="standard-input"
-              type="date"
-              value={this.state.check_in_date}
-              placeholder="Check-In"
-              onChange={this.update('check_in_date')} />
-            </span>
-          </div>
-            <span className="check-out">
-            <input
-              className="standard-input"
-              type="date"
-              value={this.state.check_out_date}
-              placeholder="Check-Out"
-              onChange={this.update('check_out_date')} />
-            </span>
-
-          <div>
-            <button onClick={this.handleSubmit} className = "form-button" type="submit">Submit</button>
+            <button onClick={this.handleSubmit} className = "form-button" type="submit">Request</button>
             <button className='header-button' onClick={this.clearBookingForm}>Cancel</button>
 
           </div>
