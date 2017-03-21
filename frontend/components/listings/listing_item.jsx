@@ -160,9 +160,7 @@ class ListingItem extends React.Component {
                   <h3 className='house-rules'> House Rules: {this.props.listing.house_rules}</h3>
                 </span>
               </div>
-
-              <div onClick={() => this.toggleReviewForm()}>Add a Review</div>
-
+              <i onClick={() => this.toggleReviewForm()} className="fa fa-plus-circle" aria-hidden="true">Review Your Host</i>
               {this.state.formVisible ? this.displayReviewForm() : (<div></div>)}
 
               <div className="reviews">

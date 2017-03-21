@@ -40,12 +40,13 @@ class ReviewForm extends React.Component {
     });
   }
 
-  clearReviewForm() {
-     this.setState({
-       title: "",
-       body:"",
-       rating: 0
-     });
+  clearReviewForm(e) {
+    e.preventDefault();
+    this.setState({
+      title: "",
+      body:"",
+      rating: 0
+    });
  }
 
  renderErrors() {

@@ -1,4 +1,4 @@
-import { RECEIVE_REVIEWS, RECEIVE_REVIEW, RECEIVE_ERRORS, CLEAR_ERRORS, REMOVE_REVIEW } from '../actions/review_actions';
+import { RECEIVE_REVIEWS, RECEIVE_REVIEW, RECEIVE_REVIEW_ERRORS, CLEAR_ERRORS, REMOVE_REVIEW } from '../actions/review_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = Object.freeze({
@@ -31,7 +31,7 @@ const ReviewsReducer = (state = _defaultState, action) => {
       oldState.reviews.splice(removeIdx, removeIdx);
       return oldState;
 
-    case RECEIVE_ERRORS:
+    case RECEIVE_REVIEW_ERRORS:
       const errors = action.errors;
       return merge({}, oldState, { errors });
 

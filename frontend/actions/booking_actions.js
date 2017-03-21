@@ -2,7 +2,7 @@ import * as APIUtil from '../util/booking_api_util';
 
 export const RECEIVE_BOOKINGS = "RECEIVE_BOOKINGS";
 export const RECEIVE_BOOKING = "RECEIVE_BOOKING";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_BOOKING_ERRORS = "RECEIVE_BOOKING_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 export const fetchBookings = listingId => dispatch => {
@@ -18,7 +18,7 @@ export const fetchBooking = id => dispatch => (
 export const createBooking = booking => dispatch => (
   APIUtil.createBooking(booking)
     .then(booking => dispatch(receiveBooking(booking)),
-    error => dispatch(receiveErrors(error.responseJSON)))
+    error => dispatch(receiveBookingErrors(error.responseJSON)))
 );
 
 export const receiveBooking = booking => ({
@@ -31,9 +31,9 @@ export const receiveBookings = bookings => ({
   bookings
 });
 
-export const receiveErrors = errors => {
+export const receiveBookingErrors = errors => {
   return ({
-  type: RECEIVE_ERRORS,
+  type: RECEIVE_BOOKING_ERRORS,
   errors
 });};
 

@@ -3,7 +3,7 @@ import * as APIUtil from '../util/review_api_util';
 export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 export const fetchReviews = listingId => dispatch => {
@@ -19,13 +19,13 @@ export const fetchReview = (listingId, id) => dispatch => (
 export const createReview = (review) => dispatch => (
   APIUtil.createReview(review)
     .then(review => dispatch(receiveReview(review)),
-    error => dispatch(receiveErrors(error.responseJSON)))
+    error => dispatch(receiveReviewErrors(error.responseJSON)))
 );
 
 export const deleteReview = (review) => dispatch => (
   APIUtil.deleteReview(review)
     .then(review => dispatch(removeReview(review)),
-    error => dispatch(receiveErrors(error.responseJSON)))
+    error => dispatch(receiveReviewErrors(error.responseJSON)))
 );
 
 export const receiveReview = review => ({
@@ -43,8 +43,8 @@ export const removeReview = review => ({
   review
 });
 
-export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
+export const receiveReviewErrors = errors => ({
+  type: RECEIVE_REVIEW_ERRORS,
   errors
 });
 
