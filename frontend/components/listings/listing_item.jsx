@@ -82,7 +82,18 @@ class ListingItem extends React.Component {
     if (this.props.listing === undefined) {
       return(<div></div>);
     } else {
+      let reviewText;
 
+      let reviewCount = this.props.review_count;
+
+      if (reviewCount > 1) {
+        reviewText = "Reviews";
+      } else if (reviewCount === 0) {
+        reviewText = "Not yet reviewed";
+        reviewCount = '';
+      } else {
+        reviewText = "Review";
+      }
 
       return(
         <div className="listing-item">
@@ -90,35 +101,40 @@ class ListingItem extends React.Component {
             <img className="listing-image" src={this.props.listing.image_url}></img>
           </div>
           <div className="all-info">
-            <div className="listing-info">
-              <h1 className='listing-show-title'>{this.props.listing.title}</h1>
-              <h2 className='listing-location'>{`${this.props.region.city},${this.props.region.state}`}</h2>
-            </div>
-            <div className="icons">
-              <img className='propery-type-icon'src = "https://s3.amazonaws.com/surf-dev/Listings/ListingShow/home_icon.jpeg"></img>
-              <h3 className='listing-type'>{this.props.listing.property_type}</h3>
-              <img className='guest-icon' src="https://s3.amazonaws.com/surf-dev/Listings/ListingShow/robot_orange.jpg"></img>
-              <h3 className='listing-guests'>{this.props.listing.max_guests} guests </h3>
+            <div className="listing-info-not-form">
+              <div className="listing-info">
+                <h1 className='listing-show-title'>{this.props.listing.title}</h1>
+                <h2 className='listing-location'>{`${this.props.region.city},${this.props.region.state}`}</h2>
+                <div className="index-rating">
+                  {"⚙ ".repeat(this.props.listing.average_rating)}
+                  <span className="index-review-count"> {reviewCount} {reviewText} </span>
+                </div>
+              </div>
+              <div className="icons">
+                <img className='propery-type-icon'src = "https://s3.amazonaws.com/surf-dev/Listings/ListingShow/home_icon.jpeg"></img>
+                <h3 className='listing-type'>{this.props.listing.property_type}</h3>
+                <img className='guest-icon' src="https://s3.amazonaws.com/surf-dev/Listings/ListingShow/robot_orange.jpg"></img>
+                <h3 className='listing-guests'>{this.props.listing.max_guests} guests </h3>
+              </div>
+
+              <div>
+                <h2>About this listing</h2>
+              </div>
+
+
+              <div className="overview">
+                <span className="space-label">
+                  <h2>The Space</h2>
+                </span>
+                <span>
+                  <h3 className='listing-type'>Property Type: {this.props.listing.property_type}</h3>
+                  <h3 className='listing-type'>Description: {this.props.listing.description}</h3>
+                  <h3 className='house-rules'> House Rules: {this.props.listing.house_rules}</h3>
+                </span>
+              </div>
             </div>
 
-            <div>
-              <h2>About this listing</h2>
-            </div>
 
-            <div className="booking">
-              <BookingContainer className="booking-box" booking={this.props.booking} listingId={this.props.listing.id} />
-            </div>
-
-            <div className="overview">
-              <span className="space-label">
-                <h2>The Space</h2>
-              </span>
-              <span>
-                <h3 className='listing-type'>Property Type: {this.props.listing.property_type}</h3>
-                <h3 className='listing-type'>Description: {this.props.listing.description}</h3>
-                <h3 className='house-rules'> House Rules: {this.props.listing.house_rules}</h3>
-              </span>
-            </div>
 
             <div className="host">
               <h3>HostInfoPlaceholder</h3>
@@ -170,6 +186,10 @@ class ListingItem extends React.Component {
             <div className="reviews">
               <ReviewIndexContainer listingId = {this.props.listing.id}/>
             </div>
+
+          </div>
+          <div className="booking">
+            <BookingContainer className="booking-box" booking={this.props.booking} listingId={this.props.listing.id} />
           </div>
         </div>
       );

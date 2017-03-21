@@ -26,33 +26,30 @@ export default class MarkerManager {
 
   _createMarkerFromListing(listing) {
     const pos = new google.maps.LatLng(listing.latitude, listing.longitude);
- //    const icon = {
- //      url: 'https://s3.amazonaws.com/surf-dev/map/map_marker.png',
+    const icon = {
+      url: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
  //      // This marker is 20 pixels wide by 32 pixels high.
  //   size: new google.maps.Size(20, 32),
  //   // The origin for this image is (0, 0).
  //   origin: new google.maps.Point(0, 0),
  //   // The anchor for this image is the base of the flagpole at (0, 32).
  //   anchor: new google.maps.Point(0, 32)
- // };
+ };
     const marker = new google.maps.Marker({
       position: pos,
-      // icon: icon,
+      icon: icon,
       draggable: true,
       map: this.map,
       listingId: listing.id
     });
     marker.addListener('click', () => this.handleClick(listing));
-    marker.addListener('mouseover', () => this.toggleBounce(marker));
+    marker.addListener('mouseover', () => this.toggleMarker(marker, 'http://maps.google.com/mapfiles/ms/icons/red.png'));
+    marker.addListener('mouseout', () => this.toggleMarker(marker, 'http://maps.google.com/mapfiles/ms/icons/blue.png'));
     this.markers.push(marker);
   }
 
-  toggleBounce(marker) {
-    if (marker.getAnimation() !== null) {
-      marker.setAnimation(null);
-    } else {
-      marker.setAnimation(google.maps.Animation.BOUNCE);
-    }
+  toggleMarker(marker, image_url) {
+    marker.setIcon(image_url);
   }
 
   _removeMarker(marker) {

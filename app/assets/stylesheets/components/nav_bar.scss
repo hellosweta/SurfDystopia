@@ -30,7 +30,10 @@
   padding: 4px 8px 12px;
 
 }
-
+.logo:hover{
+  border-bottom: 2px solid $dark_orange;
+  text-decoration: none;
+}
 .header-button:hover{
   border-bottom: 2px solid $dark_orange;
   text-decoration: none;

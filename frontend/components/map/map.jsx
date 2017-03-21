@@ -43,7 +43,7 @@ class ListingsMap extends React.Component {
     google.maps.event.addListener(this.map, 'idle', () => {
       const { north, south, east, west } = this.map.getBounds().toJSON();
       const bounds = {
-        northEast: { lat:north, lng: east },
+        northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west } };
       // this.props.updateFilter('bounds', bounds);
     });
@@ -52,6 +52,7 @@ class ListingsMap extends React.Component {
       const coords = _getCoordsObj(event.latLng);
       this._handleClick(coords);
     });
+
   }
 
 
@@ -63,7 +64,6 @@ class ListingsMap extends React.Component {
   render() {
     return (
       <div className='map-container' ref="map">
-
       </div>
     );
   }

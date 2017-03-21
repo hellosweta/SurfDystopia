@@ -55,7 +55,7 @@ class ReviewForm extends React.Component {
                 char={"⚙"}
                 size={32}
                 value={this.state.rating}
-                onChange={this.updateStars}
+                onChange={ this.updateStars }
                 color1={'#585c6c'}
                 color2={'#b48395'} />
             </div>
