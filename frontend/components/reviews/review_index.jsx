@@ -53,7 +53,7 @@ class ReviewIndex extends React.Component {
       return (
         <div >
           <div className="review-index-label">
-            <h2 className="review-count-label">{reviewCount} {this.props.reviewText} </h2>
+            <h2 className="review-count-label">{reviewCount} {reviewText} </h2>
           </div>
           <ul className='review-list'>
             {

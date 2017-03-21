@@ -31,10 +31,11 @@ export const receiveBookings = bookings => ({
   bookings
 });
 
-export const receiveErrors = errors => ({
+export const receiveErrors = errors => {
+  return ({
   type: RECEIVE_ERRORS,
   errors
-});
+});};
 
 export const clearErrors = errors => ({
   type: CLEAR_ERRORS

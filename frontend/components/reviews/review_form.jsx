@@ -13,7 +13,7 @@ class ReviewForm extends React.Component {
       title: "",
       body: "",
       rating: "",
-      listing_id: this.props.review.listingId,
+      listing_id: this.props.listingId,
     };
   }
   componentWillReceiveProps(newProps) {
@@ -33,10 +33,10 @@ class ReviewForm extends React.Component {
   }
 
   toggleReviewForm(){
-    let newformVisible = this.state.review.formVisible;
+    let newformVisible = this.state.formVisible;
     newformVisible === true ? newformVisible = false : newformVisible = true;
-    this.setState({review:
-      { formVisible: newformVisible }
+    this.setState({
+      formVisible: newformVisible
     });
   }
 
@@ -49,16 +49,17 @@ class ReviewForm extends React.Component {
  }
 
  renderErrors() {
-   if (this.props.errors === undefined){
+   if (this.props.reviewErrors === undefined){
      return(<div></div>);
    } else {
      return(
        <div>
-         {this.props.errors.map((error, i) => (
+         {this.props.reviewErrors.map((error, i) => (
            <p key={`error-${i}`}>
              {error}
            </p>
          ))}
+
        </div>
      );
    }
@@ -71,9 +72,13 @@ class ReviewForm extends React.Component {
   }
 
   displayReviewForm(){
-    return(<div className="review-form">
-      {this.renderErrors()}
+    return(
+    <div className="review-form">
+      <div>
+
+      </div>
      <div>
+       {this.renderErrors()}
        <h3>Write a Review</h3>
        <form onSubmit={this.handleSubmit}>
          <div>

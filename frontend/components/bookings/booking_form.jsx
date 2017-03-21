@@ -3,20 +3,18 @@ import React from 'react';
 class BookingForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.booking;
+    this.state = {
+      check_in_date: "",
+      check_out_date: "",
+      listing_id: this.props.listingId,
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.assignListingId = this.assignListingId.bind(this);
     this.clearBookingForm = this.clearBookingForm.bind(this);
+    this.renderBookingErrors = this.renderBookingErrors.bind(this);
   }
 
-  // componentDidMount() {
-  //   if (this.props.params) {
-  //     this.props.fetchBooking(this.props.params.bookingId);
-  //   }
-  // }
-
   componentWillReceiveProps(newProps) {
-    this.setState(newProps.booking);
+    this.setState(newProps);
   }
 
   update(field) {
@@ -25,20 +23,22 @@ class BookingForm extends React.Component {
     };
   }
 
-  clearBookingForm() {
+  clearBookingForm(e) {
+    e.preventDefault();
     this.setState({
       check_in_date: "",
       check_out_date: "",
+      listing_id: this.props.listingId,
     });
   }
 
-  renderErrors() {
-    if (!this.props.errors) {
+  renderBookingErrors() {
+    if (!this.props.bookingErrors) {
       return(<div></div>);
     } else {
       return(
         <ul>
-          {this.props.errors.map((error, i) => (
+          {this.props.bookingErrors.map((error, i) => (
             <li key={`error-${i}`}>
               {error}
             </li>
@@ -54,18 +54,12 @@ class BookingForm extends React.Component {
     this.props.createBooking(this.state);
   }
 
-  assignListingId(){
-    this.setState({
-      listing_id: this.props.listingId
-    });
-  }
-
   render () {
     return (
       <div className="booking-form">
         <form onSubmit={this.handleSubmit}>
           <ul className="errors">
-            {this.renderErrors()}
+            {this.renderBookingErrors()}
           </ul>
           <article className="booking-form-dates group">
             <div>

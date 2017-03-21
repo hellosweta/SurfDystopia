@@ -8,18 +8,8 @@ import Stars from 'react-stars';
 class ListingItem extends React.Component {
   constructor(props){
     super(props);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.updateStars = this.updateStars.bind(this);
-    // this.clearReviewForm = this.clearReviewForm.bind(this);
-    // this.renderErrors = this.renderErrors.bind(this);
     this.state = {
-      review: {
-        reviewFormVisible: false,
-      },
-      booking: {
-        check_in_date: "",
-        check_out_date: "",
-      }
+      formVisible: false
     };
   }
 
@@ -40,10 +30,10 @@ class ListingItem extends React.Component {
  //  }
  //
   toggleReviewForm(){
-    let newformVisible = this.state.review.formVisible;
+    let newformVisible = this.state.formVisible;
     newformVisible === true ? newformVisible = false : newformVisible = true;
-    this.setState({review:
-      {formVisible: newformVisible}
+    this.setState({
+      formVisible: newformVisible
     });
   }
  //
@@ -103,6 +93,7 @@ class ListingItem extends React.Component {
       } else {
         reviewText = "Review";
       }
+
       return(
         <div className="listing-item group">
           <div className="listing-image-div">
@@ -172,7 +163,7 @@ class ListingItem extends React.Component {
 
               <div onClick={() => this.toggleReviewForm()}>Add a Review</div>
 
-              {this.state.review.formVisible ? this.displayReviewForm() : (<div></div>)}
+              {this.state.formVisible ? this.displayReviewForm() : (<div></div>)}
 
               <div className="reviews">
                   <ReviewIndexContainer listingId = {this.props.listing.id}/>

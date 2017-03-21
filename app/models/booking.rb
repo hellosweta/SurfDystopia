@@ -15,6 +15,7 @@ class Booking < ApplicationRecord
   validates :listing_id, :user_id, :check_in_date, :check_out_date, presence: true
   validate :check_out_must_come_after_check_in
   validate :does_not_overlap_existing_booking
+
   belongs_to :guest,
     primary_key: :id,
     foreign_key: :user_id,
@@ -47,5 +48,5 @@ class Booking < ApplicationRecord
       errors[:check_out_date] << "Check-out must be after check-in, Surfer"
     end
   end
-  
+
 end

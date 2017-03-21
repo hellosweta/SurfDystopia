@@ -9,7 +9,6 @@ const _defaultState = Object.freeze({
 const ListingsReducer = (state = {}, action) => {
   Object.freeze(state);
   let oldState = merge({}, state);
-
   switch (action.type) {
     case RECEIVE_LISTINGS:
       return merge({}, action.listings);

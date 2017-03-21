@@ -13,11 +13,11 @@ const mapStateToProps = (state, ownProps) => {
     region = state.regions[listing.region_id];
     host = listing.host;
   }
-
+  
   return({
     listing: listing,
     region: region,
-    reviews: state.reviews,
+    reviews: state.reviews.reviews,
     host: host,
   });
 };

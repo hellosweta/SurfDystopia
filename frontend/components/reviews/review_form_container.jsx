@@ -3,18 +3,10 @@ import ReviewForm from './review_form';
 import { fetchReview, createReview, updateReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
-  let review = { title: "", body: "", rating: 0, listingId: ownProps.listingId};
-
-  if (ownProps.params) {
-    review = state.reviews[ownProps.params.reviewId];
-  }
-
-  let formType = ownProps.formType || "edit";
+  
   return {
-    review,
-    formType,
-    errors: state.reviews.errors,
+    listingId: ownProps.listingId,
+    reviewErrors: state.reviews.errors,
   };
 };
 

@@ -58,7 +58,7 @@ class ListingsMap extends React.Component {
 
 
   _handleMarkerClick(listing) {
-    this.props.router.push(`search/${listing.region_id}/${listing.id}`);
+    this.props.router.push(`listings/${listing.id}`);
   }
 
   render() {

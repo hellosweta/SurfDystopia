@@ -10,3 +10,11 @@ componentWillReceiveProps(newProps){
 - decided to imitate search with a regions show page
 
 - ajax calls to google maps were taking longer than component rendering so you'd see the map of the region before
+
+- couldn't render separate errors on forms on same page; reset state to have an errors key for booking and for reviews 
+```js
+bookings {
+  bookings:
+  errors:
+}
+```
