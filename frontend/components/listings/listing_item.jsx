@@ -17,6 +17,7 @@ class ListingItem extends React.Component {
         title: "",
         body: "",
         rating: 0,
+        formformVisible: false,
       },
       booking: {
         check_in_date: "",
@@ -30,7 +31,13 @@ class ListingItem extends React.Component {
     this.props.fetchListing();
     this.props.fetchReviews();
   }
-
+  toggleReviewForm(){
+    let newformVisible = this.state.review.formVisible;
+    newformVisible === true ? newformVisible = false : newformVisible = true;
+    this.setState({review:
+      {formVisible: newformVisible}
+    });
+  }
   componentWillReceiveProps(newProps) {
     this.setState(newProps.review);
   }
@@ -206,6 +213,8 @@ class ListingItem extends React.Component {
                   <h3 className='house-rules'> House Rules: {this.props.listing.house_rules}</h3>
                 </span>
               </div>
+              <div onClick={() => this.toggleReviewForm()}>Add a Review</div>
+              {this.state.review.formVisible ? this.displayReviewForm() : (<div></div>)}
               <div className="reviews">
                 <div className="review-index-label">
                   <h2 className="review-count-label">{reviewCount} {reviewText} </h2>

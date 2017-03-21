@@ -33,7 +33,6 @@ class BookingForm extends React.Component {
   }
 
   renderErrors() {
-    console.log(this.props.errors);
     if (!this.props.errors) {
       return(<div></div>);
     } else {
