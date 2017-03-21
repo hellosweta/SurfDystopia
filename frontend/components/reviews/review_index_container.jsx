@@ -2,17 +2,25 @@ import { connect } from 'react-redux';
 import ReviewIndex from './review_index';
 import { fetchReviews, deleteReview, createReview, updateReview } from '../../actions/review_actions';
 
-const mapStateToProps = ({ reviews }, ownProps) => {
+const mapStateToProps = ({ reviews, session }, ownProps) => {
+  let currentUserId = "";
+
+  if (session.currentUser) {
+    currentUserId = session.currentUser.id;
+  }
+
   return({
+
     reviews: reviews.reviews,
     errors: reviews.errors,
     listingId: ownProps.listingId,
+    currentUserId: currentUserId
   });
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchReviews: () => dispatch(fetchReviews(ownProps.listingId)),
-  deleteReview: id => dispatch(deleteReview(id)),
+  deleteReview: (review) => dispatch(deleteReview(review)),
 });
 
 export default connect(

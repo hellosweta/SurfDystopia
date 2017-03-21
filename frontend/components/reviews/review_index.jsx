@@ -4,6 +4,11 @@ import { hashHistory } from 'react-router';
 
 
 class ReviewIndex extends React.Component {
+  constructor(props){
+    super(props);
+    this.displayDelete = this.displayDelete.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchReviews();
   }
@@ -16,17 +21,44 @@ class ReviewIndex extends React.Component {
     };
   }
 
+  handleDelete(){
+
+  }
+
+  displayDelete(review){
+    if (this.props.currentUserId) {
+      return(<button onClick={() => this.props.deleteReview(review)}>Delete</button>);
+    }
+  }
+
   render () {
     if (this.props.reviews.length < 1) {
       return (<div><h2>Host Hasn't Been Reviewed Yet</h2></div>);
     } else if (this.props.reviews === undefined) {
       return(<div></div>);
     } else {
+
+      let reviewText;
+      let reviewCount = this.props.reviews.length;
+
+      if (reviewCount > 1) {
+        reviewText = "Reviews";
+      } else if (reviewCount === 0) {
+        reviewText = "Not yet reviewed";
+        reviewCount = '';
+      } else {
+        reviewText = "Review";
+      }
+
       return (
         <div >
+          <div className="review-index-label">
+            <h2 className="review-count-label">{reviewCount} {this.props.reviewText} </h2>
+          </div>
           <ul className='review-list'>
             {
-              this.props.reviews.map((review, id) => (
+              this.props.reviews.map((review, id) => {
+                return(
               <li className='review-item' key={id}>
                 <div className="review-title" >
                     {review.title}
@@ -39,10 +71,9 @@ class ReviewIndex extends React.Component {
                 </div>
 
                 <div>
-                  <button onClick={this.editLink(review.id)}>Edit</button>&nbsp;
-                  <button onClick={() => this.props.deleteReview(review.id)}>Delete</button>
+                  {this.displayDelete(review)}
                 </div>
-              </li>))
+              </li>);})
             }
           </ul>
 

@@ -93,8 +93,7 @@ class ListingItem extends React.Component {
       return(<div></div>);
     } else {
       let reviewText;
-
-      let reviewCount = this.props.listing.review_count;
+      let reviewCount = this.props.reviews.length;
 
       if (reviewCount > 1) {
         reviewText = "Reviews";
@@ -104,7 +103,6 @@ class ListingItem extends React.Component {
       } else {
         reviewText = "Review";
       }
-
       return(
         <div className="listing-item group">
           <div className="listing-image-div">
@@ -115,7 +113,7 @@ class ListingItem extends React.Component {
               <div className="listing-info">
                 <div className="text-listing-overview">
                   <h1 className='listing-show-title'>{this.props.listing.title}</h1>
-                  <h2 className='listing-location'>{`${this.props.region.city},${this.props.region.state}`}</h2>
+                  <Link className='listing-location' to={`/search/${this.props.listing.region_id}`}>{`${this.props.region.city},${this.props.region.state}`}</Link>
                   <div className="index-rating">
                     {"⚙ ".repeat(this.props.listing.average_rating)}
                     <span className="index-review-count"> {reviewCount} {reviewText} </span>
@@ -177,9 +175,6 @@ class ListingItem extends React.Component {
               {this.state.review.formVisible ? this.displayReviewForm() : (<div></div>)}
 
               <div className="reviews">
-                <div className="review-index-label">
-                  <h2 className="review-count-label">{reviewCount} {reviewText} </h2>
-                </div>
                   <ReviewIndexContainer listingId = {this.props.listing.id}/>
               </div>
             </div>

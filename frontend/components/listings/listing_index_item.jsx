@@ -19,7 +19,7 @@ class ListingIndexItem extends React.Component {
   handleClick() {
     const listingId = this.props.listing.id;
     const regionId = this.props.listing.region_id;
-    hashHistory.push(`/search/${regionId}/${listingId}`);
+    hashHistory.push(`/search/listings/${listingId}`);
   }
 
 
