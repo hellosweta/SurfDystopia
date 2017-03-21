@@ -9,7 +9,12 @@ class ReviewForm extends React.Component {
     this.updateStars = this.updateStars.bind(this);
     this.clearReviewForm = this.clearReviewForm.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    this.state = this.props.review;
+    this.state = {
+      title: "",
+      body: "",
+      rating: "",
+      listing_id: this.props.review.listingId,
+    };
   }
   componentWillReceiveProps(newProps) {
     this.setState(newProps);
@@ -48,13 +53,13 @@ class ReviewForm extends React.Component {
      return(<div></div>);
    } else {
      return(
-       <ul>
+       <div>
          {this.props.errors.map((error, i) => (
-           <li key={`error-${i}`}>
+           <p key={`error-${i}`}>
              {error}
-           </li>
+           </p>
          ))}
-       </ul>
+       </div>
      );
    }
  }
@@ -113,7 +118,7 @@ class ReviewForm extends React.Component {
 
 
   render () {
-    const text = this.props.formType === 'new' ? "Review Your Host" : "Update Your Review";
+
     return(<div className="review-form">
       {this.renderErrors()}
      <div>

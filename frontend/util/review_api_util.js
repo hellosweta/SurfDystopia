@@ -17,6 +17,7 @@ export const fetchReview = (listingId, id) => {
 
 
 export const createReview = (review) => {
+  debugger;
   return $.ajax({
     method: 'POST',
     url: `/api/listings/${review.listing_id}/reviews`,
@@ -33,7 +34,6 @@ export const updateReview = (listingId, review) => {
 };
 
 export const deleteReview = (review) => {
-  debugger;
   return $.ajax({
     method: 'DELETE',
     url: `api/listings/${review.listing_id}/reviews/${review.id}`

@@ -12,7 +12,6 @@ const mapStateToProps = ({ reviews, session }, ownProps) => {
   return({
 
     reviews: reviews.reviews,
-    errors: reviews.errors,
     listingId: ownProps.listingId,
     currentUserId: currentUserId
   });

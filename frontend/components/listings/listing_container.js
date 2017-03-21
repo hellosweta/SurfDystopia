@@ -18,7 +18,6 @@ const mapStateToProps = (state, ownProps) => {
     listing: listing,
     region: region,
     reviews: state.reviews,
-    errors: state.reviews.errors,
     host: host,
   });
 };
