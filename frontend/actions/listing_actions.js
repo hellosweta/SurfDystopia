@@ -9,6 +9,11 @@ export const fetchListings = filters => dispatch => {
     .then(listings => dispatch(receiveListings(listings)));
 };
 
+export const fetchAvailableListings = filters => dispatch => {
+  return APIUtil.fetchAvailableListings(filters)
+    .then(listings => dispatch(receiveListings(listings)));
+};
+
 export const fetchListing = id => dispatch => (
   APIUtil.fetchListing(id)
     .then(listing => dispatch(receiveListing(listing)))

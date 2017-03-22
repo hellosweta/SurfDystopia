@@ -22,7 +22,14 @@ class Api::ListingsController < ApplicationController
 
   def search
     debugger;
-    @listings = Listing.where(region_id: params[:check_in_date])
+    @booking = Booking.new(booking_params)
+
+    @listings = Listing.where(region_id: params[:id])
+
+    @listings.select do |listing|
+      listing.is_available?(params[:check_in_date], params[:check_out_date])
+    end
+    
     render :index
 
     # @listings = Listing.in_bounds(params[:bounds])
@@ -43,5 +50,9 @@ class Api::ListingsController < ApplicationController
       :max_guests,
       :property_type,
       :house_rules)
+  end
+
+  def booking_params
+    params.require(:booking).permit(:listing_id, :user_id, :check_in_date, :check_out_date)
   end
 end

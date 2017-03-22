@@ -41,7 +41,6 @@ class Booking < ApplicationRecord
     end
   end
 
-
   def check_out_must_come_after_check_in
     return if check_out_date.blank? || check_in_date.blank?
     if check_in_date > check_out_date

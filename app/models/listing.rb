@@ -47,6 +47,15 @@ class Listing < ApplicationRecord
         .where("longitude < ?", bounds[:northEast][:longitude])
   end
 
+  def is_available?(check_in_date, check_out_date)
+    self.bookings.each do |booking|
+      if booking.check_in_date <= check_out_date && check_in_date <= booking.check_out_date
+        return false
+      end
+    end
+    true
+  end
+
   def average_rating
     reviews.average(:rating)
   end
