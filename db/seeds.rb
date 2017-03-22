@@ -73,7 +73,7 @@ boston = Region.create!(
   state: "MA",
   latitude: 42.3601,
   longitude: -71.0589,
-  image_url: "https://s3.amazonaws.com/surf-dev/Regions/Tokyo.jpg"
+  image_url: "https://s3.amazonaws.com/surf-dev/Regions/London.jpg"
 )
 
 philadelphia = Region.create!(
@@ -81,7 +81,7 @@ philadelphia = Region.create!(
   state: "Pennsylvania",
   latitude: 40.0094,
   longitude: -75.1333,
-  image_url: "https://s3.amazonaws.com/surf-dev/Regions/London.jpg"
+  image_url: "https://s3.amazonaws.com/surf-dev/Regions/Tokyo.jpg"
 )
 
 flying_home = Listing.create!(

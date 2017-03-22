@@ -11,12 +11,10 @@
 }
 .hero-image {
   width:100%;
-  opacity: 0.7;
   filter: brightness(50%);
 }
 
 .hero-text {
-  // background:rgba(255,255,255,0.15);
   border-radius: 30px;
   display: inline-block;
   align-items: center;
@@ -24,7 +22,7 @@
   position: absolute;
   top: 45%;
   left: 35%;
-  // -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: $grey;
   text-shadow: white;
 }
@@ -43,6 +41,8 @@
   color: $dark_orange;
   align-items: center;
   padding: 7px 9px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $dark_orange;
 }
 
 .text:hover{
