@@ -6,7 +6,7 @@ class ListingIndex extends React.Component {
 
   componentDidMount(){
     this.props.fetchRegion(this.props.regionId).then(
-      this.props.fetchListings(this.props.regionId)
+    this.props.fetchListings(this.props.regionId)
     );
 
   }

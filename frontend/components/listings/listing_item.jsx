@@ -3,8 +3,10 @@ import { Link, hashHistory } from 'react-router';
 import ReviewFormContainer from '../reviews/review_form_container';
 import ReviewIndexContainer from '../reviews/review_index_container';
 import BookingContainer from '../bookings/bookings_container';
+import BookingIndexContainer from '../bookings/booking_index_container';
+import SearchBarContainer from '../search/search_bar_container';
 import Stars from 'react-stars';
-
+import DateRangePickerWrapper from '../date_picker/DateRangePickerWrapper';
 class ListingItem extends React.Component {
   constructor(props){
     super(props);
@@ -14,21 +16,11 @@ class ListingItem extends React.Component {
   }
 
   componentDidMount(){
-    // this.props.fetchRegion();
     this.props.fetchListing();
     this.props.fetchReviews();
+    this.props.fetchBookings();
   }
 
- //  componentWillReceiveProps(newProps) {
- //    this.setState(newProps.review);
- //  }
- //
- //  update(field) {
- //    return (e) => {
- //      this.setState({[field]: e.target.value});
- //    };
- //  }
- //
   toggleReviewForm(){
     let newformVisible = this.state.formVisible;
     newformVisible === true ? newformVisible = false : newformVisible = true;
@@ -36,42 +28,6 @@ class ListingItem extends React.Component {
       formVisible: newformVisible
     });
   }
- //
- //  updateStars(newRating) {
- //    this.setState({
- //      rating: newRating
- //    });
- //  }
- //
- //  clearReviewForm() {
- //     this.setState({
- //       title: "",
- //       body:"",
- //       rating:0
- //     });
- // }
-
-  // renderErrors() {
-  //   if (this.props.errors === undefined){
-  //     return(<div></div>);
-  //   } else {
-  //     return(
-  //       <ul>
-  //         {this.props.errors.map((error, i) => (
-  //           <li key={`error-${i}`}>
-  //             {error}
-  //           </li>
-  //         ))}
-  //       </ul>
-  //     );
-  //   }
-  // }
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   this.props.createReview(this.state);
-  //   this.clearReviewForm();
-  // }
 
   displayReviewForm(){
     return(<ReviewFormContainer listingId={this.props.listing.id} formType={"new"}/>);
@@ -175,8 +131,22 @@ class ListingItem extends React.Component {
             <div className="booking-form-header group">
               <h3 className="booking-form-header-text">Surf</h3>
             </div>
-            <BookingContainer className="booking-box" booking={this.props.booking} listingId={this.props.listing.id} />
+            <BookingContainer className="booking-box" bookings={this.props.bookings} listingId={this.props.listing.id} />
           </div>
+
+          <div className="booking-index">
+            <BookingIndexContainer listingId = {this.props.listing.id}/>
+          </div>
+
+
+          <div>
+            <h1>Search</h1>
+            <SearchBarContainer regions={["San Francisco", "New York"]}/>
+          </div>
+
+        </div>
+        <div>
+          <DateRangePickerWrapper/>
         </div>
         </div>
       );

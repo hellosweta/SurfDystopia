@@ -21,9 +21,6 @@ class ReviewIndex extends React.Component {
     };
   }
 
-  handleDelete(){
-
-  }
 
   displayDelete(review){
     if (this.props.currentUserId) {

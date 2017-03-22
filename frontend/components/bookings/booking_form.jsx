@@ -59,9 +59,11 @@ class BookingForm extends React.Component {
     return (
       <div className="booking-form">
         <form onSubmit={this.handleSubmit}>
+
           <ul className="errors">
             {this.renderBookingErrors()}
           </ul>
+
           <article className="booking-form-dates group">
             <div>
               <span className="check-in">
@@ -85,11 +87,9 @@ class BookingForm extends React.Component {
               </span>
             </article>
 
-
           <div>
             <button onClick={this.handleSubmit} className = "form-button" type="submit">Request</button>
             <button className='header-button' onClick={this.clearBookingForm}>Cancel</button>
-
           </div>
         </form>
       </div>
