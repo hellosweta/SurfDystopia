@@ -15,7 +15,7 @@
 
 class Review < ApplicationRecord
 
-  validates :listing_id, :author_id, :rating, presence: true
+  validates :listing_id, :author_id, :rating, :title, :body, presence: true
   belongs_to :author,
     primary_key: :id,
     foreign_key: :author_id,

@@ -3,7 +3,9 @@
   padding: 13px;
   border-radius: 3px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .review-list{
@@ -28,4 +30,7 @@
 
 .review-rating{
   font-size: 34px;
+}
+.review-form-errors{
+  padding-bottom: 10px;
 }

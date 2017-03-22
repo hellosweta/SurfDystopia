@@ -42,6 +42,7 @@ class ReviewForm extends React.Component {
 
   clearReviewForm(e) {
     e.preventDefault();
+    this.props.clearErrors();
     this.setState({
       title: "",
       body:"",
@@ -54,7 +55,7 @@ class ReviewForm extends React.Component {
      return(<div></div>);
    } else {
      return(
-       <div>
+       <div className="review-form-errors">
          {this.props.reviewErrors.map((error, i) => (
            <p key={`error-${i}`}>
              {error}
@@ -68,19 +69,21 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearErrors();
     this.props.submit(this.state);
-    this.clearReviewForm();
+    this.setState({
+      title: "",
+      body:"",
+      rating: 0
+    });
   }
 
   displayReviewForm(){
     return(
     <div className="review-form">
-      <div>
 
-      </div>
      <div>
        {this.renderErrors()}
-       <h3>Write a Review</h3>
        <form onSubmit={this.handleSubmit}>
          <div>
            <h2 className="rating">How Was Your Host?</h2>
@@ -128,7 +131,6 @@ class ReviewForm extends React.Component {
     return(<div className="review-form">
       {this.renderErrors()}
      <div>
-       <h3>Write a Review</h3>
        <form onSubmit={this.handleSubmit}>
          <div>
            <h2 className="rating">How Was Your Host?</h2>

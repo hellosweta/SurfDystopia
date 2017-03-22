@@ -160,8 +160,10 @@ class ListingItem extends React.Component {
                   <h3 className='house-rules'> House Rules: {this.props.listing.house_rules}</h3>
                 </span>
               </div>
-              <i onClick={() => this.toggleReviewForm()} className="fa fa-plus-circle" aria-hidden="true">Review Your Host</i>
-              {this.state.formVisible ? this.displayReviewForm() : (<div></div>)}
+              <div className="toggle-review-button">
+                <i onClick={() => this.toggleReviewForm()} className="fa fa-plus-circle" aria-hidden="true"></i>
+                {this.state.formVisible ? <div>{this.displayReviewForm()}</div> : (<div><h3 className="review-your-host">Review Your Host</h3></div>)}
+              </div>
 
               <div className="reviews">
                   <ReviewIndexContainer listingId = {this.props.listing.id}/>

@@ -25,6 +25,7 @@ class BookingForm extends React.Component {
 
   clearBookingForm(e) {
     e.preventDefault();
+    this.props.clearErrors();
     this.setState({
       check_in_date: "",
       check_out_date: "",
