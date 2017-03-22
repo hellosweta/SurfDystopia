@@ -1,6 +1,7 @@
 import React from 'react';
 import ListingIndexItem from './listing_index_item';
 import ListingsMap from '../map/map';
+import AvailabiltySearchBarContainer from '../search/availability_search_container';
 
 class ListingIndex extends React.Component {
 
@@ -24,6 +25,7 @@ class ListingIndex extends React.Component {
     return(
     <div>
       <h2>Available Listings</h2>
+      <AvailabiltySearchBarContainer regionId={this.props.regionId}/>
       <div className="search-results ">
         <span className="listings">
           {this.props.listings.map((listing, id) => (

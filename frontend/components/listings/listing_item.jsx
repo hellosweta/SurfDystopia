@@ -5,6 +5,7 @@ import ReviewIndexContainer from '../reviews/review_index_container';
 import BookingContainer from '../bookings/bookings_container';
 import BookingIndexContainer from '../bookings/booking_index_container';
 import SearchBarContainer from '../search/search_bar_container';
+
 import Stars from 'react-stars';
 import DateRangePickerWrapper from '../date_picker/DateRangePickerWrapper';
 class ListingItem extends React.Component {
@@ -139,7 +140,7 @@ class ListingItem extends React.Component {
           </div>
 
         </div>
-      
+
         </div>
       );
     }

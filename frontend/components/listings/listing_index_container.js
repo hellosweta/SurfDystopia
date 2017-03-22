@@ -4,8 +4,10 @@ import { fetchRegion } from '../../actions/region_actions';
 import ListingIndex from './listing_index';
 
 const mapStateToProps = (state, ownProps) => {
-  const regionId = ownProps.params.regionId;
-
+  let regionId;
+  if (ownProps.params.regionId) {
+    regionId = ownProps.params.regionId;
+  }
   return ({
     listings: Object.keys(state.listings).map(id => {
       if (id !== "errors") {
