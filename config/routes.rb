@@ -3,7 +3,11 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :listings, only: [:create, :update, :show, :index] do
+      member do
+        get "search"
+      end
       resources :reviews, only: [:index, :show, :create, :destroy]
+
     end
     resources :regions, only: [:index, :show]
     resources :bookings, only: [:index, :show, :create, :destroy]

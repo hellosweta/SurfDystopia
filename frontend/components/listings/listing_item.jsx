@@ -138,16 +138,8 @@ class ListingItem extends React.Component {
             <BookingIndexContainer listingId = {this.props.listing.id}/>
           </div>
 
-
-          <div>
-            <h1>Search</h1>
-            <SearchBarContainer regions={["San Francisco", "New York"]}/>
-          </div>
-
         </div>
-        <div>
-          <DateRangePickerWrapper/>
-        </div>
+      
         </div>
       );
     }

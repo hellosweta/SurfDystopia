@@ -8,6 +8,14 @@ export const fetchListings = (regionId) => {
   });
 };
 
+export const fetchAvailableListings = (regionId) => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/listings/search`,
+    data: { regionId }
+  });
+};
+
 export const fetchListing = (id) => {
   return $.ajax({
     method: 'GET',

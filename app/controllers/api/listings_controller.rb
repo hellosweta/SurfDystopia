@@ -20,6 +20,15 @@ class Api::ListingsController < ApplicationController
     # eventually with search you can do @listings = Listing.includes(search term)
   end
 
+  def search
+    debugger;
+    @listings = Listing.where(region_id: params[:check_in_date])
+    render :index
+
+    # @listings = Listing.in_bounds(params[:bounds])
+    # eventually with search you can do @listings = Listing.includes(search term)
+  end
+
   private
 
   def listing_params

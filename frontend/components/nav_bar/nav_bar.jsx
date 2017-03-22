@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import SessionFormContainer from '../session_form/session_form_container';
 import { SingleDatePicker } from 'react-dates';
 // import 'react-dates/lib/css/_datepicker.css';
+import SearchBarContainer from '../search/search_bar_container';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -70,48 +71,14 @@ class NavBar extends React.Component {
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   }
   render() {
-    // <SingleDatePicker
-    //   id="date_input"
-    //   date={this.state.date}
-    //   focused={this.state.focused}
-    //   onDateChange={(date) => { this.setState({ date }); }}
-    //   onFocusChange={({ focused }) => { this.setState({ focused }); }}
-    //   />
-    const regions = this.props.regions.map((region, id) =>
-      (<option key={id} value={region.city}>{region.city}</option>));
-
     return(
       <div className="login-signup">
 
         <Link to='/' className="logo">
           <img src="https://s3.amazonaws.com/surf-dev/NavBar/LogoRobot.png" alt="SurfDystopia"></img>
         </Link>
-
-        <div id='findregions'>
-          Find Hosts in:
-        </div>
-
-        <div id="locationField">
-          <input className="standard-input" id="autocomplete" placeholder="Enter a city" type="text" />
-        </div>
-
-        <div id="controls">
-          <select id="city">
-            <option value="all">All</option>
-            {regions}
-          </select>
-        </div>
-
-        <div id="listing">
-        <table id="resultsTable">
-          <tbody id="results"></tbody>
-        </table>
-      </div>
-
-
-
-
-
+        <h3>Find Hosts In:</h3>
+        <SearchBarContainer regions={this.props.regions}/>
         {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
       </div>
     );

@@ -13,7 +13,7 @@ class BookingIndex extends React.Component {
 
   render(){
     const events = this.props.bookings.map((booking,idx) => (
-      <div>{booking.guest.name}
+      <div key={idx}>{booking.guest.name}
         <li>{booking.check_in_date._d} to {booking.check_out_date} </li>
 
         </div>));

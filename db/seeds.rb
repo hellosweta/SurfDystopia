@@ -14,8 +14,29 @@ guest = User.create!(
   about_me: "I'm just visiting from the future. Looking for friendly hosts, but am not picky. I love flying my home and taking care of my RoboDog"
 )
 
+guest = User.create!(
+username: 'Guest',
+name: "Guest Surfer",
+password: "password",
+image_url: "https://s3.amazonaws.com/surf-dev/Users/User1.png",
+about_me: "I'm just visiting from the future. Looking for friendly hosts, but am not picky. I love flying my home and taking care of my RoboDog"
+)
 
+guest = User.create!(
+username: 'User2',
+name: "R2D2",
+password: "password",
+image_url: "https://s3.amazonaws.com/surf-dev/Users/User2.jpg",
+about_me: "I love to dress up! No one has ever seen my real face "
+)
 
+guest = User.create!(
+username: 'Guest',
+name: "Guest Surfer",
+password: "password",
+image_url: "https://s3.amazonaws.com/surf-dev/Users/User1.png",
+about_me: "I'm just visiting from the future. Looking for friendly hosts, but am not picky. I love flying my home and taking care of my RoboDog"
+)
 san_francisco = Region.create!(
   city: "San Francisco",
   state: "CA",

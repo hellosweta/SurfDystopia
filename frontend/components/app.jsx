@@ -8,7 +8,6 @@ import { fetchRegions } from '../actions/region_actions';
 const App = ({ children }) => (
   <div>
     <NavBarContainer />
-    <SearchBarContainer/>
     {children}
   </div>
 );
