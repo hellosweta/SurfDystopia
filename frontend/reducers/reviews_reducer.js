@@ -28,7 +28,9 @@ const ReviewsReducer = (state = _defaultState, action) => {
           removeIdx = idx;
         }
       });
-      oldState.reviews.splice(removeIdx, removeIdx);
+      let newArray = oldState.reviews.slice(0,removeIdx).concat(oldState.reviews.slice(removeIdx + 1))
+      oldState.reviews = newArray;
+      debugger;
       return oldState;
 
     case RECEIVE_REVIEW_ERRORS:

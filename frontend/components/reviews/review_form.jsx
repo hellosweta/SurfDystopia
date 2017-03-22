@@ -18,6 +18,13 @@ class ReviewForm extends React.Component {
   }
   componentWillReceiveProps(newProps) {
     this.setState(newProps);
+    if (this.props !== newProps && this.props.reviewErrors.length > 0) {
+      this.props.clearErrors();
+    }
+  }
+
+  componentWillReceiveProps(newProps){
+
   }
 
   update(field) {
