@@ -96,6 +96,14 @@
   padding-top: 10px;
   padding-left: 13px;
   border-bottom: 1px solid #dce0e0;
+  width: 675px;
+}
+
+.space-info {
+  display: inline-block;
+  padding-top: 10px;
+  padding-left: 13px;
+
 }
 
 .reviews {
@@ -196,11 +204,22 @@ li.region:hover{
 }
 
 .booking-index{
-  position: relative;
-  height: 400px;
-  right: 250px;
-  float: left;
-  width: 315px;
-  top: 450px;
-  padding-left: 13px; 
+  padding-left: 13px;
+  margin-right: 125px;
+  padding: 10px 10px 23px;
+  width: 675px;
+  display: inline-block;
+  border-bottom: 1px solid #dce0e0;
+}
+
+.booking-guest{
+  font-size: 15pt;
+  font-weight: bold;
+  left-padding: 13px;
+}
+
+.check-in-out{
+  font-size: 15px;
+  left-padding: 13px; 
+
 }

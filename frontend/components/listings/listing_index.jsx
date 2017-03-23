@@ -9,8 +9,16 @@ class ListingIndex extends React.Component {
     this.props.fetchRegion(this.props.regionId).then(
     this.props.fetchListings(this.props.regionId)
     );
-
   }
+
+  componentWillReceiveProps(newProps){
+    if (this.props.params.regionId !== newProps.params.regionId) {
+      this.props.fetchRegion(newProps.params.regionId).then(
+      this.props.fetchListings(newProps.params.regionId)
+      );
+    }
+  }
+
   renderMap(){
 
     return(<span className="map">
@@ -21,10 +29,10 @@ class ListingIndex extends React.Component {
     if (this.props.listings.length < 1) {
       return(<div></div>);
     } else {
-
     return(
     <div>
-      <h2>Available Listings</h2>
+      <h3 className="listing-show-title search-results-title">{`Available Listings in ${this.props.regionName}`}</h3>
+
       <AvailabiltySearchBarContainer regionId={this.props.regionId}/>
       <div className="search-results ">
         <span className="listings">

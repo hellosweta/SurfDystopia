@@ -6,37 +6,62 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-guest = User.create!(
-  username: 'Guest',
+guest1 = User.create!(
+  username: 'Guest1',
   name: "Guest Surfer",
   password: "password",
   image_url: "https://s3.amazonaws.com/surf-dev/Users/User1.png",
   about_me: "I'm just visiting from the future. Looking for friendly hosts, but am not picky. I love flying my home and taking care of my RoboDog"
 )
 
-guest = User.create!(
-username: 'Guest',
+guest2 = User.create!(
+username: 'Guest2',
 name: "Guest Surfer",
 password: "password",
-image_url: "https://s3.amazonaws.com/surf-dev/Users/User1.png",
+image_url: "https://s3.amazonaws.com/surf-dev/Users/User2.png",
 about_me: "I'm just visiting from the future. Looking for friendly hosts, but am not picky. I love flying my home and taking care of my RoboDog"
 )
 
-guest = User.create!(
-username: 'User2',
+guest3 = User.create!(
+username: 'Guest3',
 name: "R2D2",
 password: "password",
-image_url: "https://s3.amazonaws.com/surf-dev/Users/User2.jpg",
+image_url: "https://s3.amazonaws.com/surf-dev/Users/user_goggle_reflection.jpg",
 about_me: "I love to dress up! No one has ever seen my real face "
 )
 
-guest = User.create!(
-username: 'Guest',
+guest4 = User.create!(
+username: 'Guest4',
 name: "Guest Surfer",
 password: "password",
-image_url: "https://s3.amazonaws.com/surf-dev/Users/User1.png",
+image_url: "https://s3.amazonaws.com/surf-dev/Users/user_pipe.jpg",
 about_me: "I'm just visiting from the future. Looking for friendly hosts, but am not picky. I love flying my home and taking care of my RoboDog"
 )
+
+guest5 = User.create!(
+username: 'Guest5',
+name: "Guest Surfer",
+password: "password",
+image_url: "https://s3.amazonaws.com/surf-dev/Users/user_tophat.jpg",
+about_me: "I'm just visiting from the future. Looking for friendly hosts, but am not picky. I love flying my home and taking care of my RoboDog"
+)
+
+guest6 = User.create!(
+username: 'Guest6',
+name: "Guest Surfer",
+password: "password",
+image_url: "https://s3.amazonaws.com/surf-dev/Users/user_twinkle_lights.jpg",
+about_me: "I'm just visiting from the future. Looking for friendly hosts, but am not picky. I love flying my home and taking care of my RoboDog"
+)
+
+guest7 = User.create!(
+username: 'Guest7',
+name: "Guest Surfer",
+password: "password",
+image_url: "https://s3.amazonaws.com/surf-dev/Users/watch_maker.jpg",
+about_me: "I'm just visiting from the future. Looking for friendly hosts, but am not picky. I love flying my home and taking care of my RoboDog"
+)
+
 san_francisco = Region.create!(
   city: "San Francisco",
   state: "CA",

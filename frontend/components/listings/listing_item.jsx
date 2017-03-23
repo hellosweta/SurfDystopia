@@ -117,6 +117,11 @@ class ListingItem extends React.Component {
                   <h3 className='house-rules'> House Rules: {this.props.listing.house_rules}</h3>
                 </span>
               </div>
+
+              <div className="booking-index">
+                <BookingIndexContainer listingId = {this.props.listing.id}/>
+              </div>
+
               <div className="toggle-review-button">
                 <i onClick={() => this.toggleReviewForm()} className="fa fa-plus-circle" aria-hidden="true"></i>
                 {this.state.formVisible ? <div>{this.displayReviewForm()}</div> : (<div><h3 className="review-your-host">Review Your Host</h3></div>)}
@@ -135,9 +140,7 @@ class ListingItem extends React.Component {
             <BookingContainer className="booking-box" bookings={this.props.bookings} listingId={this.props.listing.id} />
           </div>
 
-          <div className="booking-index">
-            <BookingIndexContainer listingId = {this.props.listing.id}/>
-          </div>
+
 
         </div>
 

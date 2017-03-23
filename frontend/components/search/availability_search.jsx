@@ -7,14 +7,13 @@ class AvailabiltySearchBar extends React.Component {
     this.state = {
       check_in_date: "",
       check_out_date: "",
-      regionId: this.props.regionId
+      regionId: this.props.regionId,
+      errors: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.clearBookingForm = this.clearBookingForm.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
-    // this.toggleList = this.toggleList.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -33,14 +32,23 @@ class AvailabiltySearchBar extends React.Component {
       check_in_date: "",
       check_out_date: "",
       listing_id: this.props.listingId,
+      errors: false,
     });
   }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.fetchAvailableListings(this.state);
-    this.setState({ check_in_date: "",
-                    check_out_date: "",
-                    listingId: this.props.listingId });
+    if (this.state.check_in_date === "" || this.state.check_out_date === "") {
+      this.setState({ errors: true });
+      console.log(this.state);
+    } else {
+      this.props.fetchAvailableListings(this.state);
+      this.setState({ check_in_date: "",
+        check_out_date: "",
+        listingId: this.props.listingId,
+        errors: false
+      });
+    }
   }
 
   // handleChange(e) {
@@ -51,7 +59,10 @@ class AvailabiltySearchBar extends React.Component {
   // handleClick(local) {
   //   this.setState({address: local });
   // }
+  renderErrors(){
 
+    return(this.state.errors ? (<div><h3>Check-In and Check-Out Required</h3></div>) : (<div></div>));
+  }
   render() {
     // const locations = this.props.locations.map((local, idx)=>{
     //   return(
@@ -61,13 +72,13 @@ class AvailabiltySearchBar extends React.Component {
     //   );
     // });
     return (
-      <div className='availability-search'>
+      <div className='availability'>
       <form onSubmit={this.handleSubmit}>
-
-        <article className="booking-form-dates group">
+        <article className="availability-search group">
+          {this.renderErrors()}
           <div>
-            <span className="check-in">
-              <h3 className="check-in-text">Check In</h3>
+            <span className="check-in-search">
+              <h3 className="check-in-text-search">Check In</h3>
             <input
               className="standard-input"
               type="date"
@@ -76,8 +87,8 @@ class AvailabiltySearchBar extends React.Component {
               onChange={this.update('check_in_date')} />
             </span>
           </div>
-            <span className="check-out">
-                <h3 className="check-out-text">Check Out</h3>
+            <span className="check-out-search">
+                <h3 className="check-out-text-search">Check Out</h3>
             <input
               className="standard-input"
               type="date"
@@ -85,12 +96,12 @@ class AvailabiltySearchBar extends React.Component {
               placeholder="Check-Out"
               onChange={this.update('check_out_date')} />
             </span>
+            <div>
+              <button onClick={this.handleSubmit} className = "form-button" type="submit">Search</button>
+              <button className='header-button' onClick={this.clearBookingForm}>Cancel</button>
+            </div>
           </article>
 
-        <div>
-          <button onClick={this.handleSubmit} className = "form-button" type="submit">Request</button>
-          <button className='header-button' onClick={this.clearBookingForm}>Cancel</button>
-        </div>
       </form>
     </div>
     );

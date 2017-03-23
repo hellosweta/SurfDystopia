@@ -31,6 +31,7 @@ class SearchBar extends React.Component {
       suggestions: []
     };
   }
+
   getSuggestions(value) {
     const escapedValue = escapeRegexCharacters(value.trim());
 
@@ -81,9 +82,10 @@ class SearchBar extends React.Component {
         onSuggestionSelected={this.onSuggestionSelected}
         getSuggestionValue={getSuggestionValue}
         renderSuggestion={renderSuggestion}
+        highlightFirstSuggestion={true}
         inputProps={inputProps} />
     );
   }
 }
 
-export default SearchBar;
+export default (SearchBar);

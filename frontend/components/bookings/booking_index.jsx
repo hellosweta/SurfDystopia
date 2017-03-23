@@ -3,23 +3,26 @@ import { Link, hashHistory } from 'react-router';
 import BookingContainer from './booking_index_container';
 import EventCalendar from 'react-event-calendar';
 
-
-
 class BookingIndex extends React.Component {
   constructor(props){
     super(props);
 
   }
 
+  componentDidMount() {
+    this.props.fetchBookings();
+  }
+
   render(){
     const events = this.props.bookings.map((booking,idx) => (
-      <div key={idx}>{booking.guest.name}
-        <li>{booking.check_in_date._d} to {booking.check_out_date} </li>
-
+      <div className={'booking-guest'} key={idx}>{booking.guest.name}
+  <li className={'check-in-out'}>{new Date(booking.check_in_date).toDateString()} to {new Date(booking.check_out_date).toDateString()} </li>
         </div>));
-    return(<div>
-      <h2>This Lisiting is Currently Booked for: </h2>
-      <ul>
+    const check_in = this.props.bookings[0].check_in_date;
+
+    return(<div >
+      <h2 className="booking-title"> Current Bookings </h2>
+      <ul className="bookings">
         {events}
       </ul>
     </div>);

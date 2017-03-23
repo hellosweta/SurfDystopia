@@ -5,8 +5,11 @@ import ListingIndex from './listing_index';
 
 const mapStateToProps = (state, ownProps) => {
   let regionId;
+  let regionName;
   if (ownProps.params.regionId) {
+    let region = state.regions[ownProps.params.regionId];
     regionId = ownProps.params.regionId;
+    regionName = region.city;
   }
   return ({
     listings: Object.keys(state.listings).map(id => {
@@ -16,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
     }),
     errors: state.listings.errors,
     regionId: regionId,
+    regionName: regionName,
     latitude: state.regions && state.regions[regionId] ? state.regions[regionId].latitude : '',
     longitude: state.regions && state.regions[regionId] ? state.regions[regionId].longitude : '',
   });

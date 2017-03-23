@@ -63,3 +63,14 @@
   font-weight: bold;
   font-size: 14px;
 }
+.availability-search{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 115px;
+  width: 725px;
+}
+
+.search-results-title{
+  border-bottom: 1px solid #dce0e0;
+}

@@ -16,6 +16,9 @@
 class Review < ApplicationRecord
 
   validates :listing_id, :author_id, :rating, :title, :body, presence: true
+  validates :rating, inclusion: { in: [1, 2, 3, 4, 5],
+      message: " can't be 0" }
+
   belongs_to :author,
     primary_key: :id,
     foreign_key: :author_id,

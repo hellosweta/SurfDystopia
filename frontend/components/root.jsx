@@ -9,23 +9,6 @@ import ListingContainer from './listings/listing_container';
 import { clearErrors } from '../actions/session_actions';
 const Root = ({ store }) => {
 
-// const _ensureLoggedIn = (nextState, replace) => {
-//     const currentUser = store.getState().session.currentUser;
-//     if (!currentUser) {
-//       hashHistory.push('/');
-//     }
-//   };
-//
-// const _redirectIfLoggedIn = (nextState, replace) => {
-//   const currentUser = store.getState().session.currentUser;
-//   if (currentUser) {
-//     hashHistory.push('/');
-//   } else {
-//     store.dispatch(clearErrors());
-//   }
-// };
-
-
 return (
   <Provider store={ store }>
     <Router history={ hashHistory }>
