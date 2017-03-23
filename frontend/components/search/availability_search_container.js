@@ -8,9 +8,12 @@ const mapStateToProps = (state, ownProps) => {
   });
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return({
-    fetchAvailableListings: (listing) => dispatch(fetchAvailableListings(listing))
+    fetchAvailableListings: (listing) => {
+      debugger
+      return(dispatch(fetchAvailableListings(listing)));
+    }
   });
 };
 

@@ -38,11 +38,11 @@ class AvailabiltySearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger;
     if (this.state.check_in_date === "" || this.state.check_out_date === "") {
       this.setState({ errors: true });
     } else {
-      console.log("state");
-      console.log(this.state);
+      console.log(this.state, "state");
       this.props.fetchAvailableListings(this.state);
       this.setState({ check_in_date: "",
         check_out_date: "",
@@ -60,7 +60,7 @@ class AvailabiltySearchBar extends React.Component {
 
     return (
       <div className='availability'>
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <article className="availability-search group">
           {this.renderErrors()}
           <div>
@@ -84,7 +84,7 @@ class AvailabiltySearchBar extends React.Component {
               onChange={this.update('check_out_date')} />
             </span>
             <div>
-              <button onClick={this.handleSubmit} className = "form-button" type="submit">Search</button>
+              <button onClick={this.handleSubmit} className = "form-button">Search</button>
               <button className='header-button' onClick={this.clearBookingForm}>Cancel</button>
             </div>
           </article>

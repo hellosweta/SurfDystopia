@@ -29,12 +29,12 @@ class SessionForm extends React.Component {
 		}
 	}
 
-	redirectIfLoggedIn() {
-		if (this.props.loggedIn) {
-			this.props.router.push("/");
-			this.props.clearErrors();
-		}
-	}
+	// redirectIfLoggedIn() {
+	// 	if (this.props.loggedIn) {
+	// 		this.props.router.push("/");
+	// 		this.props.clearErrors();
+	// 	}
+	// }
 
 	update(field) {
 		return e => this.setState({
@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
 		} else {
 			this.props.signUp({user});
 		}
-		this.props.clearErrors();
+		// this.props.clearErrors();
 	}
 
 	handleSignUp(e) {

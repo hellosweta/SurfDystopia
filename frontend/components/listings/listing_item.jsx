@@ -22,6 +22,12 @@ class ListingItem extends React.Component {
     this.props.fetchBookings();
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.bookings.length !== this.props.bookings.length) {
+      this.props.fetchBookings();
+    }
+  }
+
   toggleReviewForm(){
     let newformVisible = this.state.formVisible;
     newformVisible === true ? newformVisible = false : newformVisible = true;

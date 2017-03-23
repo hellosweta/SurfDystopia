@@ -7,6 +7,7 @@ import HomeContainer from './home/home_container';
 import ListingIndexContainer from './listings/listing_index_container';
 import ListingContainer from './listings/listing_container';
 import { clearErrors } from '../actions/session_actions';
+
 const Root = ({ store }) => {
 
 return (

@@ -11,19 +11,18 @@
 }
 .hero-image {
   width:100%;
-  filter: brightness(50%);
+  filter: brightness(75%);
 }
 
 .hero-text {
   border-radius: 30px;
+  font-family: 'Lobster';
   display: inline-block;
   align-items: center;
   flex-wrap: wrap;
   position: absolute;
-  top: 45%;
+  top: 25%;
   left: 35%;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: $grey;
   text-shadow: white;
 }
 
@@ -37,17 +36,17 @@
 .text{
   text-outline: $grey;
   text-shadow: white;
-  font-size: 30pt;
+  font-size: 34pt;
   color: $dark_orange;
   align-items: center;
   padding: 7px 9px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: $dark_orange;
+  filter: brightness(130%);
+
 }
 
 .text:hover{
-  border-bottom: 2px solid $dark_orange;
   text-decoration: none;
+  filter: brightness(100%);
 }
 
 .explore{
@@ -80,8 +79,13 @@
   text-align: right;
   position: relative;
   padding: 0px 5px;
-  // bottom: 50px;
+  font-family: 'Lobster';
   background: black;
+}
+
+.region-name:hover{
+  text-decoration: none;
+  filter: brightness(130%);
 }
 
 @media screen and (max-width:680px){

@@ -16,6 +16,7 @@ class ReviewForm extends React.Component {
       listing_id: this.props.listingId,
     };
   }
+  
   componentWillReceiveProps(newProps) {
     this.setState(newProps);
     if (this.props !== newProps && this.props.reviewErrors.length > 0) {
@@ -23,9 +24,6 @@ class ReviewForm extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps){
-
-  }
 
   update(field) {
     return (e) => {
@@ -77,14 +75,14 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.clearErrors();
-    this.props.submit(this.state);
-    if (this.props.reviewErrors.length < 1) {
+    if (this.props.reviewErrors.length < 1 && this.props.sessionErrors.length < 1) {
       this.setState({
         title: "",
         body:"",
         rating: 0
       });
     }
+    this.props.submit(this.state);
   }
 
   displayReviewForm(){
