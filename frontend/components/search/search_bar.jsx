@@ -75,6 +75,7 @@ class SearchBar extends React.Component {
     };
 
     return (
+      <div className= "search-autocomplete">
       <Autosuggest
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -84,6 +85,7 @@ class SearchBar extends React.Component {
         renderSuggestion={renderSuggestion}
         highlightFirstSuggestion={true}
         inputProps={inputProps} />
+        </div>
     );
   }
 }

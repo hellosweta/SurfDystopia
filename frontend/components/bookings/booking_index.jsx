@@ -23,7 +23,7 @@ class BookingIndex extends React.Component {
         </div>));
 
     return(
-      <div>
+      <div className={"booking-index-item"}>
         <h2 className="booking-title"> Current Bookings </h2>
         <ul className="bookings">
           {events}

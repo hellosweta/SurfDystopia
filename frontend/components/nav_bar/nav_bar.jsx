@@ -73,9 +73,7 @@ class NavBar extends React.Component {
         </Link>
         <h3>Find Hosts In:</h3>
         <SearchBarContainer regions={this.props.regions}/>
-
-
-    {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
+        {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
       </div>
     );
   }
