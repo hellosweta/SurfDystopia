@@ -78,11 +78,13 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     this.props.clearErrors();
     this.props.submit(this.state);
-    this.setState({
-      title: "",
-      body:"",
-      rating: 0
-    });
+    if (this.props.reviewErrors.length < 1) {
+      this.setState({
+        title: "",
+        body:"",
+        rating: 0
+      });
+    }
   }
 
   displayReviewForm(){
@@ -123,7 +125,7 @@ class ReviewForm extends React.Component {
 
          <span >
            <button className ="form-button" onClick={this.handleSubmit} type="submit">Submit</button>
-           <button className='header-button' onClick={this.clearReviewForm}>Cancel</button>
+           <button className='header-button' onClick={this.viewForm}>Cancel</button>
 
          </span>
        </form>
