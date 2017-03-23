@@ -6,7 +6,7 @@ import AvailabiltySearchBarContainer from '../search/availability_search_contain
 class ListingIndex extends React.Component {
 
   componentDidMount(){
-    this.props.fetchRegion(this.props.regionId).then(
+    this.props.fetchRegion(this.props.routeParams.regionId).then(
     this.props.fetchListings(this.props.regionId)
     );
   }

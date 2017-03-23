@@ -9,6 +9,7 @@ export const fetchListings = (regionId) => {
 };
 
 export const fetchAvailableListings = (listing) => {
+  debugger;
   return $.ajax({
     method: 'GET',
     url: `api/listings/${listing.regionId}/search`,

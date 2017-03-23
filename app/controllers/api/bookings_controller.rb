@@ -1,6 +1,7 @@
 class Api::BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
+
+    @bookings = Booking.where(listing_id: params[:booking][:listing_id])
     render :index
   end
 

@@ -3,7 +3,9 @@ export const fetchBookings = (listingId) => {
     method: 'GET',
     url: `api/bookings`,
     data: {
-      listing_id: listingId
+      booking: {
+        listing_id: listingId
+      }
     }
   });
 };

@@ -21,6 +21,7 @@ const mapStateToProps = (state, ownProps) => {
     bookings: state.bookings.bookings,
     reviews: state.reviews.reviews,
     host: host,
+    currentUser: state.session.currentUser,
   });
 };
 

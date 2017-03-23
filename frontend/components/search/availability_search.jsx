@@ -40,7 +40,6 @@ class AvailabiltySearchBar extends React.Component {
     e.preventDefault();
     if (this.state.check_in_date === "" || this.state.check_out_date === "") {
       this.setState({ errors: true });
-      console.log(this.state);
     } else {
       this.props.fetchAvailableListings(this.state);
       this.setState({ check_in_date: "",
@@ -51,26 +50,12 @@ class AvailabiltySearchBar extends React.Component {
     }
   }
 
-  // handleChange(e) {
-  //   this.props.fetchSearchLocations(e.currentTarget.value);
-  //   this.setState({ [e.currentTarget.name]: e.currentTarget.value} );
-  // }
-
-  // handleClick(local) {
-  //   this.setState({address: local });
-  // }
   renderErrors(){
-
     return(this.state.errors ? (<div><h3>Check-In and Check-Out Required</h3></div>) : (<div></div>));
   }
+
   render() {
-    // const locations = this.props.locations.map((local, idx)=>{
-    //   return(
-    //     <li key={idx} onClick={ () => this.handleClick(local) }>
-    //       {local}
-    //     </li>
-    //   );
-    // });
+
     return (
       <div className='availability'>
       <form onSubmit={this.handleSubmit}>

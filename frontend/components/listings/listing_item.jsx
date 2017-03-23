@@ -119,7 +119,7 @@ class ListingItem extends React.Component {
               </div>
 
               <div className="booking-index">
-                <BookingIndexContainer listingId = {this.props.listing.id}/>
+                <BookingIndexContainer currentUser={this.props.currentUser} listingId = {this.props.listing.id}/>
               </div>
 
               <div className="toggle-review-button">

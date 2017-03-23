@@ -4,11 +4,10 @@ import { fetchRegion } from '../../actions/region_actions';
 import ListingIndex from './listing_index';
 
 const mapStateToProps = (state, ownProps) => {
-  let regionId;
+  let regionId = ownProps.params.regionId;
   let regionName;
-  if (ownProps.params.regionId) {
+  if (state.regions[ownProps.params.regionId] !== undefined) {
     let region = state.regions[ownProps.params.regionId];
-    regionId = ownProps.params.regionId;
     regionName = region.city;
   }
   return ({

@@ -14,18 +14,22 @@ class BookingIndex extends React.Component {
   }
 
   render(){
-    const events = this.props.bookings.map((booking,idx) => (
-      <div className={'booking-guest'} key={idx}>{booking.guest.name}
-  <li className={'check-in-out'}>{new Date(booking.check_in_date).toDateString()} to {new Date(booking.check_out_date).toDateString()} </li>
+    if (this.props.bookings.length < 1) {
+      return(<div></div>);
+    } else {
+      const events = this.props.bookings.map((booking,idx) => (
+        <div className={ this.props.currentUser.id === booking.guest.id ? 'booking-guest current-user-guest' : 'booking-guest' } key={idx}>{booking.guest.name}
+          <li className={'check-in-out'}>{new Date(booking.check_in_date).toDateString()} to {new Date(booking.check_out_date).toDateString()} </li>
         </div>));
-    const check_in = this.props.bookings[0].check_in_date;
 
-    return(<div >
-      <h2 className="booking-title"> Current Bookings </h2>
-      <ul className="bookings">
-        {events}
-      </ul>
-    </div>);
+    return(
+      <div>
+        <h2 className="booking-title"> Current Bookings </h2>
+        <ul className="bookings">
+          {events}
+        </ul>
+      </div>);
+    }
   }
 }
 

@@ -213,13 +213,18 @@ li.region:hover{
 }
 
 .booking-guest{
-  font-size: 15pt;
-  font-weight: bold;
-  left-padding: 13px;
+  font-size: 20px;
+  font-weight: lighter;
+  padding: 5px 13px;
+
+}
+
+.current-user-guest{
+  border: 1px solid $dark_orange;
 }
 
 .check-in-out{
   font-size: 15px;
-  left-padding: 13px; 
-
+  left-padding: 13px;
+  font-weight: bold;
 }
