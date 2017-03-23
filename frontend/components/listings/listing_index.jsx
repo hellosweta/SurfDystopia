@@ -26,6 +26,8 @@ class ListingIndex extends React.Component {
     </span>);
   }
   render(){
+    console.log("listing index");
+    console.log(this.props.regionId);
     if (this.props.listings.length < 1) {
       return(<div></div>);
     } else {
@@ -39,7 +41,7 @@ class ListingIndex extends React.Component {
           {this.props.listings.map((listing, id) => (
             <ListingIndexItem className="listing-index-item"
                               listing={listing}
-                              key={id}/>
+                              key={id} regionId={this.props.regionId}/>
           ))}
         </span>
         {this.props.latitude && this.props.longitude && this.renderMap()}
