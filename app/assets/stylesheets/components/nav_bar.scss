@@ -1,11 +1,12 @@
 .header-group{
   display:flex;
 	justify-content: space-between;
-	// padding: 10px 0;
 	border-bottom: 1px solid $grey;
 
 }
-
+.left-nav{
+  display: flex;
+}
 .login-signup{
   margin-top: 5px;
   padding: 8px 0;
@@ -18,9 +19,10 @@
 }
 
 .logo {
-  width: 15%;
+  width: 23%;
   max-height: 40px;
   padding-bottom: 10px;
+  padding-right: 50px;
 }
 
 .header-button{
@@ -33,7 +35,7 @@
 
 }
 .logo:hover{
-  // border-bottom: 2px solid $dark_orange;
+  filter: opacity(90%);
   text-decoration: none;
 }
 .header-button:hover{
@@ -51,16 +53,6 @@
   float: right;
   font-size: 15px;
 }
-// .left-nav {
-// 	margin-left: 20px;
-// 	cursor: pointer;
-// 	text-transform: uppercase;
-// 	font-family: $sans-serif;
-// 	font-weight: bold;
-// 	font-size: 11px;
-// 	padding: 7px 9px;
-// 	transition: background-color 0.3s;
-// }
 
 .auth {
 	margin-left: 5px;
@@ -82,20 +74,21 @@
 }
 
 body {
-	font-family: Helvetica, sans-serif;
+	font-family: $open;
 }
 .react-autosuggest__container {
 	position: relative;
 }
 .react-autosuggest__input {
 	width: 240px;
-	height: 30px;
+	height: 23px;
 	padding: 10px 20px 10px 40px;
-	font-family: Helvetica, sans-serif;
+	font-family: $open;
 	font-weight: 300;
 	font-size: 16px;
 	border: 1px solid #aaa;
 	border-radius: 4px;
+  margin-left: 8px;
 }
 .react-autosuggest__input--focused {
 	outline: none;
@@ -114,7 +107,7 @@ body {
 	width: 300px;
 	border: 1px solid #aaa;
 	background-color: #fff;
-	font-family: Helvetica, sans-serif;
+	font-family: $open;
 	font-weight: 300;
 	font-size: 16px;
 	border-bottom-left-radius: 4px;
@@ -129,6 +122,11 @@ body {
 .react-autosuggest__suggestion {
 	cursor: pointer;
 	padding: 10px 20px;
+}
+
+.find-hosts-text{
+  font-size: 15px;
+  font-weight: lighter;
 }
 .react-autosuggest__suggestion--highlighted {
 	background-color: #ddd;
@@ -145,8 +143,8 @@ body {
 }
 
 .header-profile-image {
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
   border-radius: 50px;
   border: 1px solid;
   border-color: #c4c4c4;
@@ -154,13 +152,13 @@ body {
 
 .profile-dropdown {
   padding: 5px 0;
-  height: 2
+
 }
 
 .profile-dropdown ul {
   display: none;
   border: 1px solid #dce0e0;
-  padding: 10px;
+  padding: 5px;
   border-radius: 2px;
 }
 
@@ -181,7 +179,7 @@ body {
   border-right: 10px solid transparent;
   border-bottom: 10px solid #cecece;
   position: absolute;
-  top: -10px;
+  top: -8px;
   right: 5px;
 }
 
@@ -192,7 +190,7 @@ body {
   line-height: 15px;
   border-bottom: 1px solid #dce0e0;
   width: 100px;
-  padding-bottom: 5px;
+  padding-bottom: 0px;
 }
 
 .profile-dropdown li a {
@@ -216,13 +214,15 @@ body {
 .profile-dropdown-name:hover {
   cursor: default;
 }
-
+.drop-down-log-out{
+  left-padding: 10px;
+}
 .profile-dropdown-name {
   color: $dark_purple;
   background: none;
   text-transform: none;
   border: 1px 1px solid;
   height: 10px;
-  padding: 4px 8px 12px 10px;
+  padding: 4px 8px 15px 10px;
   font-size: 15px;
 }

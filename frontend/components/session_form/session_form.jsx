@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
 		this.state = {
 			username: "",
 			password: "",
+			image_url: "https://s3.amazonaws.com/surf-dev/Users/cranium.jpg",
 			modalOpen: false,
 			modalType: 'logIn'
 		};
@@ -25,16 +26,17 @@ class SessionForm extends React.Component {
 
 	componentWillReceiveProps(newProps){
 		if (this.props !== newProps && this.props.errors.length > 0) {
+			debugger;
 			this.props.clearErrors();
 		}
 	}
 
-	// redirectIfLoggedIn() {
-	// 	if (this.props.loggedIn) {
-	// 		this.props.router.push("/");
-	// 		this.props.clearErrors();
-	// 	}
-	// }
+	redirectIfLoggedIn() {
+		if (this.props.loggedIn) {
+			this.props.router.push("/");
+			this.props.clearErrors();
+		}
+	}
 
 	update(field) {
 		return e => this.setState({
@@ -50,7 +52,8 @@ class SessionForm extends React.Component {
 		} else {
 			this.props.signUp({user});
 		}
-		// this.props.clearErrors();
+		debugger;
+		this.props.clearErrors();
 	}
 
 	handleSignUp(e) {
@@ -86,7 +89,7 @@ class SessionForm extends React.Component {
 		return(
 			<ul>
 				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
+					<li className={"errors"} key={`error-${i}`}>
 						{error}
 					</li>
 				))}

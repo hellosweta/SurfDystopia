@@ -24,6 +24,7 @@
   top: 25%;
   left: 35%;
   text-shadow: white;
+  font-weight: normal;
 }
 
 
@@ -41,7 +42,7 @@
   align-items: center;
   padding: 7px 9px;
   filter: brightness(130%);
-
+  font-weight: normal;
 }
 
 .text:hover{
@@ -60,15 +61,16 @@
   padding: 30px 20px 0px 0px;
 }
 .region-image-container:last-of-type{
-  padding-right: 0px;
+  // padding-right: 0px;
 }
 .region-image{
   box-sizing: content-box;
   padding: 30px 20px 0px 0px;
   overflow: hidden;
   height: 300px;
-  width: 100%;
+  width: 527px;
   opacity: 80%;
+
 
 }
 
@@ -81,6 +83,7 @@
   padding: 0px 5px;
   font-family: 'Lobster';
   background: black;
+  line-height: 140%;
 }
 
 .region-name:hover{

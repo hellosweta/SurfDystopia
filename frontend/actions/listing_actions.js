@@ -13,9 +13,8 @@ export const fetchAvailableListings = filters => dispatch => {
 debugger;
   return APIUtil.fetchAvailableListings(filters)
   .then(listings => {
-    debugger
     return(dispatch(receiveListings(listings)));
-  });
+  }, errors => console.log(errors));
 };
 
 export const fetchListing = id => dispatch => (

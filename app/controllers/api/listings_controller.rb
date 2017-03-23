@@ -21,7 +21,6 @@ class Api::ListingsController < ApplicationController
   end
 
   def search
-
     all_listings = Listing.where(region_id: params[:id])
     @listings = all_listings.select do |listing|
       listing.is_available?(Date.parse(params[:listing][:check_in_date]),

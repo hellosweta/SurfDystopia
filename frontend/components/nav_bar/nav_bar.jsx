@@ -3,7 +3,6 @@ import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
 import SessionFormContainer from '../session_form/session_form_container';
 import { SingleDatePicker } from 'react-dates';
-// import 'react-dates/lib/css/_datepicker.css';
 import SearchBarContainer from '../search/search_bar_container';
 
 class NavBar extends React.Component {
@@ -44,14 +43,14 @@ class NavBar extends React.Component {
       <div className="auth">
         <ul className="header-links">
 
-        <li className="profile-dropdown"><a href="#">
+        <li className="profile-dropdown">
           <img className="header-profile-image"
-            src={currentUser.image_url}/></a>
+            src={currentUser.image_url}/>
           <ul>
               <li>
                 <h5 className="profile-dropdown-name">{currentUser.name}</h5>
                </li>
-            <li><button className="header-button" onClick={logOut}>Log Out</button></li>
+            <li><button className="header-button drop-down-log-out" onClick={logOut}>Log Out</button></li>
           </ul>
         </li>
       </ul>
@@ -72,7 +71,7 @@ class NavBar extends React.Component {
         <Link to='/' className="logo">
           <img src="https://s3.amazonaws.com/surf-dev/NavBar/LogoRobot.png" alt="SurfDystopia"></img>
         </Link>
-        <h3>Find Hosts In:</h3>
+        <h3 className="find-hosts-text"> Find Hosts In </h3>
         <SearchBarContainer regions={this.props.regions}/>
         </div>
       {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}

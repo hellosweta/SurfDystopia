@@ -6,7 +6,7 @@ html {
 body {
 	width: 90%;
 	margin: 0 auto;
-	font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 }
 
@@ -20,7 +20,7 @@ button {
 	padding: 7px 9px;
 	border-radius: 3px;
 	transition: background-color 0.3s;
-	font-family: $sans-serif;
+	font-family: $open;
 	font-size: 15px;
 	text-align: center;
 }
@@ -79,7 +79,7 @@ img {
 small {
 	font-size: 9px;
 	color: $grey;
-	font-family: $sans-serif;
+	font-family: $open;
 }
 
 /*
@@ -126,7 +126,7 @@ hr {
 
 .input-wrapper input {
 	flex: 1;
-	font-family: $sans-serif;
+	font-family: $open;
 	padding: 0 10px;
 	border: 1px solid $grey;
 	border-right: none;

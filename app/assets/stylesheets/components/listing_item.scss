@@ -4,10 +4,11 @@
 
 .all-info{
   display: flex;
+  margin-left: 70px;
 }
 
 .listing-info{
-  width: 675px;
+  width: 900px;
   padding: 0 0 30px 0;
 
 }
@@ -21,6 +22,7 @@
 .listing-info-not-form{
   float: left;
   margin-top: 30px;
+  width: 1000px;
 }
 
 .user-thumbnail {
@@ -150,10 +152,10 @@ li.region:hover{
 
 .booking{
   position: relative;
-  height: 400px;
+  height: 450px;
   float: left;
-  width: 315px;
-  box-shadow: 0 2px 3px 2px;
+  width: 375px;
+  margin-right: 150px;
 }
 
 .booking-form {
@@ -165,22 +167,26 @@ li.region:hover{
 }
 
 .booking-form-header{
-  background-color: $grey;
+  background-color: $pink;
   margin-bottom: 0px;
   padding: 6px 20px;
   position: absolute;
   width: 100%;
   top: -59px;
   left: 0px;
-  box-shadow: 0px 2px 3px 2px;
-
 }
 .errors{
   margin: 0 auto 15px auto;
+  padding: 5px;
+  font-size: 15px;
+  color: $dark_orange;
 }
 .booking-form-header-text{
   color: white;
-  text-align: left;
+  text-align: center;
+  font-family: 'Lobster';
+  font-size: 23pt;
+  margin: 4px 0px;
 }
 .booking-form-dates{
   padding-bottom: 20px;

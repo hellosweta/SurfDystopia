@@ -67,7 +67,7 @@ class ListingItem extends React.Component {
               <div className="listing-info">
                 <div className="text-listing-overview">
                   <h1 className='listing-show-title'>{this.props.listing.title}</h1>
-                  <Link className='listing-location' to={`/search/${this.props.listing.region_id}`}>{`${this.props.region.city},${this.props.region.state}`}</Link>
+                  <div className='listing-location' onClick={() => hashHistory.push(`/search/${this.props.listing.region_id}`)}>{`${this.props.region.city},${this.props.region.state}`}</div>
                   <div className="index-rating">
                     {"⚙ ".repeat(this.props.listing.average_rating)}
                     <span className="index-review-count"> {reviewCount} {reviewText} </span>
@@ -141,7 +141,7 @@ class ListingItem extends React.Component {
 
           <div className="booking">
             <div className="booking-form-header group">
-              <h3 className="booking-form-header-text">Surf</h3>
+              <h3 className="booking-form-header-text">Request Booking</h3>
             </div>
             <BookingContainer className="booking-box" bookings={this.props.bookings} listingId={this.props.listing.id} />
           </div>

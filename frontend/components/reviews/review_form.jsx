@@ -16,7 +16,7 @@ class ReviewForm extends React.Component {
       listing_id: this.props.listingId,
     };
   }
-  
+
   componentWillReceiveProps(newProps) {
     this.setState(newProps);
     if (this.props !== newProps && this.props.reviewErrors.length > 0) {
@@ -60,7 +60,7 @@ class ReviewForm extends React.Component {
      return(<div></div>);
    } else {
      return(
-       <div className="review-form-errors">
+       <div className="review-form-errors errors">
          {this.props.reviewErrors.map((error, i) => (
            <p key={`error-${i}`}>
              {error}
