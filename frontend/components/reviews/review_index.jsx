@@ -13,15 +13,6 @@ class ReviewIndex extends React.Component {
     this.props.fetchReviews();
   }
 
-  editLink(id){
-    return (e) => {
-      e.preventDefault();
-      const url = `/reviews/${id}/edit`;
-      hashHistory.push(url);
-    };
-  }
-
-
   displayDelete(review){
     if (this.props.currentUserId == review.author_id) {
       return(<button onClick={() => this.props.deleteReview(review)}>Delete</button>);
@@ -50,7 +41,7 @@ class ReviewIndex extends React.Component {
       const newReviews = this.props.reviews;
       const reverseReviews = [];
       newReviews.forEach( review => reverseReviews.unshift(review));
-    
+
       return (
         <div >
           <div className="review-index-label">

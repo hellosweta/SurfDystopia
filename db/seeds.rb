@@ -18,7 +18,7 @@ guest2 = User.create!(
 username: 'Guest2',
 name: "War Lord",
 password: "password",
-image_url: "https://s3.amazonaws.com/surf-dev/Users/User2.png",
+image_url: "https://s3.amazonaws.com/surf-dev/Users/User2.jpg",
 about_me: "I love to dress up! No one has ever seen my real face. I like to collect swords, shields, and discarded circuit boards."
 )
 

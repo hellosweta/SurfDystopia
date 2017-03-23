@@ -6,20 +6,30 @@ import EventCalendar from 'react-event-calendar';
 class BookingIndex extends React.Component {
   constructor(props){
     super(props);
-
+    this.displayDelete = this.displayDelete.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBookings();
   }
 
+  displayDelete(booking){
+    if (this.props.currentUser.id == booking.user_id) {
+      return(<button onClick={() => this.props.deleteBooking(booking)}>Delete</button>);
+    }
+  }
+
+
   render(){
     if (this.props.bookings.length < 1) {
-      return(<div></div>);
+      return(<div><h2>No Upcoming Bookings</h2></div>);
     } else {
       const events = this.props.bookings.map((booking,idx) => (
         <div className={ this.props.currentUser !== null && this.props.currentUser.id === booking.guest.id ? 'booking-guest current-user-guest' : 'booking-guest' } key={idx}>{booking.guest.name}
           <li className={'check-in-out'}>{new Date(booking.check_in_date).toDateString()} to {new Date(booking.check_out_date).toDateString()} </li>
+            <div>
+              {this.displayDelete(booking)}
+            </div>
         </div>));
 
     return(

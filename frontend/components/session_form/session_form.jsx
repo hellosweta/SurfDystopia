@@ -97,7 +97,7 @@ class SessionForm extends React.Component {
 		const CloseButton = (() => (<button>Close modal</button>));
 		return (
 			<div >
-				<nav className="login-signup">
+				<nav className="auth">
 					<button className="header-button" onClick={this.openModal.bind(this, 'logIn')}>Log In</button>
 					&nbsp;&nbsp;
 					<button className="header-button" onClick={this.openModal.bind(this, 'signUp')}>Sign Up</button>

@@ -10,7 +10,6 @@ const mapStateToProps = ({ reviews, session }, ownProps) => {
   }
 
   return({
-
     reviews: reviews.reviews,
     listingId: ownProps.listingId,
     currentUserId: currentUserId

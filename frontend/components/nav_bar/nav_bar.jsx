@@ -68,12 +68,14 @@ class NavBar extends React.Component {
   render() {
     return(
       <div className="login-signup">
+        <div className="left-nav">
         <Link to='/' className="logo">
           <img src="https://s3.amazonaws.com/surf-dev/NavBar/LogoRobot.png" alt="SurfDystopia"></img>
         </Link>
         <h3>Find Hosts In:</h3>
         <SearchBarContainer regions={this.props.regions}/>
-        {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
+        </div>
+      {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
       </div>
     );
   }
