@@ -20,6 +20,7 @@
 .logo {
   width: 15%;
   max-height: 40px;
+  padding-bottom: 10px;
 }
 
 .header-button{
@@ -138,7 +139,90 @@ body {
 .icon {
 	position: absolute;
 	top: 13px;
-	left: 10px;
+	left: 20px;
 	width: 24px;
 	height: 24px;
+}
+
+.header-profile-image {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  border: 1px solid;
+  border-color: #c4c4c4;
+}
+
+.profile-dropdown {
+  padding: 5px 0;
+  height: 2
+}
+
+.profile-dropdown ul {
+  display: none;
+  border: 1px solid #dce0e0;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.profile-dropdown:hover ul {
+  display: block;
+  position: absolute;
+  right: 50px;
+  top: 55px;
+  background-color: #fff;
+  border-bottom: 1px solid #dce0e0;
+  z-index: 1;
+}
+
+.profile-dropdown div {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #cecece;
+  position: absolute;
+  top: -10px;
+  right: 5px;
+}
+
+.profile-dropdown li {
+  display: block;
+  width: 100%;
+  float: none;
+  line-height: 15px;
+  border-bottom: 1px solid #dce0e0;
+  width: 100px;
+  padding-bottom: 5px;
+}
+
+.profile-dropdown li a {
+  padding: 0;
+}
+
+.profile-dropdown li:last-child {
+  border: 0;
+  padding-top: 5px;
+}
+
+.profile-dropdown li:hover a {
+  padding-left: 5px;
+  font-weight: bold;
+}
+
+.header-search {
+  display: inline-block;
+}
+
+.profile-dropdown-name:hover {
+  cursor: default;
+}
+
+.profile-dropdown-name {
+  color: $dark_purple;
+  background: none;
+  text-transform: none;
+  border: 1px 1px solid;
+  height: 10px;
+  padding: 4px 8px 12px 10px;
+  font-size: 15px;
 }

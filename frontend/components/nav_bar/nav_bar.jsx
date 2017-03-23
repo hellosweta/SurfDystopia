@@ -42,30 +42,25 @@ class NavBar extends React.Component {
   loggedIn(currentUser, logOut){
     return(
       <div className="auth">
-        <ul className="drowdown">
-          <li>
-          </li>
-          <li>
-            <h5 className="header-name">{this.props.currentUser.name}</h5>
-          </li>
-          <li>
-            <button className="header-button" onClick={logOut}>Log Out</button>
-          </li>
-        </ul>
+        <ul className="header-links">
 
-
+        <li className="profile-dropdown"><a href="#">
+          <img className="header-profile-image"
+            src={currentUser.image_url}/></a>
+          <ul>
+              <li>
+                <h5 className="profile-dropdown-name">{currentUser.name}</h5>
+               </li>
+            <li><button className="header-button" onClick={logOut}>Log Out</button></li>
+          </ul>
+        </li>
+      </ul>
       </div>
     );
   }
 
   initAutocomplete() {
-    // var map = new google.maps.Map(document.getElementById('map'), {
-    //   center: {lat: -33.8688, lng: 151.2195},
-    //   zoom: 13,
-    //   mapTypeId: 'roadmap'
-    // });
 
-    // Create the search box and link it to the UI element.
     var input = document.getElementById('autocomplete');
     var searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -73,13 +68,14 @@ class NavBar extends React.Component {
   render() {
     return(
       <div className="login-signup">
-
         <Link to='/' className="logo">
           <img src="https://s3.amazonaws.com/surf-dev/NavBar/LogoRobot.png" alt="SurfDystopia"></img>
         </Link>
         <h3>Find Hosts In:</h3>
         <SearchBarContainer regions={this.props.regions}/>
-        {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
+
+
+    {this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logOut) : this.notLoggedIn(this.props.demo)}
       </div>
     );
   }
