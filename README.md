@@ -2,9 +2,10 @@
 
 [SurfDystopia live][heroku]
 
-[heroku]: https://surfdystopia.herokuapp.com/#/
 
 SurfDystopia is a full-stack web application inspired by CouchSurfing and AirBnb with a Retro Futurism Twist. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React/Redux on the frontend.
+
+[heroku]: https://surfdystopia.herokuapp.com/#/
 
 ## Features & Implementation
 
@@ -55,9 +56,6 @@ Registered Users will be able to upload their own listings to the site through a
 ### Image Upload
 
 I plan to use react-dropzone to allow users to upload images to make listing show pages for their own listings. Additional they will be able to upload their own profile pictures.
-
-
-![SurfDystopia live][heroku]
 
 [splashpage]: ./docs/Screenshots/SplashImage.png
 [regions]: ./docs/Screenshots/RegionIndex.png
