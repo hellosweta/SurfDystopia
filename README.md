@@ -61,3 +61,4 @@ I plan to use react-dropzone to allow users to upload images to make listing sho
 [regions]: ./docs/Screenshots/RegionIndex.png
 [regions]: ./docs/Screenshots/RegionIndex.png
 [listingshow]: ./docs/Screenshots/ListingShowPage.png
+[listingindex]: ./docs/Screenshots/ListingIndexPage.png
