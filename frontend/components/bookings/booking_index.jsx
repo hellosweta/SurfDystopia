@@ -24,10 +24,9 @@ class BookingIndex extends React.Component {
     if (this.props.bookings.length < 1) {
       return(<div><h2>No Upcoming Bookings</h2></div>);
     } else {
-      debugger;
       const events = this.props.bookings.map((booking,idx) => (
         <div className={ this.props.currentUser !== null && this.props.currentUser.id === booking.guest.id ? 'booking-guest current-user-guest' : 'booking-guest' } key={idx}>{booking.guest.name}
-          <li className={'check-in-out'}>{ booking.check_in_date } to { booking.check_out_date } </li>
+          <div className={'check-in-out'}>{ booking.check_in_date } to { booking.check_out_date } </div>
             <div>
               {this.displayDelete(booking)}
             </div>

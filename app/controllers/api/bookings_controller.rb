@@ -9,7 +9,7 @@ class Api::BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     if current_user.nil?
       render(
-        json: ["Surfer, you must be logged in to book a couch. Hit Demo on the top right!"],
+        json: ["Surfer, you must be logged in. Hit Demo on the top right!"],
         status: 401
       )
     else

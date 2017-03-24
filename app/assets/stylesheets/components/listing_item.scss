@@ -160,10 +160,9 @@ li.region:hover{
 
 .booking-form {
   border: 1px solid #dce0e0;
-  padding: 10px 10px;
+  padding: 18px;
   right: 250px;
   top: 440px;
-
 }
 
 .booking-form-header{
@@ -197,16 +196,20 @@ li.region:hover{
   margin-right: 12px;
 }
 
-.check-in-text{
-  padding-bottom: 8px;
-}
-
 .check-out{
   flex: left;
 }
 
-.check-out-text{
-  padding-bottom: 8px;
+.date-label-checkin {
+  margin: 0 19px 8px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.date-label-checkout {
+  margin: 0 8px 8px 0;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .booking-index{
@@ -221,7 +224,7 @@ li.region:hover{
 .booking-guest{
   font-size: 20px;
   font-weight: lighter;
-  padding: 5px 13px;
+  padding: 14px;
 
 }
 
@@ -239,4 +242,5 @@ li.region:hover{
   font-size: 15px;
   left-padding: 13px;
   font-weight: bold;
+  padding: 14px 0;
 }

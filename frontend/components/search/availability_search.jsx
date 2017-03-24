@@ -38,11 +38,9 @@ class AvailabiltySearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     if (this.state.check_in_date === "" || this.state.check_out_date === "") {
       this.setState({ errors: true });
     } else {
-      console.log(this.state, "state");
       this.props.fetchAvailableListings(this.state);
       this.setState({ check_in_date: "",
         check_out_date: "",
@@ -60,37 +58,36 @@ class AvailabiltySearchBar extends React.Component {
 
     return (
       <div className='availability'>
-      <form>
-        <article className="availability-search group">
-          {this.renderErrors()}
-          <div>
+        <form>
+          <article className="availability-search group">
+            {this.renderErrors()}
             <span className="check-in-search">
-              <h3 className="check-in-text-search">Check In</h3>
-            <input
-              className="standard-input"
-              type="date"
-              value={this.state.check_in_date}
-              placeholder="Check-In"
-              onChange={this.update('check_in_date')} />
+              <span className="availability-search-label">Check In: </span>
+              <input
+                className="standard-input"
+                type="date"
+                value={this.state.check_in_date}
+                placeholder="Check-In"
+                onChange={this.update('check_in_date')}
+              />
             </span>
-          </div>
-            <span className="check-out-search">
-                <h3 className="check-out-text-search">Check Out</h3>
-            <input
-              className="standard-input"
-              type="date"
-              value={this.state.check_out_date}
-              placeholder="Check-Out"
-              onChange={this.update('check_out_date')} />
+            <span className="check-out-search" style={{marginLeft: '8px'}}>
+              <span className="availability-search-label">Check Out: </span>
+              <input
+                className="standard-input"
+                type="date"
+                value={this.state.check_out_date}
+                placeholder="Check-Out"
+                onChange={this.update('check_out_date')}
+              />
             </span>
-            <div>
+            <div style={{paddingTop: '18px', marginLeft: '18px'}}>
               <button onClick={this.handleSubmit} className = "form-button">Search</button>
-              <button className='header-button' onClick={this.clearBookingForm}>Cancel</button>
+              {/*<button className='header-button' onClick={this.clearBookingForm}>Cancel</button>*/}
             </div>
           </article>
-
-      </form>
-    </div>
+        </form>
+      </div>
     );
   }
 }

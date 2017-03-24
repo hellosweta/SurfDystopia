@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return({
     fetchAvailableListings: (listing) => {
-      debugger
       return(dispatch(fetchAvailableListings(listing)));
     }
   });

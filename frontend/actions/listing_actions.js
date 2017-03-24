@@ -10,11 +10,9 @@ export const fetchListings = filters => dispatch => {
 };
 
 export const fetchAvailableListings = filters => dispatch => {
-debugger;
-  return APIUtil.fetchAvailableListings(filters)
-  .then(listings => {
+  return APIUtil.fetchAvailableListings(filters).then(listings => {
     return(dispatch(receiveListings(listings)));
-  }, errors => console.log(errors));
+  });
 };
 
 export const fetchListing = id => dispatch => (

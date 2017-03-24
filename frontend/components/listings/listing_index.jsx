@@ -7,14 +7,14 @@ class ListingIndex extends React.Component {
 
   componentDidMount(){
     this.props.fetchRegion(this.props.routeParams.regionId).then(
-    this.props.fetchListings(this.props.regionId)
+      this.props.fetchListings(this.props.regionId)
     );
   }
 
   componentWillReceiveProps(newProps){
     if (this.props.params.regionId !== newProps.params.regionId) {
       this.props.fetchRegion(newProps.params.regionId).then(
-      this.props.fetchListings(newProps.params.regionId)
+        this.props.fetchListings(newProps.params.regionId)
       );
     }
   }
