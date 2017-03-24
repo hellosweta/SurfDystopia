@@ -653,11 +653,20 @@ Review.create!(
 CHECK_INS = ["2017-03-08", "2017-04-08", "2017-01-08", "2017-02-08", "2017-05-08", "2017-06-08", "2017-03-09", "2017-04-09", "2017-01-09", "2017-02-09", "2017-05-09", "2017-06-09", "2017-03-15", "2017-04-15", "2017-01-15", "2017-02-15", "2017-05-15", "2017-06-15"]
 CHECK_OUTS = ["2017-09-08", "2017-10-08", "2017-07-08", "2017-08-08", "2017-11-08", "2017-12-08", "2017-09-09", "2017-10-09", "2017-07-09", "2017-08-09", "2017-11-09", "2017-12-09", "2017-09-15", "2017-10-15", "2017-07-15", "2017-08-15", "2017-11-15", "2017-12-15"]
 
-30.times do |listing_id|
+6.times do |listing_id|
   Booking.create!([
-    {listing_id: listing_id, user_id: rand(1..30) % 7 + 1, check_in_date: "2017-04-08", check_out_date: "2017-05-08"},
-    {listing_id: listing_id, user_id: rand(1..30) % 7 + 1, check_in_date: "2017-05-09", check_out_date: "2017-06-09"},
-    {listing_id: listing_id, user_id: rand(1..30) % 7 + 1, check_in_date: "2017-07-08", check_out_date: "2017-08-08"},
+    {listing_id: 1 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-04-08", check_out_date: "2017-04-12"},
+    {listing_id: 2 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-05-10", check_out_date: "2017-05-12"},
+    {listing_id: 3 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-06-08", check_out_date: "2017-06-10"},
+    {listing_id: 4 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-07-08", check_out_date: "2017-07-12"},
+    {listing_id: 5 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-08-10", check_out_date: "2017-08-12"},
+    {listing_id: 1 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-01-15", check_out_date: "2017-01-18"},
+    {listing_id: 2 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-02-13", check_out_date: "2017-02-15"},
+    {listing_id: 3 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-03-08", check_out_date: "2017-03-10"},
+    {listing_id: 4 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-09-08", check_out_date: "2017-09-12"},
+    {listing_id: 5 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-10-10", check_out_date: "2017-10-12"},
+    {listing_id: 1 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-11-08", check_out_date: "2017-11-12"},
+    {listing_id: 2 + (listing_id * 5), user_id: rand(1..30) % 7 + 1, check_in_date: "2017-12-10", check_out_date: "2017-12-12"},
   ])
 end
 

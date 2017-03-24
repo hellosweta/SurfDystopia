@@ -27,7 +27,7 @@ class ListingIndex extends React.Component {
   }
   render(){
     if (this.props.listings.length < 1) {
-      return(<div></div>);
+      return(<div>Sorry No Available Listings</div>);
     } else {
     return(
     <div>
@@ -36,6 +36,7 @@ class ListingIndex extends React.Component {
       <AvailabiltySearchContainer regionId={this.props.regionId}/>
       <div className="search-results ">
         <span className="listings">
+
           {this.props.listings.map((listing, id) => (
             <ListingIndexItem className="listing-index-item"
                               listing={listing}
