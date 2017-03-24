@@ -11,8 +11,12 @@ SurfDystopia is a full-stack web application inspired by CouchSurfing and AirBnb
 ### Regions Rendering and Search
 Regions are the 6 cities in which listings exist. The database holds the `city` and `state` strings, an `image_url`, and the `latitude` and `longitude` to allow for centering the Map on the respective region.
 
+![Splash Page][splashpage]
+
 Upon starting the app, we render the App and the `Home` Component at the Index Route. The `Home` Component fetches regions from the state and renders them in a component. Each region affords the user to view all listings in that city. Additionally, the user can search for regions at the top of the page and also be directed to the listings that belong to that region. Either searching or clicking a region will direct the app to a the listing index route which renders the `Listing Index` component.
-![Splash Page](https://github.com/swetagsanghavi/CouchSurfingClone/blob/master/docs/Screenshots/SplashImage.png)
+
+![Regions Index][regions]
+
 ### Listings Rendering and Search
 
 Listings are locations that users can book for a a range of dates. They are stored in the database with foreign keys for the region and host of the listing. The `title`, `latitude`, `longitude`, `image_url`, `description`, `max_guests`, `property_type`, and `house_rules` are also stored in the database to allow for rendering each listing. Listings are rendered in a `Listing Index` component. At the Listing Index Route, users can also search listings by availability and view them on the map.
@@ -30,3 +34,4 @@ def is_available?(check_in_date, check_out_date)
 end
 ```
 ![SurfDystopia live][heroku]
+[splashpage]: ./docs/Screenshots/SplashImage.png
