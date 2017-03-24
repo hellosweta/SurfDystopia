@@ -73,7 +73,8 @@ class ReviewForm extends React.Component {
         rating: 0
       });
     }
-    this.props.submit(this.state);
+    this.props.createReview(this.state);
+    debugger;
   }
 
   displayReviewForm(){

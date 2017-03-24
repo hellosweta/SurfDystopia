@@ -11,10 +11,9 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const submit = ownProps.formType === "new" ? createReview : updateReview;
   return {
     fetchReview: id => dispatch(fetchReview(id)),
-    submit: review => dispatch(createReview(review)),
+    createReview: review => dispatch(createReview(review)),
     clearErrors: () => dispatch(clearErrors()),
   };
 };
