@@ -28,11 +28,10 @@ class ListingItem extends React.Component {
     }
   }
 
+
   toggleReviewForm(){
-    let newformVisible = this.state.formVisible;
-    newformVisible === true ? newformVisible = false : newformVisible = true;
     this.setState({
-      formVisible: newformVisible
+      formVisible: !this.state.formVisible
     });
   }
 

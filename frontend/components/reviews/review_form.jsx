@@ -37,36 +37,23 @@ class ReviewForm extends React.Component {
     });
   }
 
-  toggleReviewForm(){
-    let newformVisible = this.state.formVisible;
-    newformVisible === true ? newformVisible = false : newformVisible = true;
-    this.setState({
-      formVisible: newformVisible
-    });
-  }
-
   clearReviewForm(e) {
     e.preventDefault();
     this.props.clearErrors();
     this.setState({
       title: "",
       body:"",
-      rating: 0
+      rating: 0,
     });
  }
 
  renderErrors() {
-   if (this.props.reviewErrors === undefined && this.props.sessionErrors === undefined){
+   if (this.props.reviewErrors === []){
      return(<div></div>);
    } else {
      return(
        <div className="review-form-errors errors">
          {this.props.reviewErrors.map((error, i) => (
-           <p key={`error-${i}`}>
-             {error}
-           </p>
-         ))}
-         {this.props.sessionErrors.map((error, i) => (
            <p key={`error-${i}`}>
              {error}
            </p>
@@ -79,7 +66,7 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.clearErrors();
-    if (this.props.reviewErrors.length < 1 && this.props.sessionErrors.length < 1) {
+    if (this.props.reviewErrors.length < 1 ) {
       this.setState({
         title: "",
         body:"",
@@ -94,9 +81,9 @@ class ReviewForm extends React.Component {
     <div className="review-form">
 
      <div>
-       {this.renderErrors()}
        <form onSubmit={this.handleSubmit}>
          <div>
+            {this.renderErrors()}
            <h2 className="rating">How Was Your Host?</h2>
              <Stars
                className="stars"
@@ -127,7 +114,7 @@ class ReviewForm extends React.Component {
 
          <span >
            <button className ="form-button" onClick={this.handleSubmit} type="submit">Submit</button>
-           <button className='header-button' onClick={this.viewForm}>Cancel</button>
+           <button className='header-button' onClick={this.clearReviewForm}>Cancel</button>
 
          </span>
        </form>

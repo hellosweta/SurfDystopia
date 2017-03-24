@@ -27,7 +27,7 @@ export default class MarkerManager {
   _createMarkerFromListing(listing) {
     const pos = new google.maps.LatLng(listing.latitude, listing.longitude);
     const icon = {
-      url: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
+      url: 'https://maps.google.com/mapfiles/ms/icons/blue.png',
  //      // This marker is 20 pixels wide by 32 pixels high.
  //   size: new google.maps.Size(20, 32),
  //   // The origin for this image is (0, 0).
@@ -43,8 +43,8 @@ export default class MarkerManager {
       listingId: listing.id
     });
     marker.addListener('click', () => this.handleClick(listing));
-    marker.addListener('mouseover', () => this.toggleMarker(marker, 'http://maps.google.com/mapfiles/ms/icons/red.png'));
-    marker.addListener('mouseout', () => this.toggleMarker(marker, 'http://maps.google.com/mapfiles/ms/icons/blue.png'));
+    marker.addListener('mouseover', () => this.toggleMarker(marker, 'https://maps.google.com/mapfiles/ms/icons/red.png'));
+    marker.addListener('mouseout', () => this.toggleMarker(marker, 'https://maps.google.com/mapfiles/ms/icons/blue.png'));
     this.markers.push(marker);
   }
 
