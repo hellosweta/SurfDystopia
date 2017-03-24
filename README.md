@@ -11,7 +11,7 @@ SurfDystopia is a full-stack web application inspired by CouchSurfing and AirBnb
 ### Regions Rendering and Search
 Regions are the 6 cities in which listings exist. The database holds the `city` and `state` strings, an `image_url`, and the `latitude` and `longitude` to allow for centering the Map on the respective region.
 
-![Splash Page][splashpage]
+![Splash Page](docs/Screenshots/SplashImage.png)
 
 Upon starting the app, we render the App and the `Home` Component at the Index Route. The `Home` Component fetches regions from the state and renders them in a component. Each region affords the user to view all listings in that city. Additionally, the user can search for regions at the top of the page and also be directed to the listings that belong to that region. Either searching or clicking a region will direct the app to a the listing index route which renders the `Listing Index` component.
 
@@ -58,6 +58,7 @@ I plan to use react-dropzone to allow users to upload images to make listing sho
 
 
 ![SurfDystopia live][heroku]
+
 [splashpage]: ./docs/Screenshots/SplashImage.png
 [regions]: ./docs/Screenshots/RegionIndex.png
 [regions]: ./docs/Screenshots/RegionIndex.png
