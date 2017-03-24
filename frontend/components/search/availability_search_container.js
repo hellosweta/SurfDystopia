@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchAvailableListings } from '../../actions/listing_actions';
-import AvailabiltySearchBar from './availability_search';
+import AvailabilitySearchBar from './availability_search';
 
 const mapStateToProps = (state, ownProps) => {
   return({
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AvailabiltySearchBar);
+)(AvailabilitySearchBar);

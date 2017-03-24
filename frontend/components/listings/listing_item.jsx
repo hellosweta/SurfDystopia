@@ -7,7 +7,7 @@ import BookingIndexContainer from '../bookings/booking_index_container';
 import SearchBarContainer from '../search/search_bar_container';
 
 import Stars from 'react-stars';
-import DateRangePickerWrapper from '../date_picker/DateRangePickerWrapper';
+
 class ListingItem extends React.Component {
   constructor(props){
     super(props);

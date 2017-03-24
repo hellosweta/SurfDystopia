@@ -17,5 +17,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(NavBar);
-
-// <Modal> {SessionContainer} </Modal>
