@@ -7,8 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 RATING = [1, 2, 3, 4, 5]
-GUEST_ID = [1, 2, 3, 4, 5, 6, 7]
-LISTING_ID = (1..30).to_a
+
 REVIEWS = [
   "Lovely stay! The host was friendly and on time for our arrival. Location is central to all the sights. Host cooked us breakfast on our last day and sent us on our way. We highly recommend this place!",
   "Our host was friendly and accomodating. The space looked just like the pictures. About 5 minutes from the nearest hovertrain station",
@@ -76,6 +75,9 @@ password: "password",
 image_url: "https://s3.amazonaws.com/surf-dev/Users/watch_maker.jpg",
 about_me: "I guarentee a good TIME when you stay with me"
 )
+
+
+GUESTS = [guest1, guest2, guest3, guest4, guest5, guest6, guest7]
 
 san_francisco = Region.create!(
   city: "San Francisco",
@@ -334,63 +336,63 @@ listing_16 = Listing.create!(
 
 listing_17 = Listing.create!(
   host_id: guest3.id,
-  title: "East Village Walk Up",
+  title: "Home in the sky",
   latitude: 47.601048,
   longitude: -122.328188,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/FlyingHouses/flying_home_10.jpg",
-  description: "We have a couch you can crash one. Perfect for anyone trying to see where the old Webster Hall was and the surrounding area. ",
+  description: "Perfect for catching views of old city from above",
   region_id: seattle.id,
   max_guests: rand(1..6),
   property_type: "Air-Home",
-  house_rules: "No smoking. Be respectful, we all know what that means",
+  house_rules: "No smoking. Hands and legs inside the vehicle at all times",
 )
 
 listing_18 = Listing.create!(
   host_id: guest4.id,
-  title: "East Village Walk Up",
+  title: "Flying Home",
   latitude: 47.602437,
   longitude: -122.331792,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/FlyingHouses/flying_home_9.jpg",
-  description: "We have a couch you can crash one. Perfect for anyone trying to see where the old Webster Hall was and the surrounding area. ",
+  description: "Just because Seattle is uninhabitable doesn't mean you can't visit! Cruise from above and catch views of the old City",
   region_id: seattle.id,
   max_guests: rand(1..6),
   property_type: "Air-Home",
-  house_rules: "No smoking. Be respectful, we all know what that means",
+  house_rules: "No smoking. Hands and legs inside the vehicle at all times",
 )
 
 listing_19 = Listing.create!(
   host_id: guest5.id,
-  title: "Spacious Castle",
+  title: "Spacious Air ship",
   latitude: 47.608083,
   longitude: -122.327329,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/FlyingHouses/grass_walkway.jpg",
-  description: "Come stay at our fortress in the West Village. Built in 2201 to fend off the 3rd Wave Invaders, this home is full of history and antique pieces. Perfect for large groups. Cold at night",
+  description: "Perfect for catching views of old city from above",
   region_id: seattle.id,
   max_guests: rand(1..6),
   property_type: "Air-Home",
-  house_rules: "Don't go into the dungeon",
+  house_rules: "No smoking. Hands and legs inside the vehicle at all times",
 )
 
 listing_20 = Listing.create!(
   host_id: guest6.id,
-  title: "Spacious Castle",
+  title: "Greenhouse in the sky",
   latitude: 47.611518,
   longitude: -122.344451,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/FlyingHouses/rainforest.jpg",
-  description: "Come stay at our fortress in the West Village. Built in 2201 to fend off the 3rd Wave Invaders, this home is full of history and antique pieces. Perfect for large groups. Cold at night",
+  description: "Just because Seattle is uninhabitable doesn't mean you can't visit! Cruise from above and catch views of the old City",
   region_id: seattle.id,
   max_guests: rand(1..6),
   property_type: "Air-Home",
-  house_rules: "Don't go into the dungeon",
+  house_rules: "No smoking. Hands and legs inside the vehicle at all times",
 )
 
 listing_21 = Listing.create!(
   host_id: guest7.id,
-  title: "Comfy spot in the bustling city",
+  title: "Converted Loft",
   latitude: 42.364547,
   longitude: -71.064781,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/metropolis/Warehouse.png",
-  description: "We're located above Stella's antiques. This is a nice spot for anyone trying to stay central to all the attractions. We love to meet travelers and hear about adventures through time and space. Great cafes around, many specializing in vintage drinks such as matcha and chai lattes.",
+  description: "Homey spot in an old battery factory. Pre-Energy-Revolution architechture",
   region_id: boston.id,
   max_guests: rand(1..6),
   property_type: "Apartment",
@@ -399,41 +401,41 @@ listing_21 = Listing.create!(
 
 listing_22 = Listing.create!(
   host_id: guest4.id,
-  title: "East Village Walk Up",
+  title: "Jamaica Plains Walk Up",
   latitude: 42.351770,
   longitude: -71.071901,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/metropolis/eiffel_tower.jpg",
-  description: "We have a couch you can crash one. Perfect for anyone trying to see where the old Webster Hall was and the surrounding area. ",
+  description: "We have a couch you can crash one. Perfect for anyone trying to see where the old Prudential Center was",
   region_id: boston.id,
   max_guests: rand(1..6),
   property_type: "Couch",
-  house_rules: "No smoking. Be respectful, we all know what that means",
+  house_rules: "Quiet during business hours",
 )
 
 listing_23 = Listing.create!(
   host_id: guest5.id,
-  title: "Spacious Castle",
+  title: "Jamaica Plains Walk Up",
   latitude: 37.786623,
   longitude: -122.425133,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/metropolis/flying_home_2.jpg",
-  description: "Come stay at our fortress in the West Village. Built in 2201 to fend off the 3rd Wave Invaders, this home is full of history and antique pieces. Perfect for large groups. Cold at night",
+  description: "We have a couch you can crash one. Perfect for anyone trying to see where the old Prudential Center was",
   region_id: boston.id,
   max_guests: rand(1..6),
-  property_type: "Castle",
-  house_rules: "Don't go into the dungeon",
+  property_type: "Apartment",
+  house_rules: "Quiet during business hours",
 )
 
 listing_24 = Listing.create!(
   host_id: guest6.id,
-  title: "Spacious Castle",
+  title: "Converted Loft",
   latitude: 42.361790,
   longitude: -71.058621,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/metropolis/library.jpg",
-  description: "Come stay at our fortress in the West Village. Built in 2201 to fend off the 3rd Wave Invaders, this home is full of history and antique pieces. Perfect for large groups. Cold at night",
+  description: "Homey spot in an old battery factory. Pre-Energy-Revolution architechture",
   region_id: boston.id,
   max_guests: rand(1..6),
-  property_type: "Castle",
-  house_rules: "Don't go into the dungeon",
+  property_type: "Apartment",
+  house_rules: "Quiet during business hours",
 )
 
 listing_25 = Listing.create!(
@@ -455,11 +457,11 @@ listing_26 = Listing.create!(
   latitude: 39.976260,
   longitude: -75.129026,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/yellow/cliffs_case.jpg",
-  description: "Sorry, super meager accomodations, but right around the corner from Todd's Whiskey",
+  description: "Sorry, super meager accomodations, but central to anywhere you'd want to warpspeed to",
   region_id: philadelphia.id,
   max_guests: rand(1..6),
   property_type: "Floor",
-  house_rules: "Have fun but excessive drinking is not allowed. Treat this as your own home!",
+  house_rules: "No AI companions or roboguests. Treat this as your own home!",
 )
 
 listing_27 = Listing.create!(
@@ -468,7 +470,7 @@ listing_27 = Listing.create!(
   latitude: 39.987309,
   longitude: -75.142073,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/yellow/flying_home_6.jpg",
-  description: "Sorry, super meager accomodations, but right around the corner from Todd's Whiskey",
+  description: "Minutes away from the teleportation hub. Walking distance from anywhere you'd like to see",
   region_id: philadelphia.id,
   max_guests: rand(1..6),
   property_type: "Floor",
@@ -477,23 +479,23 @@ listing_27 = Listing.create!(
 
 listing_28 = Listing.create!(
   host_id: guest4.id,
-  title: "Sleep on my Floor",
+  title: "Comfy home in the heart of the city",
   latitude: 39.977313,
   longitude: -75.129026,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/yellow/planet_room.jpg",
-  description: "Sorry, super meager accomodations, but right around the corner from Todd's Whiskey",
+  description: "Sorry, super meager accomodations, but central to anywhere you'd want to warpspeed to",
   region_id: philadelphia.id,
   max_guests: rand(1..6),
   property_type: "Floor",
-  house_rules: "Have fun but excessive drinking is not allowed. Treat this as your own home!",
+  house_rules: "No AI companions or roboguests. Treat this as your own home!",
 )
 listing_29 = Listing.create!(
   host_id: guest5.id,
-  title: "Sleep on my Floor",
+  title: "Apartment in the City",
   latitude: 39.968353,
   longitude: -75.224894,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/yellow/stairwell.jpg",
-  description: "Sorry, super meager accomodations, but right around the corner from Todd's Whiskey",
+  description: "Minutes away from the teleportation hub. Walking distance from anywhere you'd like to see",
   region_id: philadelphia.id,
   max_guests: rand(1..6),
   property_type: "Floor",
@@ -502,24 +504,38 @@ listing_29 = Listing.create!(
 
 listing_30 = Listing.create!(
   host_id: guest6.id,
-  title: "Sleep on my Floor",
+  title: "Train Station Abode",
   latitude: 40.005909,
   longitude: -75.101756,
   image_url: "https://s3.amazonaws.com/surf-dev/Listings/ListingFolders/yellow/train_station.jpg",
-  description: "Sorry, super meager accomodations, but right around the corner from Todd's Whiskey",
+  description: "Come stay at a renovated train station",
   region_id: philadelphia.id,
   max_guests: rand(1..6),
   property_type: "Floor",
-  house_rules: "Have fun but excessive drinking is not allowed. Treat this as your own home!",
+  house_rules: "No AI companions or roboguests. Treat this as your own home!",
 )
+
+LISTINGS = [listing_1, listing_2, listing_3, listing_4, listing_5, listing_6, listing_7, listing_8, listing_9, listing_10, listing_11, listing_12, listing_13, listing_14, listing_15, listing_16, listing_17, listing_18, listing_19, listing_20, listing_21, listing_22, listing_23, listing_24, listing_25, listing_26, listing_27, listing_28, listing_29, listing_30]
+
+TITLES = ["Great", "Okay Stay", "Lovely Hosts", "Had a great Stay", "Was Perfect For What We Needed"]
+
+100.times do
+  Review.create!(
+    listing_id: LISTINGS.sample.id,
+    author_id: GUESTS.sample.id,
+    rating: rand(1..5),
+    title: TITLES.sample,
+    body: REVIEWS.sample
+  )
+end
 
 
 Review.create!(
   listing_id: listing_7.id,
   author_id: guest1.id,
-  rating: 3,
+  rating: rand(1..5),
   title: "This host soars to the top",
-  body: "Our stay was perfect."
+  body: REVIEWS.sample
 )
 
 Review.create!(
@@ -527,7 +543,7 @@ Review.create!(
   author_id: guest2.id,
   rating: 4,
   title: "This host soars to the top",
-  body: "Our stay was perfect."
+  body: REVIEWS.shuffle[0]
 )
 
 Review.create!(
@@ -634,40 +650,16 @@ Review.create!(
   body: "Turn around do not book here!"
 )
 
-Review.create!(
-  listing_id: listing_7.id,
-  author_id: guest1.id,
-  rating: 3,
-  title: "Average",
-  body: "Exactly as depicted in the pictures. Got the job done"
-)
+CHECK_INS = ["2017-03-08", "2017-04-08", "2017-01-08", "2017-02-08", "2017-05-08", "2017-06-08", "2017-03-09", "2017-04-09", "2017-01-09", "2017-02-09", "2017-05-09", "2017-06-09", "2017-03-15", "2017-04-15", "2017-01-15", "2017-02-15", "2017-05-15", "2017-06-15"]
+CHECK_OUTS = ["2017-09-08", "2017-10-08", "2017-07-08", "2017-08-08", "2017-11-08", "2017-12-08", "2017-09-09", "2017-10-09", "2017-07-09", "2017-08-09", "2017-11-09", "2017-12-09", "2017-09-15", "2017-10-15", "2017-07-15", "2017-08-15", "2017-11-15", "2017-12-15"]
 
-Booking.create!([
-  {listing_id: listing_1.id, user_id: guest7.id, check_in_date: "2017-03-08", check_out_date: "2017-03-24"}
-])
-
-Booking.create!([
-  {listing_id: listing_2.id, user_id: guest6.id, check_in_date: "2017-04-08", check_out_date: "2017-04-24"}
-])
-
-Booking.create!([
-  {listing_id: listing_3.id, user_id: guest5.id, check_in_date: "2017-05-08", check_out_date: "2017-05-24"}
-])
-
-Booking.create!([
-  {listing_id: listing_4.id, user_id: guest4.id, check_in_date: "2017-04-08", check_out_date: "2017-05-24"}
-])
-
-Booking.create!([
-  {listing_id: listing_5.id, user_id: guest3.id, check_in_date: "2017-06-08", check_out_date: "2017-06-24"}
-])
-
-Booking.create!([
-  {listing_id: listing_6.id, user_id: guest2.id, check_in_date: "2017-07-08", check_out_date: "2017-07-24"}
-])
-Booking.create!([
-  {listing_id: listing_7.id, user_id: guest1.id, check_in_date: "2017-08-08", check_out_date: "2017-08-24"}
-])
+30.times do |listing_id|
+  Booking.create!([
+    {listing_id: listing_id, user_id: rand(1..30) % 7 + 1, check_in_date: "2017-04-08", check_out_date: "2017-05-08"},
+    {listing_id: listing_id, user_id: rand(1..30) % 7 + 1, check_in_date: "2017-05-09", check_out_date: "2017-06-09"},
+    {listing_id: listing_id, user_id: rand(1..30) % 7 + 1, check_in_date: "2017-07-08", check_out_date: "2017-08-08"},
+  ])
+end
 
 Review.create!([
   {listing_id: 1, author_id: 1, rating: 4, title: "This host soars to the top", body: "Our stay was perfect."},

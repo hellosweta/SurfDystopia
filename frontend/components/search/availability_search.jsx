@@ -37,7 +37,6 @@ class AvailabiltySearchBar extends React.Component {
     if (this.state.check_in_date === "" || this.state.check_out_date === "") {
       this.setState({ errors: true });
     } else {
-      debugger;
       this.props.fetchAvailableListings(this.state);
       this.setState({ check_in_date: "",
         check_out_date: "",

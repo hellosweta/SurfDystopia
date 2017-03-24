@@ -10,7 +10,6 @@ export const fetchListings = (regionId) => {
 
 export const fetchAvailableListings = (listing) => {
   const regionId = listing.regionId;
-  debugger
   return $.ajax({
     method: 'GET',
     url: `api/listings/${regionId}/search`,
