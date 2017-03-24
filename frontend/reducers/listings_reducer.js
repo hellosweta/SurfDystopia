@@ -1,11 +1,6 @@
 import { RECEIVE_LISTINGS, RECEIVE_LISTING, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/listing_actions';
 import merge from 'lodash/merge';
 
-const _defaultState = Object.freeze({
-  listings: {},
-  errors: []
-});
-
 const ListingsReducer = (state = {}, action) => {
   Object.freeze(state);
   let oldState = merge({}, state);
@@ -16,14 +11,6 @@ const ListingsReducer = (state = {}, action) => {
     case RECEIVE_LISTING:
       const newListing = {[action.listing.id]: action.listing};
       return merge({}, state, newListing);
-    // case RECEIVE_ERRORS:
-    //   const errors = action.errors;
-    //   return merge({}, oldState, {
-    //     errors
-    //   });
-    //
-    // case CLEAR_ERRORS:
-    //   return Object.assign({}, oldState, { errors: [] });
     default:
       return state;
   }

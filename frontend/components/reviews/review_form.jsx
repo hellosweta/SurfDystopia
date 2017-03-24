@@ -56,7 +56,7 @@ class ReviewForm extends React.Component {
  }
 
  renderErrors() {
-   if (this.props.reviewErrors === undefined){
+   if (this.props.reviewErrors === undefined && this.props.sessionErrors === undefined){
      return(<div></div>);
    } else {
      return(
@@ -66,7 +66,11 @@ class ReviewForm extends React.Component {
              {error}
            </p>
          ))}
-
+         {this.props.sessionErrors.map((error, i) => (
+           <p key={`error-${i}`}>
+             {error}
+           </p>
+         ))}
        </div>
      );
    }

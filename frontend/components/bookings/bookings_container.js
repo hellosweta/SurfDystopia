@@ -2,12 +2,13 @@ import { connect } from 'react-redux';
 import BookingForm from './booking_form';
 import { deleteBooking, receiveErrors, fetchBookings, createBooking, clearErrors } from '../../actions/booking_actions';
 
-const mapStateToProps = ({bookings}, ownProps) => {
+const mapStateToProps = ({bookings, session}, ownProps) => {
 
   return ({
     bookings: bookings.bookings,
     bookingErrors: bookings.errors,
-    listingId: ownProps.listingId
+    listingId: ownProps.listingId,
+    sessionErrors: session.errors
   });
 
 };

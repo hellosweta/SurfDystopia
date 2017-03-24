@@ -14,7 +14,7 @@ class BookingIndex extends React.Component {
   }
 
   displayDelete(booking){
-    if (this.props.currentUser.id == booking.user_id) {
+    if (this.props.currentUser && this.props.currentUser.id === booking.user_id) {
       return(<button onClick={() => this.props.deleteBooking(booking)}>Delete</button>);
     }
   }

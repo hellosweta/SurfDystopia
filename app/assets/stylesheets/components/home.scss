@@ -10,7 +10,7 @@
   padding-bottom: 20px;
 }
 .hero-image {
-  width:100%;
+  width: 100%;
   filter: brightness(60%);
 }
 
@@ -61,17 +61,14 @@
   padding: 30px 20px 0px 0px;
 }
 .region-image-container:last-of-type{
-  // padding-right: 0px;
+  padding-right: 0px;
 }
 .region-image{
   box-sizing: content-box;
   padding: 30px 20px 0px 0px;
   overflow: hidden;
   height: 300px;
-  width: 527px;
-  opacity: 80%;
-
-
+  width: 100%;
 }
 
 .region-name{

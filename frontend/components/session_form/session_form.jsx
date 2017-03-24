@@ -26,7 +26,6 @@ class SessionForm extends React.Component {
 
 	componentWillReceiveProps(newProps){
 		if (this.props !== newProps && this.props.errors.length > 0) {
-			debugger;
 			this.props.clearErrors();
 		}
 	}
@@ -52,18 +51,16 @@ class SessionForm extends React.Component {
 		} else {
 			this.props.signUp({user});
 		}
-		debugger;
-		this.props.clearErrors();
 	}
 
 	handleSignUp(e) {
-		this.openModal.bind(this, 'signUp');
+		this.openModal.bind(this, 'signUp')();
 		this.props.clearErrors();
 	}
 
 
 	handleLogIn(e){
-		this.openModal.bind(this, 'logIn');
+		this.openModal.bind(this, 'logIn')();
 		this.props.clearErrors();
 	}
 	navLink() {
@@ -83,6 +80,7 @@ class SessionForm extends React.Component {
 
 	closeModal() {
 		this.setState({modalOpen: false});
+		this.props.clearErrors();
 	}
 
 	renderErrors() {
@@ -97,7 +95,6 @@ class SessionForm extends React.Component {
 		);
 	}
 	render() {
-		const CloseButton = (() => (<button>Close modal</button>));
 		return (
 			<div >
 				<nav className="auth">
@@ -110,7 +107,7 @@ class SessionForm extends React.Component {
 				<Modal
 					contentLabel="Modal"
 					isOpen={this.state.modalOpen}
-					closeButton={CloseButton}
+					closeButton={this.closeModal}
 					onRequestClose={this.closeModal}
 					style={ModalStyle}>
 
