@@ -50,10 +50,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'binding_of_caller'
   gem 'pry-rails'
-  gem "guard", ">= 2.2.2", :require => false
-  gem "guard-livereload",  :require => false
-  gem "rack-livereload"
-  gem "rb-fsevent",        :require => false
   gem 'seed_dump'
 end
 

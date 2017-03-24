@@ -6,6 +6,7 @@ const ListingsReducer = (state = {}, action) => {
   let oldState = merge({}, state);
   switch (action.type) {
     case RECEIVE_LISTINGS:
+      debugger;
       return merge({}, action.listings);
     case RECEIVE_LISTING:
       const newListing = {[action.listing.id]: action.listing};

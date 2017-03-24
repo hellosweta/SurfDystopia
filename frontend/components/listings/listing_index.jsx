@@ -1,7 +1,7 @@
 import React from 'react';
 import ListingIndexItem from './listing_index_item';
 import ListingsMap from '../map/map';
-import AvailabiltySearchBarContainer from '../search/availability_search_container';
+import AvailabiltySearchContainer from '../search/availability_search_container';
 
 class ListingIndex extends React.Component {
 
@@ -26,8 +26,6 @@ class ListingIndex extends React.Component {
     </span>);
   }
   render(){
-    console.log("listing index");
-    console.log(this.props.regionId);
     if (this.props.listings.length < 1) {
       return(<div></div>);
     } else {
@@ -35,7 +33,7 @@ class ListingIndex extends React.Component {
     <div>
       <h3 className="listing-show-title search-results-title">{`Available Listings in ${this.props.regionName}`}</h3>
 
-      <AvailabiltySearchBarContainer regionId={this.props.regionId}/>
+      <AvailabiltySearchContainer regionId={this.props.regionId}/>
       <div className="search-results ">
         <span className="listings">
           {this.props.listings.map((listing, id) => (

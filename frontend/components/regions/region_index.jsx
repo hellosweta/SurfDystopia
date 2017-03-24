@@ -15,7 +15,7 @@ class RegionIndex extends React.Component {
             this.props.regions.map(region => (
               <RegionIndexItem
                 key={region.id}
-                region={region} onClick={() => this.props.fetchListings(region.id).then(console.log("fetchedlistings"))}/>
+                region={region} onClick={() => this.props.fetchListings(region.id)} />
             ))
           }
         </ul>

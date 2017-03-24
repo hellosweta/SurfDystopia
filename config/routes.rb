@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :listings, only: [:create, :update, :show, :index] do
       member do
-        post "search"
+        get "search"
       end
       resources :reviews, only: [:index, :show, :create, :destroy]
 
