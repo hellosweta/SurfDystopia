@@ -33,5 +33,32 @@ def is_available?(check_in_date, check_out_date)
   true
 end
 ```
+
+`Listing Index` will then render available listings. Additionally, users can move through the map to see available listings. Each marker also allows users to click to the specific listing's show page.
+
+![Listing Index][listingindex]
+
+### Bookings
+
+Bookings are stored in the database as a join table storing `listing_id` and `user_id`. Additionally `check_in_date` and `check_out_date` are stored. Users can request bookings. Bookings will be saved to the database if they are available. Users are also able to see their bookings on listing pages and delete them.
+
+![Listing Show][listingshow]
+
+## Next Steps
+
+I plan to add two additional features to SurfDystopia:
+
+### Add Listing
+
+Registered Users will be able to upload their own listings to the site through a form. Listings will be rendered under the region specified by users.
+
+### Image Upload
+
+I plan to use react-dropzone to allow users to upload images to make listing show pages for their own listings. Additional they will be able to upload their own profile pictures.
+
+
 ![SurfDystopia live][heroku]
 [splashpage]: ./docs/Screenshots/SplashImage.png
+[regions]: ./docs/Screenshots/RegionIndex.png
+[regions]: ./docs/Screenshots/RegionIndex.png
+[listingshow]: ./docs/Screenshots/ListingShowPage.png
