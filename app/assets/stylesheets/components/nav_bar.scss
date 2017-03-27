@@ -6,6 +6,7 @@
 }
 .left-nav{
   display: flex;
+  width: 800px; 
 }
 .login-signup{
   margin-top: 5px;
@@ -31,7 +32,7 @@
   text-transform: none;
   border: 1px 1px solid;
   height: 15px;
-  padding: 4px 8px 12px;
+  padding: 4px 8px 22px;
 
 }
 .logo:hover{
@@ -81,7 +82,7 @@ body {
 }
 .react-autosuggest__input {
 	width: 240px;
-	height: 23px;
+	height: 38px;
 	padding: 10px 20px 10px 40px;
 	font-family: $open;
 	font-weight: 300;
