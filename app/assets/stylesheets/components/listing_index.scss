@@ -6,6 +6,7 @@
 .listings{
   display: flex;
   flex-wrap: wrap;
+  box-sizing: content-box;
 }
 
 .map-container {
@@ -26,6 +27,7 @@
 .index-item-info:hover{
   cursor: pointer;
   border: 1px solid $dark_orange;
+  padding: 13px 14px;
 }
 
 .listing-index-image{
