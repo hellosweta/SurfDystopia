@@ -73,6 +73,7 @@ class ReviewForm extends React.Component {
         rating: 0
       });
     }
+    debugger;
     this.props.createReview(this.state);
   }
 
@@ -113,7 +114,7 @@ class ReviewForm extends React.Component {
          </div>
 
          <span >
-           <button className ="form-button" onClick={this.handleSubmit} type="submit">Submit</button>
+           <button className ="form-button" type="submit">Submit</button>
            <button className='header-button' onClick={this.clearReviewForm}>Cancel</button>
 
          </span>

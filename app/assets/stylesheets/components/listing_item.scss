@@ -39,24 +39,27 @@
   width: 75%;
 }
 .listing-show-title {
-  font-size: 36px;
+  font-size: 43px;
   font-weight: bold;
   padding: 6px 0px;
 
 }
 
 .listing-location {
-  font-size: 15px;
+  display: inline-block;
+  font-size: 21px;
   text-align: left;
   font-weight: normal;
-  bottom-padding: 10px;
+  padding-bottom: 8px;
   left-padding: 13px;
   font-color: $grey;
 }
 
 .listing-location:hover{
-  border-bottom: 2px solid $dark_orange;
+  border-bottom: 1px solid $dark_orange;
   text-decoration: none;
+  padding-bottom: 6px;
+  cursor: pointer;
 
 }
 .user-thumbnail p {
@@ -171,7 +174,7 @@ li.region:hover{
   padding: 6px 20px;
   position: absolute;
   width: 100%;
-  top: -59px;
+  top: -58px;
   left: 0px;
 }
 .errors{

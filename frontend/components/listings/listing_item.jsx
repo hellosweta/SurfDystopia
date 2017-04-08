@@ -66,7 +66,7 @@ class ListingItem extends React.Component {
               <div className="listing-info">
                 <div className="text-listing-overview">
                   <h1 className='listing-show-title'>{this.props.listing.title}</h1>
-                  <div className='listing-location' onClick={() => hashHistory.push(`/search/${this.props.listing.region_id}`)}>{`${this.props.region.city},${this.props.region.state}`}</div>
+                  <div className='listing-location' onClick={() => hashHistory.push(`/search/${this.props.listing.region_id}`)}>{`${this.props.region.city}, ${this.props.region.state}`}</div>
                   <div className="index-rating">
                     {"⚙ ".repeat(this.props.listing.average_rating)}
                     <span className="index-review-count"> {reviewCount} {reviewText} </span>
