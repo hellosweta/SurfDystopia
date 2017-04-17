@@ -41,7 +41,6 @@ class ReviewIndex extends React.Component {
       const newReviews = this.props.reviews;
       const reverseReviews = [];
       newReviews.forEach( review => reverseReviews.unshift(review));
-      debugger;
       return (
         <div >
           <div className="review-index-label">

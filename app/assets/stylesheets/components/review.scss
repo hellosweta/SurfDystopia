@@ -28,6 +28,7 @@
   font: $sans-serif;
   padding: 5px;
 }
+
 .reviewer{
   display: flex;
   align-items: center;
@@ -49,6 +50,7 @@
 
 .review-rating{
   font-size: 34px;
+  color: $pink;
 }
 .review-form-errors{
   padding-bottom: 10px;
