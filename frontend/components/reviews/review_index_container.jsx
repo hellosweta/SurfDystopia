@@ -8,7 +8,6 @@ const mapStateToProps = ({ reviews, session }, ownProps) => {
   if (session.currentUser) {
     currentUserId = session.currentUser.id;
   }
-
   return({
     reviews: reviews.reviews,
     listingId: ownProps.listingId,

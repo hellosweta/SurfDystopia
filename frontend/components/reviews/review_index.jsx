@@ -15,7 +15,7 @@ class ReviewIndex extends React.Component {
 
   displayDelete(review){
     if (this.props.currentUserId == review.author_id) {
-      return(<button onClick={() => this.props.deleteReview(review)}>Delete</button>);
+      return(<button className="delete" onClick={() => this.props.deleteReview(review)}>Delete</button>);
     }
   }
 
@@ -41,7 +41,7 @@ class ReviewIndex extends React.Component {
       const newReviews = this.props.reviews;
       const reverseReviews = [];
       newReviews.forEach( review => reverseReviews.unshift(review));
-
+      debugger;
       return (
         <div >
           <div className="review-index-label">
@@ -52,6 +52,13 @@ class ReviewIndex extends React.Component {
               reverseReviews.map((review, id) => {
                 return(
               <li className='review-item' key={id}>
+                <div className="reviewer">
+                  <div><img className="reviewer-pic" src={review.author.image_url}></img></div>
+                  <div className="reviewer-name">
+                    {review.author.name}
+                  </div>
+              </div>
+
                 <div className="review-title" >
                     {review.title}
                 </div>

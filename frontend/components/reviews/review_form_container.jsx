@@ -3,7 +3,6 @@ import ReviewForm from './review_form';
 import { fetchReview, createReview, updateReview, clearErrors } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
   return {
     listingId: ownProps.listingId,
     reviewErrors: state.reviews.errors,

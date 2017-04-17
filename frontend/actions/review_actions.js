@@ -16,11 +16,9 @@ export const fetchReview = (listingId, id) => dispatch => (
     .then(reviews => dispatch(receiveReview(reviews)))
 );
 
-export const createReview = (review) => dispatch => (
-  APIUtil.createReview(review)
-    .then(review => dispatch(receiveReview(review)),
-    error => dispatch(receiveReviewErrors(error.responseJSON)))
-);
+export const createReview = (review) => dispatch => {
+  APIUtil.createReview(review).then(review => dispatch(receiveReview(review)), error => dispatch(receiveReviewErrors(error.responseJSON)))
+};
 
 export const deleteReview = (review) => dispatch => (
   APIUtil.deleteReview(review)

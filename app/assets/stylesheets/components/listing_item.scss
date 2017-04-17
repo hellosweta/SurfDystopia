@@ -89,7 +89,15 @@
   height: 50px;
   width: auto;
 }
-
+.listing-type {
+  font-size: 17px;
+  padding: 5px 0px 5px 13px;
+  display: flex;
+}
+.listing-type-title {
+  margin-right: 20px;
+  width: 300px;
+}
 .listing-description {
   width: 675px;
   padding: 25px 0px 33px 13px;
@@ -105,7 +113,6 @@
 }
 
 .space-info {
-  display: inline-block;
   padding-top: 10px;
   padding-left: 13px;
 

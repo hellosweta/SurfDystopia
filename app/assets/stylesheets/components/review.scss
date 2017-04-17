@@ -18,14 +18,33 @@
   border-bottom: 1px solid #dce0e0;
 }
 .review-title{
-  font-size: 18px;
+  font-size: 19px;
   font: $sans-serif;
   font-weight: bold;
+  padding: 5px;
 }
 .review-body{
-  font-size: 15px;
+  font-size: 17px;
   font: $sans-serif;
+  padding: 5px;
+}
+.reviewer{
+  display: flex;
+  align-items: center;
+  padding: 0px 0px 5px;
+}
+.reviewer-name{
+  font-size: 22px;
+  font-weight: lighter;
+  padding: 0px 13px;
 
+}
+.reviewer-pic {
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+  border: 1px solid;
+  border-color: #c4c4c4;
 }
 
 .review-rating{
@@ -33,4 +52,8 @@
 }
 .review-form-errors{
   padding-bottom: 10px;
+}
+
+.delete{
+  padding: 5px;
 }

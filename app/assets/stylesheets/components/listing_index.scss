@@ -7,6 +7,26 @@
   display: flex;
   flex-wrap: wrap;
   box-sizing: content-box;
+  height: 632px;
+  overflow:scroll;
+  overflow-x:hidden;
+}
+.listing-index-item-each {
+  background-color: #F5F5F5;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px 0 4px 0;
+  color: #3B3C3E;
+  font-size: 12px;
+  font-weight: bold;
+  left: -1px;
+  padding: 10px 7px 5px;
+  margin: 5px;
+}
+
+.listing-index-item-each:hover{
+  cursor: pointer;
+  border: 1px solid $dark_orange;
+  padding: 9px 6px 4px;
 }
 
 .map-container {
@@ -24,11 +44,7 @@
   justify-content: flex-start;
 }
 
-.index-item-info:hover{
-  cursor: pointer;
-  border: 1px solid $dark_orange;
-  padding: 13px 14px;
-}
+
 
 .listing-index-image{
   height: 190px;

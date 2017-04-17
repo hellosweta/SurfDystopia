@@ -112,14 +112,17 @@ class ListingItem extends React.Component {
                 </span>
                 <span className="space-info">
                   <ul className='listing-type'>
-                    <li>
+                    <li className='listing-type-title'>
                       Property Type
                     </li>
                     <li>
                       {this.props.listing.property_type}
                     </li>
                   </ul>
-                  <h3 className='house-rules'> House Rules: {this.props.listing.house_rules}</h3>
+                  <ul className='listing-type'>
+                    <li className='listing-type-title'>
+                      House Rules
+                    </li>  {this.props.listing.house_rules}</ul>
                 </span>
               </div>
 

@@ -40,7 +40,7 @@ class ListingIndexItem extends React.Component {
     }
 
     return (
-      <div onClick={this.handleClick} >
+      <div className= 'listing-index-item-each' onClick={this.handleClick} >
         <div className="index-item-info">
           <img className="listing-index-image" src={image_url}/>
           <div className="listing-index-title">

@@ -14,7 +14,7 @@ const mapStateToProps = ({bookings, session}, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchBookings: () => dispatch(fetchBookings()),
+  fetchBookings: (listingId) => dispatch(fetchBookings(listingId)),
   createBooking: (booking) => dispatch(createBooking(booking)),
   clearErrors: () => dispatch(clearErrors())
 });
