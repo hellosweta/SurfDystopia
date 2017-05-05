@@ -55,10 +55,17 @@
   flex-wrap: wrap;
   height: 200px;
 }
+
 .region-image-container{
   display: flex;
   position: absolute;
   padding: 30px 20px 0px 0px;
+}
+
+.region:hover{
+  cursor: pointer;
+  border: 1px solid $dark_orange;
+  padding: 0px;
 }
 .region-image-container:last-of-type{
   padding-right: 0px;
