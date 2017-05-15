@@ -40,8 +40,10 @@ gem 'paperclip', "~> 5.0.0.beta1"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'pry-rails'
+  gem 'spring'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -53,13 +55,12 @@ group :development do
   gem 'better_errors'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'binding_of_caller'
-  gem 'pry-rails'
   gem 'seed_dump'
 end
 
 group :test do
-  gem 'faker'
   gem 'capybara'
+  gem 'faker'
   gem 'guard-rspec'
   gem 'launchy'
   gem "shoulda-matchers"
