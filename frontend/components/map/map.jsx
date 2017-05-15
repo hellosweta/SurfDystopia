@@ -26,9 +26,6 @@ class ListingsMap extends React.Component {
     const map = this.refs.map;
 
     this.map = new google.maps.Map(map, _mapOptions);
-
-  //   this.map.mapTypes.set('No Labels', nolabelMapType);
-  //  this.map.setMapTypeId('No Labels');
     this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this));
     this._registerListeners();
     this.MarkerManager.updateMarkers(this.props.listings);
@@ -45,7 +42,6 @@ class ListingsMap extends React.Component {
       const bounds = {
         northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west } };
-      // this.props.updateFilter('bounds', bounds);
     });
 
     google.maps.event.addListener(this.map, 'click', event => {

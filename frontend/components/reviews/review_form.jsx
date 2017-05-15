@@ -162,8 +162,8 @@ class ReviewForm extends React.Component {
          <span >
            <button className ="form-button" onClick={this.handleSubmit} type="submit">Submit</button>
            <button className='header-button' onClick={this.clearReviewForm}>Cancel</button>
-
          </span>
+         
        </form>
      </div>
    </div>

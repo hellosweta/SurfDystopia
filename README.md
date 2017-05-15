@@ -45,6 +45,12 @@ Bookings are stored in the database as a join table storing `listing_id` and `us
 
 ![Listing Show][listingshow]
 
+### Testing
+
+I have added RSpec tests after development to increase ease of adding additional features.
+
+- Model Level Testing: testing for
+
 ## Next Steps
 
 I plan to add two additional features to SurfDystopia:

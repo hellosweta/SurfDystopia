@@ -18,9 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  const windowFunctions = {store, fetchListing, fetchListings, fetchReview};
-  Object.assign(window, windowFunctions);
-  window.fetchReview = fetchReview;
   Modal.setAppElement(document.body);
   ReactDOM.render(<Root store= { store }/>, root);
 });

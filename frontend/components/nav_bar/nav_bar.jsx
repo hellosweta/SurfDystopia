@@ -10,7 +10,6 @@ class NavBar extends React.Component {
     super(props);
     this.handleLogIn = this.handleLogIn.bind(this);
     this.handleSignUp = this.handleSignUp.bind(this);
-
   }
 
   componentWillMount(){
@@ -59,11 +58,11 @@ class NavBar extends React.Component {
   }
 
   initAutocomplete() {
-
     var input = document.getElementById('autocomplete');
     var searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   }
+  
   render() {
     return(
       <div className="login-signup">

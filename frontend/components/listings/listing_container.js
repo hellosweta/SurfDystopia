@@ -26,7 +26,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-// pull listing out and grab region id
   return({
     fetchListing: () => dispatch(fetchListing(ownProps.params.listingId)),
     fetchReviews: () => dispatch(fetchReviews(ownProps.params.listingId)),

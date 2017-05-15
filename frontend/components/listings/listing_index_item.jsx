@@ -5,16 +5,7 @@ class ListingIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    // this.hightlightMarker = this.hightlightMarker.bind(this);
   }
-
-  // hightlightMarker(e){
-  //   google.maps.event.trigger(marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png'),'mouseover');
-  // }
-
-  // }
-  //
-  // marker.addListener('mouseover', () => );
 
   handleClick() {
     const listingId = this.props.listing.id;
