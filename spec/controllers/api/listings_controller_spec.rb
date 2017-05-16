@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::ListingsController, type: :controller do
   describe 'GET #show' do
-    let! (:user) { create(:user) }
-    let! (:region) { create(:region) }
+
     let! (:listing) { create(:listing) }
     before(:each) do
       get :show, { id: listing.id, format: :json }
